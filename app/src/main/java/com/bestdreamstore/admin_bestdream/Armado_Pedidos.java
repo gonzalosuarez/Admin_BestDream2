@@ -185,23 +185,17 @@ public class Armado_Pedidos extends AppCompatActivity{
 
                 if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){
 
-
                     String data =bar_code_scanner.getText().toString();
-
-                    bar_code_scanner.getText().clear();
                     Log.e("BAR_CODE_TOTAL-----", data);
-                    bar_code_scanner.requestFocus();
-
-                    Log.e("PRODUCTOS-----", String.valueOf(productos));
-
-
-
-
-
 
                     DELETE_ITEM(data);
 
+                    bar_code_scanner.setText("");
+                    bar_code_scanner.requestFocus();
 
+                    recyclerView_global.setFocusable(false);
+
+                    return true;
 
 
 
