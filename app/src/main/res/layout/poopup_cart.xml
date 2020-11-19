@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_margin="10dp"
+    android:background="@drawable/poop_up_traslucid_style"
+    android:id="@+id/linear">
+
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:gravity="right"
+            android:layout_weight="7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:gravity="left"
+                android:id="@+id/logo_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:gravity="right"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_gravity="right"
+                android:layout_margin="10dip"
+                android:background="@drawable/icon_close_red"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:id="@+id/closePopupBtn"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+    /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
+    /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
+    /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
+
+    <LinearLayout
+        android:layout_margin="10px"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:id="@+id/content_window"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+
+    /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
+    /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
+    /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
+
+
+
+
+
+
+    <Button
+        android:layout_gravity="left"
+        android:id="@+id/procesar_pedido"
+        android:textColor="@color/theme_background"
+        android:text="Procesar >> "
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+
+    <LinearLayout
+            android:layout_gravity="right"
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            >
+
+
+
+
+
+            <Button
+                android:padding="5dip"
+                android:layout_gravity="right"
+                android:id="@+id/borrar"
+                android:textColor="@color/theme_background"
+                android:text="Borrar"
+                android:background="@color/primary_dark"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+
+
+
+            <Button
+                android:padding="5dip"
+                android:layout_gravity="right"
+                android:id="@+id/imprimir_guia"
+                android:textColor="@color/theme_background"
+                android:text="Imprimir Guia"
+                android:background="@color/primary_dark"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+

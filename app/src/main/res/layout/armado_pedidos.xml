@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_margin="10dp"
+    android:id="@+id/linear">
+
+
+
+
+    <LinearLayout
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+
+        <LinearLayout
+            android:layout_gravity="left"
+            android:layout_weight=".3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+
+            <ImageButton
+                android:layout_gravity="left"
+                android:background="@drawable/icon_back_black"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/back"/>
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_gravity="right"
+            android:layout_weight=".7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/bar_code_scanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_margin="10px"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+
+
+
+    <Button
+        android:layout_gravity="left"
+        android:id="@+id/procesar_pedido"
+        android:textColor="@color/theme_background"
+        android:text="Procesar >> "
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_gravity="right"
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        >
+
+
+
+
+
+        <com.bestdreamstore.admin_bestdream.LIBS.HTMLTextView
+            android:textSize="10dip"
+            android:textColor="#333333"
+            android:padding="5dip"
+            android:layout_gravity="right"
+            android:id="@+id/datos_clienta"
+            android:layout_weight="1.8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+
+
+
+        <Button
+            android:textSize="10dip"
+            android:layout_gravity="right"
+            android:id="@+id/reporte"
+            android:text="Enviar Faltantes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+</LinearLayout>

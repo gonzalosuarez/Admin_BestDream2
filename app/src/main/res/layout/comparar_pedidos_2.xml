@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_margin="10dp"
+    android:id="@+id/linear">
+
+
+
+
+
+
+    <LinearLayout
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+
+        <LinearLayout
+            android:layout_gravity="left"
+            android:layout_weight=".5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+
+            <ImageButton
+                android:layout_gravity="left"
+                android:background="@drawable/icon_back_black"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/back"/>
+
+
+
+
+
+            <ImageButton
+                android:layout_gravity="left"
+                android:background="@drawable/ic_view_server"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/ver_pedido_original"/>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_gravity="right"
+            android:layout_weight=".5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+
+
+
+
+            <ImageButton
+                android:layout_gravity="right"
+                android:background="@drawable/ic_menu_camera"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/sacar_foto_pedido"/>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_margin="10px"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+
+
+    <Button
+        android:layout_gravity="left"
+        android:id="@+id/procesar_pedido"
+        android:textColor="@color/theme_background"
+        android:text="Procesar >> "
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_gravity="right"
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        >
+
+
+
+
+
+        <Button
+            android:padding="5dip"
+            android:layout_gravity="right"
+            android:id="@+id/borrar"
+            android:textColor="@color/theme_background"
+            android:text="Borrar"
+            android:background="@color/primary_dark"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+
+
+
+        <Button
+            android:layout_marginLeft="20dp"
+            android:padding="5dip"
+            android:layout_gravity="right"
+            android:id="@+id/imprimir_guia"
+            android:textColor="@color/theme_background"
+            android:text="Imprimir Guia"
+            android:background="@color/primary_dark"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+
