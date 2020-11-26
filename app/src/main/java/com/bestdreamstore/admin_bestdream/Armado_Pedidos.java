@@ -103,11 +103,15 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
+
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.armado_pedidos);
+
+
+        /*QUIERO DETECTAR SI SE MODIFICA DE MANERA EN LA NUBE LA APP*/
 
         setFinishOnTouchOutside(false);
 
