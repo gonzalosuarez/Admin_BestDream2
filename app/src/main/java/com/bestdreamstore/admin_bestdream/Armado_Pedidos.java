@@ -111,7 +111,7 @@ public class Armado_Pedidos extends AppCompatActivity{
         setContentView(R.layout.armado_pedidos);
 
 
-        /*QUIERO DETECTAR SI SE MODIFICA DE MANERA EN LA NUBE LA APP*/
+        /*CAMBIO NUEVOOOOOOOOOO*/
 
         setFinishOnTouchOutside(false);
 
