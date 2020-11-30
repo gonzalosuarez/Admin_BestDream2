@@ -88,7 +88,6 @@ public class Armado_Pedidos extends AppCompatActivity{
     private boolean permisoCamaraConcedido = false, permisoSolicitadoDesdeBoton = false;
 
 
-    EditText bar_code_scanner;
     HTMLTextView datos_clienta;
     ImageView image_prod, image_confirmation;
     JSONObject json;
@@ -101,7 +100,7 @@ public class Armado_Pedidos extends AppCompatActivity{
     String id_order_fin;
     JSONArray productos, productos_server;
 
-
+    String barcode = "";
 
 
     @SuppressLint("NewApi")
@@ -174,47 +173,6 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
-        bar_code_scanner = (EditText) findViewById(R.id.bar_code_scanner);
-
-        bar_code_scanner.setInputType(InputType.TYPE_NULL);
-        bar_code_scanner.requestFocus();
-
-
-
-        bar_code_scanner.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-
-                Log.e("tag" , "Key  Action "+keyEvent.getAction());
-
-                if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){
-
-
-                    String data =bar_code_scanner.getText().toString();
-
-                    bar_code_scanner.getText().clear();
-                    Log.e("BAR_CODE_TOTAL-----", data);
-                    bar_code_scanner.requestFocus();
-
-                    Log.e("PRODUCTOS-----", String.valueOf(productos));
-
-
-
-
-
-
-                    DELETE_ITEM(data);
-
-
-
-
-
-                }
-                return false;
-            }
-        });
-
-
 
 
 
@@ -249,13 +207,6 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
-
-
-
-
-
-
-
         //MOSTRAR_CARRITO();
         enableSwipeToDeleteAndUndo();
 
@@ -268,6 +219,26 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent e) {
+        if(e.getAction()==KeyEvent.ACTION_DOWN
+                && e.getKeyCode() != KeyEvent.KEYCODE_ENTER){ //Not Adding ENTER_KEY to barcode String
+            char pressedKey = (char) e.getUnicodeChar();
+            barcode += pressedKey;
+        }
+        if (e.getAction()==KeyEvent.ACTION_DOWN
+                && e.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+
+            Log.e("Barcode Read-----", barcode);
+            Log.e("PRODUCTOS-----", String.valueOf(productos));
+
+            DELETE_ITEM(barcode);
+
+            barcode="";
+        }
+        return false;
+    }
 
 
 
@@ -515,8 +486,6 @@ public class Armado_Pedidos extends AppCompatActivity{
 
     public void DELETE_ITEM(String bar_code){
 
-
-        bar_code_scanner.requestFocus();
         json_base_2 = null;
         DatabaseHandler db2 = new DatabaseHandler(getApplicationContext());
 
@@ -530,9 +499,7 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
-                int chek_if_exist = db2.check_if_product_inf_cart(json_base_2.getString(KEY_BAR_CODE));
-
-
+             //   int chek_if_exist = db2.check_if_product_inf_cart(json_base_2.getString(KEY_BAR_CODE));
 
 
                     if(bar_code.equals(json_base_2.getString(KEY_BAR_CODE))){

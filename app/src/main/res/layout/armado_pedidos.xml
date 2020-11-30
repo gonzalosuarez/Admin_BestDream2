@@ -40,21 +40,6 @@
 
 
 
-        <LinearLayout
-            android:layout_gravity="right"
-            android:layout_weight=".7"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/bar_code_scanner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-
-        </LinearLayout>
-
-
 
 
     </LinearLayout>
