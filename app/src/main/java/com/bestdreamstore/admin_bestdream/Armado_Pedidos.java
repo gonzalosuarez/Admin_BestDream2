@@ -110,7 +110,7 @@ public class Armado_Pedidos extends AppCompatActivity{
         setContentView(R.layout.armado_pedidos);
 
 
-        /*CAMBIO NUEVOOOOOOOOOO*/
+        /*NUEVO DETECTOR SIN EDIT TEXT*/
 
         setFinishOnTouchOutside(false);
 
