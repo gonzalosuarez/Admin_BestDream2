@@ -529,26 +529,6 @@ public boolean insert_all_cart(JSONArray CART){
 
 
 
-
-
-
-    public int check_if_product_inf_cart(String bar_code){
-
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        String countQuery = "SELECT  * FROM " + TABLE_CART + " WHERE " + KEY_BAR_CODE + " = " + bar_code;
-        Cursor cursor = db.rawQuery(countQuery, null);
-        int count = cursor.getCount();
-        cursor.close();
-        return count;
-
-    }
-
-
-
-
-
-
     public int check_cantidad_id_prod(String id_producto){
 
         int cantidad = 0;

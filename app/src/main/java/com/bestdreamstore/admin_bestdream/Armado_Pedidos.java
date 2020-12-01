@@ -222,23 +222,23 @@ public class Armado_Pedidos extends AppCompatActivity{
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent e) {
-        if(e.getAction()==KeyEvent.ACTION_DOWN
-                && e.getKeyCode() != KeyEvent.KEYCODE_ENTER){ //Not Adding ENTER_KEY to barcode String
+
+        if(e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() != KeyEvent.KEYCODE_ENTER){ //Not Adding ENTER_KEY to barcode String
             char pressedKey = (char) e.getUnicodeChar();
             barcode += pressedKey;
         }
-        if (e.getAction()==KeyEvent.ACTION_DOWN
-                && e.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
 
-            Log.e("Barcode Read-----", barcode);
-            Log.e("PRODUCTOS-----", String.valueOf(productos));
-
+        if (e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+            Log.e("BAR_CODE_SCANNER-----", barcode);
             DELETE_ITEM(barcode);
 
             barcode="";
         }
         return false;
+
     }
+
+
 
 
 
@@ -490,19 +490,21 @@ public class Armado_Pedidos extends AppCompatActivity{
         DatabaseHandler db2 = new DatabaseHandler(getApplicationContext());
 
 
-        for(int i = 0; i<productos.length(); i++) {
+        if (productos.toString().contains(bar_code)) {
+
+            Log.i("SI EXISTE: "," :: "+ bar_code);
+
+            for(int i = 0; i<productos.length(); i++) {
 
 
-            try {
+                try {
 
-                json_base_2 = productos.getJSONObject(i);
+                    json_base_2 = productos.getJSONObject(i);
 
-
-
-             //   int chek_if_exist = db2.check_if_product_inf_cart(json_base_2.getString(KEY_BAR_CODE));
 
 
                     if(bar_code.equals(json_base_2.getString(KEY_BAR_CODE))){
+
                         if(json_base_2.getInt(KEY_CANTIDAD) > 1){
 
                             //ELIMINAR 1 DE LA CANTIDAD
@@ -521,40 +523,35 @@ public class Armado_Pedidos extends AppCompatActivity{
 
                     }
 
+                } catch (JSONException e) {
 
-                    /*
-                if(chek_if_exist > 0){
-
-
-                }else{
-
-                    //INSERT_ERROR
-                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),"ERROR: NO EXISTE EN PEDIDO",Snackbar.LENGTH_SHORT);
-                    snackbar.setAction("UNDO", new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-
-                        }
-                    });
-
-                    snackbar.setActionTextColor(Color.YELLOW);
-                    snackbar.show();
-
+                    e.printStackTrace();
                 }
 
-                     */
 
 
-
-
-            } catch (JSONException e) {
-
-                e.printStackTrace();
             }
 
+        }else{
 
+                Log.i("NO EXISTE: "," :: "+ bar_code);
+
+                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),"ERROR: NO EXISTE EN PEDIDO",Snackbar.LENGTH_SHORT);
+                snackbar.setAction("UNDO", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
+
+                snackbar.setActionTextColor(Color.YELLOW);
+                snackbar.show();
 
         }
+
+
+
+
 
 
 
