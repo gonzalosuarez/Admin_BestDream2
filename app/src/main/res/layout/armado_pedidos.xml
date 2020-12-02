@@ -112,8 +112,8 @@
         <Button
             android:textSize="10dip"
             android:layout_gravity="right"
-            android:id="@+id/reporte"
-            android:text="Enviar Faltantes"
+            android:id="@+id/poopu_err"
+            android:text="Ver Errores"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

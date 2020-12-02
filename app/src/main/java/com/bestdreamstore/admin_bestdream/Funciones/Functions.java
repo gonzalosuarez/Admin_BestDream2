@@ -273,6 +273,27 @@ public class Functions {
 
 
 
+    public JSONObject get_details_bar_code(String bar_code){
+
+
+        String urlfin = "https://bestdream.store/Admin/get_details_bar_code/?bar_code="+bar_code;
+        HashMap<String, String> params = new HashMap<>();
+        params.put("bar_code", bar_code);
+
+        JSONObject json = jsonParser.makeHttpRequest(urlfin, "POST",params);
+
+
+
+        Log.e("DETALils: ", String.valueOf(json));
+        return json;
+
+
+    }
+
+
+
+
+
     public JSONObject ver_pedido_servidor(String id_pedido){
 
         HashMap<String, String> params = new HashMap<>();
@@ -556,24 +577,6 @@ public class Functions {
 
 
 
-public JSONObject get_reportes(String id_pedido){
-
-    String request_url = "https://bestdream.store/Admin/ver_reportes_pedidos/?id_pedido="+id_pedido;
-
-    Log.e("URL_DETAILS-----", request_url);
-
-
-    HashMap<String, String> params = new HashMap<>();
-    params.put("id_pedido", id_pedido);
-
-    JSONObject json = jsonParser.makeHttpRequest(request_url, "POST",params);
-
-    return json;
-}
-
-
-
-
 
 
     public String get_id_order_admin(Context context){
@@ -723,38 +726,6 @@ public static JSONArray ordenar_arr_bar_code(JSONArray array) {
 
         DatabaseHandler db = new DatabaseHandler(ctx);
         return db.insert_all_cart(productos);
-
-    }
-
-
-
-
-
-
-    public boolean check_if_isset_in_cart(JSONArray CART_SERVER, String bar_code){
-
-        boolean res = false;
-
-
-        for (int i=0; i < CART_SERVER.length(); i++){
-            JSONObject jsonObject2 = null;
-
-            try {
-
-                jsonObject2 = CART_SERVER.getJSONObject(i);
-                String id_producto_server = jsonObject2.getString("id_producto");
-                if(bar_code.equals(id_producto_server)){
-                    res = true;
-                }
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-
-        }
-
-        return res;
 
     }
 

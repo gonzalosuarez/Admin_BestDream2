@@ -1,12 +1,15 @@
 package com.bestdreamstore.admin_bestdream;
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -20,17 +23,25 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bestdreamstore.admin_bestdream.ADAPTERS.Get_Cart_Adapter;
 import com.bestdreamstore.admin_bestdream.ADAPTERS.SwipeToDeleteCallback;
@@ -67,20 +78,22 @@ public class Armado_Pedidos extends AppCompatActivity{
     private static final String KEY_ERROR= "key_error";
     private static final String KEY_ID = "id";
 
+    PopupWindow popupWindow;
+
      //GetCartAdapter1.remove(position);
     //recyclerViewadapter.notifyDataSetChanged();
 
     private static RecyclerView recyclerView_global;
     private static RecyclerView.Adapter recyclerViewadapter;
-    JSONArray feed_todos;
-    JSONObject json_base_2;
+    JSONArray ARRAY_ERRORES;
+    JSONObject json_base_2, OBJETC_ERRORES;
     private static LinearLayout content_window;
     public static View view;
     public static ArrayList GetCartAdapter1 = new ArrayList<>();
     public static TextView datos_pedido;
     MenuItem fav;
     public static Functions userFunctions;
-
+    ArrayList<String> errores_list = new ArrayList<String>();
     Cart_Controller cart;
     Web_View_Controller web_view_controller;
 
@@ -92,14 +105,14 @@ public class Armado_Pedidos extends AppCompatActivity{
     ImageView image_prod, image_confirmation;
     JSONObject json;
     String id_pedido;
-    Button delivery, borrar, imprimir_guia, reporte;
+    Button delivery, poopu_err;
     Get_Cart_Adapter GetCartAdapter2;
     ImageButton back;
     Parcelable recyclerViewState = null;
     DatabaseHandler db;
     String id_order_fin;
     JSONArray productos, productos_server;
-
+    View popupView;
     String barcode = "";
 
 
@@ -110,9 +123,17 @@ public class Armado_Pedidos extends AppCompatActivity{
         setContentView(R.layout.armado_pedidos);
 
 
+
+
+
+
+
+
+
         /*NUEVO DETECTOR SIN EDIT TEXT - 2*/
 
         setFinishOnTouchOutside(false);
+        ARRAY_ERRORES = new JSONArray();
 
         db = new DatabaseHandler(getApplicationContext());
 
@@ -153,6 +174,21 @@ public class Armado_Pedidos extends AppCompatActivity{
         recyclerView_global.setHasFixedSize(true);
         recyclerView_global.setLayoutManager(recyclerViewlayoutManager);
 
+
+
+
+
+        poopu_err = (Button)findViewById(R.id.poopu_err);
+        poopu_err.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                open_poop_up_errores();
+
+
+            }
+        });
 
 
         back = (ImageButton)findViewById(R.id.back);
@@ -202,11 +238,6 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
-        reporte = (Button) findViewById(R.id.reporte);
-        reporte.setVisibility(View.INVISIBLE);
-
-
-
         //MOSTRAR_CARRITO();
         enableSwipeToDeleteAndUndo();
 
@@ -223,6 +254,31 @@ public class Armado_Pedidos extends AppCompatActivity{
     @Override
     public boolean dispatchKeyEvent(KeyEvent e) {
 
+        /*
+        if(popupView.isShown()){
+
+            MediaPlayer mp = MediaPlayer.create(this, R.raw.error_sound3);
+            mp.start();
+
+        }else{
+
+            if(e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() != KeyEvent.KEYCODE_ENTER){ //Not Adding ENTER_KEY to barcode String
+                char pressedKey = (char) e.getUnicodeChar();
+                barcode += pressedKey;
+            }
+
+            if (e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                Log.e("BAR_CODE_SCANNER-----", barcode);
+                DELETE_ITEM(barcode);
+
+                barcode="";
+            }
+
+        }
+
+       */
+
+
         if(e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() != KeyEvent.KEYCODE_ENTER){ //Not Adding ENTER_KEY to barcode String
             char pressedKey = (char) e.getUnicodeChar();
             barcode += pressedKey;
@@ -234,6 +290,7 @@ public class Armado_Pedidos extends AppCompatActivity{
 
             barcode="";
         }
+
         return false;
 
     }
@@ -322,23 +379,6 @@ public class Armado_Pedidos extends AppCompatActivity{
                     //String datos_gral = full_name
 
 
-                    reporte.setVisibility(View.VISIBLE);
-                    reporte.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-
-                            String arr_fin = String.valueOf(GetCartAdapter1);
-                            Log.i("CARRITO:::", "----" + GetCartAdapter1 + "---");
-
-                            //Log.i("ids", Arrays.toString(GetCartAdapter1));
-
-
-
-
-
-
-                         }
-                    });
 
 
 
@@ -534,27 +574,27 @@ public class Armado_Pedidos extends AppCompatActivity{
 
         }else{
 
-                Log.i("NO EXISTE: "," :: "+ bar_code);
 
-                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),"ERROR: NO EXISTE EN PEDIDO",Snackbar.LENGTH_SHORT);
-                snackbar.setAction("UNDO", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+            MediaPlayer mp = MediaPlayer.create(this, R.raw.error_sound2);
+            mp.start();
 
-                    }
-                });
+                JSONObject datos_producto = userFunctions.get_details_bar_code(bar_code);
 
-                snackbar.setActionTextColor(Color.YELLOW);
-                snackbar.show();
+            try {
+
+                errores_list.add(datos_producto.getString("nombre"));
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            Log.i("NO EXISTE: "," :: "+ bar_code);
+            open_poop_up_errores();
+
+
+
 
         }
-
-
-
-
-
-
-
 
 
 
@@ -564,6 +604,60 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
+
+
+
+
+    public void open_poop_up_errores(){
+
+
+        LayoutInflater layoutInflater = (LayoutInflater)getBaseContext()
+                .getSystemService(LAYOUT_INFLATER_SERVICE);
+
+        popupView = layoutInflater.inflate(R.layout.poop_up_errores, null);
+
+        popupWindow = new PopupWindow(popupView,
+                LinearLayout.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.MATCH_PARENT,
+                true);
+
+        popupWindow.setTouchable(true);
+        popupWindow.setFocusable(true);
+
+        popupWindow.showAtLocation(popupView, Gravity.CENTER, 0, 0);
+
+
+        final ListView myListView = (ListView)popupView.findViewById(R.id.errores);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, errores_list);
+        myListView.setAdapter(arrayAdapter);
+
+
+
+
+        ((ImageButton) popupView.findViewById(R.id.close))
+                .setOnClickListener(new View.OnClickListener() {
+
+                    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
+                    public void onClick(View arg0) {
+
+                        popupWindow.dismiss();
+
+                    }
+                });
+
+
+                myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        myListView.invalidateViews();
+                        arrayAdapter.remove(arrayAdapter.getItem(position));
+
+                    }
+                });
+
+
+
+        }
 
 
 
@@ -648,7 +742,6 @@ public class Armado_Pedidos extends AppCompatActivity{
     private void enableSwipeToDeleteAndUndo() {
 
 
-
         SwipeToDeleteCallback swipeToDeleteCallback = new SwipeToDeleteCallback(getApplicationContext()) {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
@@ -658,23 +751,6 @@ public class Armado_Pedidos extends AppCompatActivity{
 
                 GetCartAdapter1.remove(position);
                 recyclerViewadapter.notifyDataSetChanged();
-
-
-
-
-                /*
-
-                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),"Borrar: "+res,Snackbar.LENGTH_SHORT);
-                snackbar.setAction("UNDO", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                    }
-                });
-
-                snackbar.setActionTextColor(Color.YELLOW);
-                snackbar.show();
-                */
 
 
             }
