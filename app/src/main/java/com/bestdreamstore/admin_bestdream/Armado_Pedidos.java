@@ -108,7 +108,7 @@ public class Armado_Pedidos extends AppCompatActivity{
     String id_pedido;
     Button delivery;
     Get_Cart_Adapter GetCartAdapter2;
-    ImageButton back;
+    ImageButton back, add_monedero;
     Parcelable recyclerViewState = null;
     DatabaseHandler db;
     String id_order_fin;
@@ -179,6 +179,17 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
+
+        add_monedero = (ImageButton)findViewById(R.id.back);
+        add_monedero.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+
+
+            }
+        });
 
 
         back = (ImageButton)findViewById(R.id.back);
@@ -372,9 +383,9 @@ public class Armado_Pedidos extends AppCompatActivity{
 
                                            datos_clienta.setText("<strong>NUEVO ADMINISTRADOR</strong><br>"+
                                             "<strong>"+full_name+"</strong><br>"+
-                                            calle+" "+ numero +" "+ colonia +"<br>"+
-                                            municipio+" "+ estado +" "+ cp +"<br>"+
-                                             "<strong>$"+total_pagado+"</strong><br>"+
+                                            //calle+" "+ numero +" "+ colonia +"<br>"+
+                                            //municipio+" "+ estado +" "+ cp +"<br>"+
+                                             //"<strong>$"+total_pagado+"</strong><br>"+
                                              "<strong>Armo: "+nombre_user+"</strong><br>"
                                             );
 
@@ -447,8 +458,8 @@ public class Armado_Pedidos extends AppCompatActivity{
 
                     datos_clienta.setText(
                             "<strong>"+full_name+"</strong><br>"+
-                                    calle+" "+ numero +" "+ colonia +"<br>"+
-                                    municipio+" "+ estado +" "+ cp +"<br>"+
+                                    //calle+" "+ numero +" "+ colonia +"<br>"+
+                                   // municipio+" "+ estado +" "+ cp +"<br>"+
                                     //"<strong>$"+total_pagado+"</strong><br>"+
                                     "<strong>Armo: "+quien_armo+"</strong><br>"
                     );
