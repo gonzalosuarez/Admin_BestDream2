@@ -1,0 +1,9 @@
+<changelist name="unnamed2" date="1606397066066" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/unnamed2/shelved.patch" />
+  <option name="DESCRIPTION" value="" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/raw/error_sound.wav" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/unnamed2/error_sound.wav" />
+  </binary>
+</changelist>

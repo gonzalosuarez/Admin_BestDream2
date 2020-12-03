@@ -1,0 +1,675 @@
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(date 1605924436394)
++++ .idea/compiler.xml	(date 1605924436394)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="1.8" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/jarRepositories.xml	(date 1605924441934)
++++ .idea/jarRepositories.xml	(date 1605924441934)
+@@ -0,0 +1,45 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="BintrayJCenter" />
++      <option name="name" value="BintrayJCenter" />
++      <option name="url" value="https://jcenter.bintray.com/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="maven" />
++      <option name="name" value="maven" />
++      <option name="url" value="https://jitpack.io" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="Google" />
++      <option name="name" value="Google" />
++      <option name="url" value="https://dl.google.com/dl/android/maven2/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="C:\Users\MI PC\AppData\Local\Android\Sdk\extras\android\m2repository" />
++      <option name="name" value="C:\Users\MI PC\AppData\Local\Android\Sdk\extras\android\m2repository" />
++      <option name="url" value="file:/$PROJECT_DIR$/../../../MI%20PC/AppData/Local/Android/Sdk/extras/android/m2repository/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="C:\Users\MI PC\AppData\Local\Android\Sdk\extras\m2repository" />
++      <option name="name" value="C:\Users\MI PC\AppData\Local\Android\Sdk\extras\m2repository" />
++      <option name="url" value="file:/$PROJECT_DIR$/../../../MI%20PC/AppData/Local/Android/Sdk/extras/m2repository/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="C:\Users\MI PC\AppData\Local\Android\Sdk\extras\google\m2repository" />
++      <option name="name" value="C:\Users\MI PC\AppData\Local\Android\Sdk\extras\google\m2repository" />
++      <option name="url" value="file:/$PROJECT_DIR$/../../../MI%20PC/AppData/Local/Android/Sdk/extras/google/m2repository/" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"PLATFORM\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/gradle.xml	(revision e91c935150d5deaad2ee480eb87156b73086cc63)
++++ .idea/gradle.xml	(date 1605826224038)
+@@ -14,6 +14,7 @@
+           </set>
+         </option>
+         <option name="resolveModulePerSourceSet" value="false" />
++        <option name="useQualifiedModuleNames" value="true" />
+       </GradleProjectSettings>
+     </option>
+   </component>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_7\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision e91c935150d5deaad2ee480eb87156b73086cc63)
++++ .idea/misc.xml	(date 1605924436292)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: app/src/main/java/com/bestdreamstore/admin_bestdream/DATA_BASE/DatabaseHandler.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.bestdreamstore.admin_bestdream.DATA_BASE;\r\n\r\n\r\nimport android.content.ContentValues;\r\nimport android.content.Context;\r\nimport android.database.Cursor;\r\nimport android.database.DatabaseUtils;\r\nimport android.database.sqlite.SQLiteDatabase;\r\nimport android.database.sqlite.SQLiteOpenHelper;\r\nimport android.database.sqlite.SQLiteStatement;\r\nimport android.os.Environment;\r\nimport android.util.Log;\r\n\r\nimport java.io.File;\r\nimport java.io.FileNotFoundException;\r\nimport java.io.FileOutputStream;\r\nimport java.io.PrintStream;\r\nimport java.util.ArrayList;\r\nimport java.util.Arrays;\r\nimport java.util.Collections;\r\nimport java.util.Comparator;\r\nimport java.util.HashMap;\r\n\r\nimport android.content.ContentValues;\r\nimport android.content.Context;\r\nimport android.database.Cursor;\r\nimport android.database.sqlite.SQLiteDatabase;\r\nimport android.database.sqlite.SQLiteOpenHelper;\r\nimport android.util.Log;\r\nimport android.widget.Toast;\r\n\r\nimport com.bestdreamstore.admin_bestdream.ADAPTERS.Get_Cart_Adapter;\r\n\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\n\r\n\r\npublic class DatabaseHandler extends SQLiteOpenHelper {\r\n\r\n    //private SQLiteHelper sqLiteHelper;\r\n    // VARIABLES ESTATICAS\r\n    private static final int DATABASE_VERSION = 12;\r\n\r\n\r\n\r\n    // NOMBRE DE TABLA LOGIN\r\n    private static final String TABLE_LOGIN = \"login_admin_fin\";\r\n    private static final String TABLE_CART = \"cart_administracion_4\";\r\n    private static final String TABLE_ID_PEDIDO = \"id_pedido_admin\";\r\n\r\n\r\n\r\n\r\n\r\n\r\n    // LOGIN NOMBRE DE COLUMNAS\r\n\r\n    private static final String KEY_ID = \"id\";\r\n\r\n    private static final String KEY_PERMISOS = \"permisos\";\r\n\r\n    private static final String KEY_FECHA = \"fecha\";\r\n\r\n\r\n    private static final String KEY_NAME = \"name\";\r\n    private static final String KEY_EMAIL = \"email\";\r\n    private static final String KEY_IMAGE_URL = \"image_url_user\";\r\n    private static final String KEY_ID_PEDIDO = \"id_pedido\";\r\n\r\n\r\n\r\n\r\n\r\n    private static final String KEY_ID_PRODUCTO = \"id_producto\";\r\n    private static final String KEY_NOMBRE = \"nombre_producto\";\r\n    private static final String KEY_PRECIO_PREMIUM = \"precio_premium\";\r\n    private static final String KEY_COSTO_PRODUCTO = \"costo_producto\";\r\n    private static final String KEY_BAR_CODE = \"bar_code\";\r\n    private static final String KEY_CANTIDAD = \"cantidad\";\r\n    private static final String KEY_COSTO_ENVIO = \"costo_envio\";\r\n    private static final String KEY_MARCA = \"marca\";\r\n    private static final String KEY_PRODUCTO = \"producto\";\r\n    private static final String KEY_CATEGORIA = \"categoria\";\r\n    private static final String KEY_IMAGEN= \"imagen_comp\";\r\n    private static final String KEY_TIPO_ALTA_CART= \"tipo_alta_cart\";\r\n    private static final String KEY_ERROR= \"key_error\";\r\n\r\n\r\n\r\n\r\n\r\n    public DatabaseHandler(Context context) {\r\n\r\n        super(context, TABLE_CART,null, DATABASE_VERSION);\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    String CREATE_TABLE_ID_PEDIDO = \"CREATE TABLE IF NOT EXISTS \" + TABLE_ID_PEDIDO + \"(\"\r\n            + KEY_ID + \" INTEGER PRIMARY KEY,\"\r\n            + KEY_ID_PEDIDO + \" TEXT\" + \")\";\r\n\r\n\r\n\r\n\r\n\r\n    String CREATE_LOGIN_TABLE = \"CREATE TABLE IF NOT EXISTS \" + TABLE_LOGIN + \"(\"\r\n            + KEY_ID + \" INTEGER PRIMARY KEY,\"\r\n            + KEY_NAME + \" TEXT,\"\r\n            + KEY_PERMISOS + \" TEXT\" + \")\";\r\n\r\n\r\n\r\n    String CREATE_TABLE_CART = \"CREATE TABLE IF NOT EXISTS \" + TABLE_CART + \"(\"\r\n            + KEY_ID + \" INTEGER PRIMARY KEY,\"\r\n            + KEY_ID_PRODUCTO + \" TEXT,\"\r\n            + KEY_NOMBRE + \" TEXT,\"\r\n            + KEY_IMAGEN + \" TEXT,\"\r\n            + KEY_CATEGORIA + \" TEXT,\"\r\n            + KEY_MARCA + \" TEXT,\"\r\n            + KEY_PRECIO_PREMIUM + \" TEXT,\"\r\n            + KEY_COSTO_PRODUCTO + \" TEXT,\"\r\n            + KEY_BAR_CODE + \" TEXT,\"\r\n            + KEY_COSTO_ENVIO + \" INTEGER,\"\r\n            + KEY_PRODUCTO + \" TEXT,\"\r\n            + KEY_TIPO_ALTA_CART + \" TEXT,\"\r\n            + KEY_ERROR + \" TEXT,\"\r\n            + KEY_CANTIDAD + \" INTEGER\" + \")\";\r\n\r\n\r\n\r\n\r\n\r\n    @Override\r\n    public void onCreate(SQLiteDatabase db) {\r\n        //Se ejecuta la sentencia SQL de creaci�n de la tabla\r\n        db.execSQL(CREATE_LOGIN_TABLE);\r\n        db.execSQL(CREATE_TABLE_CART);\r\n        db.execSQL(CREATE_TABLE_ID_PEDIDO);\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /**************************************ID_PEDIDO**************************************************/\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /**************************************ID_PEDIDO**************************************************/\r\n    /****************************************************************************************/\r\n\r\n\r\n\r\n\r\n    public int ADD_ID_PEDIDO(String id_pedido) {\r\n\r\n        int res_fin = 0;\r\n\r\n        if(if_exist_id_pedido()){\r\n\r\n\r\n            SQLiteDatabase db = this.getReadableDatabase();\r\n            ContentValues args = new ContentValues();\r\n            args.put(KEY_ID_PEDIDO, id_pedido);\r\n\r\n            db.update(TABLE_ID_PEDIDO, args, null, null);\r\n\r\n            res_fin = 1;\r\n\r\n\r\n        }else{\r\n\r\n\r\n            ContentValues values = new ContentValues();\r\n            values.put(KEY_ID_PEDIDO, id_pedido);\r\n\r\n            SQLiteDatabase db = this.getWritableDatabase();\r\n            long result = db.insert(TABLE_ID_PEDIDO, null, values);\r\n            if(result == -1){\r\n                res_fin = 0;\r\n            }else{\r\n                res_fin = 1;\r\n            }\r\n\r\n            db.close(); // CERRAR CONEXION\r\n\r\n        }\r\n\r\n\r\n\r\n        return res_fin;\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    public boolean if_exist_id_pedido() {\r\n        String countQuery = \"SELECT  * FROM \" + TABLE_ID_PEDIDO;\r\n        SQLiteDatabase db = this.getReadableDatabase();\r\n        Cursor cursor = db.rawQuery(countQuery, null);\r\n        int rowCount = cursor.getCount();\r\n        db.close();\r\n        cursor.close();\r\n\r\n        if(rowCount > 0){\r\n\r\n            return true;\r\n\r\n        }\r\n        return false;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    public JSONArray getID_Order() throws JSONException, FileNotFoundException {\r\n\r\n        SQLiteDatabase db = this.getReadableDatabase();\r\n        Cursor cursor = db.rawQuery(\"select * from \" + TABLE_ID_PEDIDO, null);\r\n        cursor.moveToFirst();\r\n\r\n        JSONObject User_Login = new JSONObject();\r\n\r\n        JSONArray UserArray = new JSONArray();\r\n        JSONArray UserArray_Fin = new JSONArray();\r\n\r\n        int i = 0;\r\n        while (!cursor.isAfterLast()) {\r\n\r\n            JSONObject user = new JSONObject();\r\n            try {\r\n\r\n                user.put(KEY_ID_PEDIDO, cursor.getString(cursor.getColumnIndex(KEY_ID_PEDIDO)));\r\n                cursor.moveToNext();\r\n\r\n                UserArray.put(i, user);\r\n                i++;\r\n\r\n            } catch (JSONException e) {\r\n\r\n                e.printStackTrace();\r\n            }\r\n\r\n        }\r\n\r\n        User_Login.put(\"id_order\", UserArray);\r\n        UserArray_Fin.put(User_Login);\r\n\r\n        db.close(); // CERRAR CONEXION\r\n\r\n\r\n        return UserArray_Fin;\r\n    }\r\n\r\n\r\n\r\n\r\n    public int reset_id_pedido(){\r\n        SQLiteDatabase db = this.getWritableDatabase();\r\n\r\n        int result = db.delete(TABLE_ID_PEDIDO, null, null);\r\n        db.close();\r\n\r\n        return result;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /**************************************ID_PEDIDO**************************************************/\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /**************************************ID_PEDIDO**************************************************/\r\n    /****************************************************************************************/\r\n\r\n\r\n\r\n\r\n\r\n\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /**************************************LOGIN**************************************************/\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /**************************************LOGIN**************************************************/\r\n    /****************************************************************************************/\r\n\r\n\r\n\r\n    /**\r\n     *INSERTAR A DE BASE DE DATOS\r\n     * */\r\n    public int addUser(String nombre, String permisos) {\r\n\r\n        int res_fin = 0;\r\n        SQLiteDatabase db = this.getWritableDatabase();\r\n\r\n        ContentValues values = new ContentValues();\r\n        values.put(KEY_NAME, nombre); // Name\r\n        values.put(KEY_PERMISOS, permisos);\r\n\r\n\r\n        long result = db.insert(TABLE_LOGIN, null, values);\r\n        if(result == -1){\r\n            res_fin = 0;\r\n        }else{\r\n            res_fin = 1;\r\n        }\r\n\r\n        db.close(); // CERRAR CONEXION\r\n\r\n        return res_fin;\r\n    }\r\n\r\n\r\n    /**\r\n     * OBTENER DATOS DE USUSARIO DE BASE DE DATOS\r\n     * */\r\n\r\n\r\n\r\n    public JSONArray getUserDetails() throws JSONException, FileNotFoundException {\r\n\r\n        SQLiteDatabase db = this.getReadableDatabase();\r\n        Cursor cursor = db.rawQuery(\"select * from \" + TABLE_LOGIN, null);\r\n        cursor.moveToFirst();\r\n\r\n        JSONObject User_Login = new JSONObject();\r\n\r\n        JSONArray UserArray = new JSONArray();\r\n        JSONArray UserArray_Fin = new JSONArray();\r\n\r\n        int i = 0;\r\n        while (!cursor.isAfterLast()) {\r\n\r\n\r\n            JSONObject user = new JSONObject();\r\n            try {\r\n\r\n                user.put(KEY_NAME, cursor.getString(cursor.getColumnIndex(KEY_NAME)));\r\n                user.put(KEY_PERMISOS, cursor.getString(cursor.getColumnIndex(KEY_PERMISOS)));\r\n\r\n                cursor.moveToNext();\r\n\r\n                UserArray.put(i, user);\r\n                i++;\r\n\r\n            } catch (JSONException e) {\r\n\r\n                e.printStackTrace();\r\n            }\r\n\r\n        }\r\n\r\n        User_Login.put(\"user_login\", UserArray);\r\n        UserArray_Fin.put(User_Login);\r\n\r\n        db.close(); // CERRAR CONEXION\r\n\r\n\r\n        return UserArray_Fin;\r\n    }\r\n\r\n\r\n\r\n    /////////////////////////////////////////ESTATUS DE LOGEO///////////////////////////////////////////////////////////////\r\n\r\n\r\n\r\n    /**\r\n     * OBTENER ESTATUS DE LOGIN\r\n     * REGRESAR TRUE SI LOS ROWS ESTAN EN LA TABLA\r\n     * */\r\n    public int getRowCount() {\r\n        String countQuery = \"SELECT  * FROM \" + TABLE_LOGIN;\r\n        SQLiteDatabase db = this.getReadableDatabase();\r\n        Cursor cursor = db.rawQuery(countQuery, null);\r\n        int rowCount = cursor.getCount();\r\n        db.close();\r\n        cursor.close();\r\n\r\n        // REGRESAR CONTADOR\r\n        return rowCount;\r\n    }\r\n\r\n\r\n\r\n    /**\r\n     * RECREAR BASE DE DATOS\r\n     * BORRAR TODAS LAS TABLAS Y CREAR NUEVAMENTE\r\n     * */\r\n    public int reset_login(){\r\n        SQLiteDatabase db = this.getWritableDatabase();\r\n\r\n        int result = db.delete(TABLE_LOGIN, null, null);\r\n        db.close();\r\n\r\n        return result;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    /////////////////////////////////////////\r\n\r\n\r\n    // BORRAR TABLAS DE SESSION LOGIN | LOGOUT\r\n    @Override\r\n    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {\r\n        // BORRAR TABLA VIEJA SI EXISTE\r\n        db.execSQL(\"DROP TABLE IF EXISTS \" + TABLE_LOGIN);\r\n\r\n        // CREAR NUEVAMENTE LA TABLA\r\n        onCreate(db);\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /**************************************LOGIN**************************************************/\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /**************************************LOGIN**************************************************/\r\n    /****************************************************************************************/\r\n\r\n\r\n\r\n\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /**************************************CART**************************************************/\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /**************************************CART**************************************************/\r\n    /****************************************************************************************/\r\n\r\n\r\npublic boolean insert_all_cart(JSONArray CART){\r\n\r\n    boolean RES_FINAL = false;\r\n    SQLiteDatabase db = this.getWritableDatabase();\r\n    JSONObject json_base_2 = null;\r\n\r\n    for(int i = 0; i<CART.length(); i++) {\r\n\r\n        try {\r\n\r\n            json_base_2 = CART.getJSONObject(i);\r\n\r\n            ContentValues values = new ContentValues();\r\n            values.put(KEY_ID_PRODUCTO, json_base_2.getString(KEY_ID_PRODUCTO)); // Name\r\n            values.put(KEY_NOMBRE, json_base_2.getString(KEY_NOMBRE));\r\n            values.put(KEY_IMAGEN, json_base_2.getString(KEY_IMAGEN));\r\n            values.put(KEY_CATEGORIA, \"categoria\");\r\n            values.put(KEY_MARCA, \"marca\");\r\n            values.put(KEY_PRECIO_PREMIUM, json_base_2.getString(KEY_PRECIO_PREMIUM));\r\n            values.put(KEY_COSTO_PRODUCTO, \"costo_producoto\");\r\n            values.put(KEY_BAR_CODE, json_base_2.getString(KEY_BAR_CODE));\r\n            values.put(KEY_COSTO_ENVIO, \"costo_envio\");\r\n            values.put(KEY_PRODUCTO, \"producto\");\r\n            values.put(KEY_TIPO_ALTA_CART, \"tipo_alta_cart\");\r\n            values.put(KEY_ERROR, \"key_error\");\r\n            values.put(KEY_CANTIDAD, json_base_2.getInt(KEY_CANTIDAD));\r\n\r\n\r\n            // INSERTAR///////////////////\r\n            db.insert(TABLE_CART, null, values);\r\n\r\n\r\n\r\n            if (i == CART.length()-1) {\r\n                RES_FINAL = true;\r\n                db.close();\r\n            }\r\n\r\n\r\n        } catch (JSONException e) {\r\n\r\n            e.printStackTrace();\r\n        }\r\n\r\n\r\n\r\n    }\r\n\r\n    return RES_FINAL;\r\n\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public int check_if_product_inf_cart(String bar_code){\r\n\r\n        SQLiteDatabase db = this.getReadableDatabase();\r\n\r\n        String countQuery = \"SELECT  * FROM \" + TABLE_CART + \" WHERE \" + KEY_BAR_CODE + \" = \" + bar_code;\r\n        Cursor cursor = db.rawQuery(countQuery, null);\r\n        int count = cursor.getCount();\r\n        cursor.close();\r\n        return count;\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public int check_cantidad_id_prod(String id_producto){\r\n\r\n        int cantidad = 0;\r\n\r\n        SQLiteDatabase db = this.getReadableDatabase();\r\n        Cursor cursor = db.rawQuery(\"SELECT * FROM \" + TABLE_CART + \" WHERE \" + KEY_ID_PRODUCTO + \" = ?\", new String[] {id_producto});\r\n\r\n\r\n            if (cursor.moveToFirst()){\r\n                cantidad = cursor.getInt(cursor.getColumnIndex(KEY_CANTIDAD));\r\n            }\r\n            cursor.close();\r\n\r\n\r\n        db.close();\r\n\r\n        Log.i(\"Cantidad: \",\" :: \"+ cantidad);\r\n\r\n        return cantidad;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    public JSONArray get_Cart_Json() throws JSONException, FileNotFoundException {\r\n\r\n\r\n        SQLiteDatabase db = this.getReadableDatabase();\r\n        Cursor cursor = db.rawQuery(\"select * from \" + TABLE_CART, null);\r\n        cursor.moveToFirst();\r\n\r\n        JSONObject Cart_Total = new JSONObject();\r\n\r\n\r\n        JSONArray ContactArray = new JSONArray();\r\n        JSONArray ContactArray_Fin = new JSONArray();\r\n\r\n        int i = 0;\r\n        while (!cursor.isAfterLast()) {\r\n\r\n\r\n            JSONObject cart = new JSONObject();\r\n\r\n\r\n            try {\r\n\r\n                cart.put(KEY_ID, cursor.getString(cursor.getColumnIndex(KEY_ID)));\r\n                cart.put(KEY_ID_PRODUCTO, cursor.getString(cursor.getColumnIndex(KEY_ID_PRODUCTO)));\r\n                cart.put(KEY_NOMBRE, cursor.getString(cursor.getColumnIndex(KEY_NOMBRE)));\r\n                cart.put(KEY_IMAGEN, cursor.getString(cursor.getColumnIndex(KEY_IMAGEN)));\r\n                cart.put(KEY_CATEGORIA, cursor.getString(cursor.getColumnIndex(KEY_CATEGORIA)));\r\n                cart.put(KEY_MARCA, cursor.getString(cursor.getColumnIndex(KEY_MARCA)));\r\n                cart.put(KEY_PRECIO_PREMIUM, cursor.getString(cursor.getColumnIndex(KEY_PRECIO_PREMIUM)));\r\n                cart.put(KEY_COSTO_PRODUCTO, cursor.getString(cursor.getColumnIndex(KEY_COSTO_PRODUCTO)));\r\n                cart.put(KEY_BAR_CODE, cursor.getString(cursor.getColumnIndex(KEY_BAR_CODE)));\r\n                cart.put(KEY_COSTO_ENVIO, cursor.getString(cursor.getColumnIndex(KEY_COSTO_ENVIO)));\r\n                cart.put(KEY_PRODUCTO, cursor.getString(cursor.getColumnIndex(KEY_PRODUCTO)));\r\n                cart.put(KEY_TIPO_ALTA_CART, cursor.getString(cursor.getColumnIndex(KEY_TIPO_ALTA_CART)));\r\n                cart.put(KEY_ERROR, cursor.getString(cursor.getColumnIndex(KEY_ERROR)));\r\n                cart.put(KEY_CANTIDAD, cursor.getString(cursor.getColumnIndex(KEY_CANTIDAD)));\r\n\r\n                cursor.moveToNext();\r\n\r\n                ContactArray.put(i, cart);\r\n                i++;\r\n\r\n            } catch (JSONException e) {\r\n\r\n                e.printStackTrace();\r\n            }\r\n\r\n        }\r\n\r\n\r\n\r\n\r\n\r\n\r\n        Cart_Total.put(\"productos\", ContactArray);\r\n        ContactArray_Fin.put(Cart_Total);\r\n\r\n        db.close(); // CERRAR CONEXION\r\n\r\n\r\n        return ContactArray_Fin;\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public int cambiar_cantidad(String id_producto, Integer cantidad){\r\n\r\n\r\n        SQLiteDatabase db = this.getReadableDatabase();\r\n        ContentValues args = new ContentValues();\r\n        args.put(KEY_CANTIDAD, cantidad-1);\r\n\r\n        return db.update(TABLE_CART, args,  KEY_ID_PRODUCTO +\"=?\", new String[]{id_producto});\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public int incrementar_uno(String id_producto){\r\n\r\n       int cantidad_bd = check_cantidad_id_prod(id_producto);\r\n\r\n        SQLiteDatabase db = this.getReadableDatabase();\r\n        ContentValues args = new ContentValues();\r\n        args.put(KEY_CANTIDAD, cantidad_bd+1);\r\n\r\n        return db.update(TABLE_CART, args,  KEY_ID_PRODUCTO +\"=?\", new String[]{id_producto});\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    public int insertar_error_code(String err, String id_producto){\r\n\r\n\r\n        SQLiteDatabase db = this.getReadableDatabase();\r\n        ContentValues args = new ContentValues();\r\n        args.put(KEY_ERROR, err);\r\n\r\n        return db.update(TABLE_CART, args,  KEY_ID_PRODUCTO +\"=?\", new String[]{id_producto});\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public boolean delete(String id_producto){\r\n\r\n        SQLiteDatabase db = this.getReadableDatabase();\r\n\r\n        return db.delete(TABLE_CART, KEY_ID_PRODUCTO + \"=?\", new String[]{id_producto}) > 0;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public boolean delete_id_position(String position){\r\n\r\n        SQLiteDatabase db = this.getReadableDatabase();\r\n\r\n        return db.delete(TABLE_CART, KEY_ID + \"=?\", new String[]{position}) > 0;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public int Count_Cart() {\r\n\r\n        int total_productos = 0;\r\n        int i = 0;\r\n\r\n        SQLiteDatabase db = this.getReadableDatabase();\r\n        Cursor cursor = db.rawQuery(\"select * from \" + TABLE_CART, null);\r\n        cursor.moveToFirst();\r\n\r\n\r\n        while (!cursor.isAfterLast()) {\r\n\r\n            total_productos += cursor.getInt(cursor.getColumnIndex(KEY_CANTIDAD));\r\n            cursor.moveToNext();\r\n            i++;\r\n\r\n        }\r\n\r\n\r\n        db.close();\r\n\r\n        return total_productos;\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    public int DELETE_CART(){\r\n        SQLiteDatabase db = this.getWritableDatabase();\r\n\r\n        int result = db.delete(TABLE_CART, null, null);\r\n        db.close();\r\n\r\n        return result;\r\n\r\n\r\n    }\r\n\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /**************************************CART**************************************************/\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /****************************************************************************************/\r\n    /**************************************CART**************************************************/\r\n    /****************************************************************************************/\r\n\r\n\r\n\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bestdreamstore/admin_bestdream/DATA_BASE/DatabaseHandler.java	(revision e91c935150d5deaad2ee480eb87156b73086cc63)
++++ app/src/main/java/com/bestdreamstore/admin_bestdream/DATA_BASE/DatabaseHandler.java	(date 1605958348422)
+@@ -532,15 +532,26 @@
+ 
+ 
+ 
+-    public int check_if_product_inf_cart(String bar_code){
++    public boolean check_if_product_inf_cart(String bar_code){
+ 
++        boolean res = false;
+         SQLiteDatabase db = this.getReadableDatabase();
++        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_CART + " WHERE " + KEY_BAR_CODE + " = ?", new String[] {bar_code});
++
++        int rowCount = cursor.getCount();
+ 
+-        String countQuery = "SELECT  * FROM " + TABLE_CART + " WHERE " + KEY_BAR_CODE + " = " + bar_code;
+-        Cursor cursor = db.rawQuery(countQuery, null);
+-        int count = cursor.getCount();
++        if(rowCount > 0){
++            res = true;
++        }
++
+         cursor.close();
+-        return count;
++        db.close();
++
++        Log.i("EXISTE BAR_CODE: "+bar_code+" -- "," :: "+ res);
++
++        // REGRESAR CONTADOR
++        return res;
++
+ 
+     }
+ 
+Index: app/src/main/java/com/bestdreamstore/admin_bestdream/Funciones/Functions.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.bestdreamstore.admin_bestdream.Funciones;\r\n\r\n\r\n\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\nimport android.content.ContentValues;\r\nimport android.content.Context;\r\n\r\nimport java.io.FileNotFoundException;\r\nimport java.util.ArrayList;\r\nimport java.util.Arrays;\r\nimport java.util.Collections;\r\nimport java.util.Comparator;\r\nimport java.util.List;\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\nimport com.android.volley.toolbox.JsonArrayRequest;\r\nimport com.android.volley.toolbox.JsonObjectRequest;\r\nimport android.content.DialogInterface;\r\nimport android.database.sqlite.SQLiteDatabase;\r\nimport android.graphics.Bitmap;\r\nimport android.graphics.drawable.BitmapDrawable;\r\nimport android.graphics.drawable.Drawable;\r\nimport android.os.AsyncTask;\r\nimport android.support.v4.content.ContextCompat;\r\nimport android.support.v7.app.AlertDialog;\r\nimport android.support.v7.widget.GridLayoutManager;\r\nimport android.support.v7.widget.RecyclerView;\r\nimport android.support.v7.widget.StaggeredGridLayoutManager;\r\nimport android.util.Log;\r\nimport android.view.LayoutInflater;\r\nimport android.view.Menu;\r\nimport android.view.MenuItem;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.ImageView;\r\nimport android.widget.LinearLayout;\r\nimport android.widget.TextView;\r\nimport com.bestdreamstore.admin_bestdream.DATA_BASE.DatabaseHandler;\r\n\r\n\r\n\r\npublic class Functions {\r\n\r\n\r\n    private JSONParser jsonParser;\r\n\r\n    JSONObject json_fin, json_json, images_extras;\r\n    JSONArray feed_todos, feed_images_extras;\r\n\r\n    String GLOBAL_STRING_VOLLEY_RETURN;\r\n\r\n    private static final String KEY_PERMISOS = \"permisos\";\r\n    private static final String KEY_NAME = \"name\";\r\n\r\n    private static final String KEY_ID_PEDIDO = \"id_pedido\";\r\n\r\n    // TESTEO EN SERVIDOR\r\n    private static String loginURL = \"https://bestdream.store/Admin/serach_login\";\r\n    private static String subir_pedido = \"https://bestdream.store/Android/alta_pedido_android\";\r\n    public Functions(){\r\n        jsonParser = new JSONParser();\r\n    }\r\n\r\n\r\n\r\n    String nombre, permisos, id_order;\r\n\r\n\r\n\r\n    public int addUser(String nombre, String permisos, Context context) {\r\n\r\n        DatabaseHandler db = new DatabaseHandler(context);\r\n        int res = db.addUser(nombre, permisos);\r\n\r\n        return res;\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public boolean isUserLoggedIn(Context context){\r\n        DatabaseHandler db = new DatabaseHandler(context);\r\n\r\n        int count = db.getRowCount();\r\n        if(count > 0){\r\n\r\n            return true;\r\n\r\n        }\r\n        return false;\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    public String get_name_user(Context context){\r\n\r\n        DatabaseHandler db = new DatabaseHandler(context);\r\n\r\n\r\n        JSONArray USER = null;\r\n\r\n        try {\r\n\r\n            USER = db.getUserDetails();\r\n\r\n            for(int j = 0; j<USER.length(); j++) {\r\n\r\n                JSONObject json_base = null;\r\n                try {\r\n\r\n                    json_base = USER.getJSONObject(j);\r\n                    JSONArray user_login = json_base.getJSONArray(\"user_login\");\r\n                    JSONObject JSON_NAME = user_login.getJSONObject(0);\r\n                    nombre = JSON_NAME.getString(KEY_NAME);\r\n\r\n                } catch (JSONException e) {\r\n                    e.printStackTrace();\r\n                }\r\n\r\n            }\r\n\r\n\r\n        } catch (JSONException e) {\r\n            e.printStackTrace();\r\n        } catch (FileNotFoundException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n        return nombre;\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public String get_permisos_user(Context context){\r\n\r\n        DatabaseHandler db = new DatabaseHandler(context);\r\n\r\n\r\n        JSONArray USER = null;\r\n\r\n        try {\r\n\r\n            USER = db.getUserDetails();\r\n\r\n            for(int j = 0; j<USER.length(); j++) {\r\n\r\n                JSONObject json_base = null;\r\n                try {\r\n\r\n                    json_base = USER.getJSONObject(j);\r\n                    JSONArray user_login = json_base.getJSONArray(\"user_login\");\r\n                    JSONObject JSON_NAME = user_login.getJSONObject(0);\r\n                    permisos = JSON_NAME.getString(KEY_PERMISOS);\r\n\r\n                } catch (JSONException e) {\r\n                    e.printStackTrace();\r\n                }\r\n\r\n            }\r\n\r\n\r\n        } catch (JSONException e) {\r\n            e.printStackTrace();\r\n        } catch (FileNotFoundException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n        return permisos;\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public boolean cerrar_session_login(Context context){\r\n\r\n        DatabaseHandler db = new DatabaseHandler(context);\r\n\r\n        int count = db.reset_login();\r\n        if(count > 0){\r\n\r\n            return true;\r\n\r\n        }else{\r\n\r\n            return false;\r\n\r\n        }\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public JSONObject login_service(String email, String pass){\r\n\r\n        HashMap<String, String> params = new HashMap<>();\r\n        params.put(\"email\", email);\r\n        params.put(\"pass\", pass);\r\n\r\n        JSONObject json = jsonParser.makeHttpRequest(loginURL, \"POST\",params);\r\n        // RETORNO JSON\r\n        //Log.e(\"JSON----\", \"Es un Objeto\");\r\n        Log.e(\"TEST::LOGIN\", String.valueOf(json));\r\n\r\n        return json;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public boolean check_autorizacion(String user){\r\n\r\n        boolean res_fin = false;\r\n\r\n        String urlfin = \"https://bestdream.store/Admin/check_autorizacion_empleados/?user=\"+user;\r\n        HashMap<String, String> params = new HashMap<>();\r\n        params.put(\"user\", user);\r\n\r\n        JSONObject json = jsonParser.makeHttpRequest(urlfin, \"POST\",params);\r\n\r\n        try {\r\n\r\n            if(json.getInt(\"success\") == 1){\r\n                res_fin = true;\r\n            }\r\n\r\n        } catch (JSONException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n\r\n        return res_fin;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    public JSONObject ver_pedido_servidor(String id_pedido){\r\n\r\n        HashMap<String, String> params = new HashMap<>();\r\n        params.put(\"id_pedido\", id_pedido);\r\n        params.put(\"tag\", \"ANDROID_NORMAL\");\r\n\r\n        JSONObject json = jsonParser.makeHttpRequest(\"https://bestdream.store/Android/details_pedido/\"+id_pedido, \"POST\",params);\r\n        // RETORNO JSON\r\n        //Log.e(\"JSON----\", \"Es un Objeto\");\r\n        Log.e(\"PEDIDO::::\", String.valueOf(json));\r\n\r\n        return json;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    public JSONObject ver_faltantes_productos(String id_pedido){\r\n\r\n        HashMap<String, String> params = new HashMap<>();\r\n        params.put(\"id_pedido\", id_pedido);\r\n        params.put(\"tag\", \"ANDROID_NORMAL\");\r\n\r\n        JSONObject json = jsonParser.makeHttpRequest(\"https://bestdream.store/Android/productos_faltantes/\"+id_pedido, \"POST\",params);\r\n        // RETORNO JSON\r\n        //Log.e(\"JSON----\", \"Es un Objeto\");\r\n        Log.e(\"PRODUCTOS::::\", String.valueOf(json));\r\n\r\n        return json;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public int armar_pedido_func(String nombre_user, String id_pedido){\r\n\r\n        int res = 0;\r\n\r\n        String urlfin = \"https://bestdream.store/Android/armar_pedido/?nombre_user=\"+nombre_user+\"&id_pedido=\"+id_pedido;\r\n        HashMap<String, String> params = new HashMap<>();\r\n        params.put(\"id_pedido\", id_pedido);\r\n        params.put(\"nombre_user\", nombre_user);\r\n\r\n        JSONObject json = jsonParser.makeHttpRequest(urlfin, \"POST\",params);\r\n\r\n        try {\r\n\r\n            res = json.getInt(\"success\");\r\n\r\n        } catch (JSONException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n\r\n\r\n        return res;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public String get_id_pedido_bar_code_fedex(String bar_code_fedex){\r\n\r\n        String res = \"\";\r\n\r\n        String urlfin = \"https://bestdream.store/Android/get_id_pedido_bar_code_fedex/?bar_code_fedex=\"+bar_code_fedex;\r\n\r\n        Log.e(\"URL_DETAILS-----\", urlfin);\r\n\r\n        HashMap<String, String> params = new HashMap<>();\r\n        params.put(\"bar_code_fedex\", bar_code_fedex);\r\n\r\n        JSONObject json = jsonParser.makeHttpRequest(urlfin, \"POST\",params);\r\n\r\n        try {\r\n\r\n            res = json.getString(\"id_pedido\");\r\n\r\n        } catch (JSONException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n\r\n\r\n        return res;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    public String autorizar_pedido(String codigo_id_pedido){\r\n\r\n        String res = \"null\";\r\n\r\n        String urlfin = \"https://bestdream.store/Android/autorizar_pedido/?id_pedido=\"+codigo_id_pedido;\r\n\r\n        Log.e(\"URL_DETAILS-----\", urlfin);\r\n\r\n        HashMap<String, String> params = new HashMap<>();\r\n        params.put(\"codigo_id_pedido\", codigo_id_pedido);\r\n\r\n        JSONObject json = jsonParser.makeHttpRequest(urlfin, \"POST\",params);\r\n\r\n        try {\r\n\r\n            res = json.getString(\"msg\");\r\n\r\n        } catch (JSONException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n\r\n\r\n        return res;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public String get_name_cliente(String id_pedido){\r\n\r\n        String res = \"\";\r\n\r\n        String urlfin = \"https://bestdream.store/Android/get_nombre_cliente_id_pedido/?id_pedido=\"+id_pedido;\r\n        HashMap<String, String> params = new HashMap<>();\r\n        params.put(\"id_pedido\", id_pedido);\r\n\r\n        JSONObject json = jsonParser.makeHttpRequest(urlfin, \"POST\",params);\r\n\r\n        try {\r\n\r\n            res = json.getString(\"nombre_cliente\");\r\n\r\n        } catch (JSONException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n\r\n\r\n        return res;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public int encajar_pedido_func(String nombre_user, String id_pedido){\r\n\r\n        int res = 0;\r\n\r\n        String urlfin = \"https://bestdream.store/Android/encajar_pedido_user/?nombre_user=\"+nombre_user+\"&id_pedido=\"+id_pedido;\r\n        HashMap<String, String> params = new HashMap<>();\r\n        params.put(\"id_pedido\", id_pedido);\r\n        params.put(\"nombre_user\", nombre_user);\r\n\r\n        JSONObject json = jsonParser.makeHttpRequest(urlfin, \"POST\",params);\r\n\r\n        try {\r\n\r\n            res = json.getInt(\"success\");\r\n\r\n        } catch (JSONException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n\r\n\r\n        return res;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    public JSONObject cerrar_pedido_func(String nombre_user, String id_pedido){\r\n\r\n        String urlfin = \"https://bestdream.store/Android/cerrar_pedido/?nombre_user=\"+nombre_user+\"&id_pedido=\"+id_pedido;\r\n        HashMap<String, String> params = new HashMap<>();\r\n        params.put(\"id_pedido\", id_pedido);\r\n        params.put(\"nombre_user\", nombre_user);\r\n\r\n        JSONObject json = jsonParser.makeHttpRequest(urlfin, \"POST\",params);\r\n\r\n        return json;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    public JSONArray get_all_users_admin(){\r\n\r\n        String urlfin = \"https://bestdream.store/Android/get_all_users_admin/\";\r\n        HashMap<String, String> params = new HashMap<>();\r\n        JSONArray arr = null;\r\n\r\n        JSONObject json = jsonParser.makeHttpRequest(urlfin, \"POST\",params);\r\n        try {\r\n\r\n             arr = json.getJSONArray(\"feed\");\r\n\r\n        } catch (JSONException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n        return arr;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public String get_key_pedido(String id_pedido){\r\n\r\n        String request_url = \"https://bestdream.store/Admin/get_key_pedido/\"+id_pedido;\r\n\r\n        String key_pedido = \"\";\r\n\r\n\r\n        HashMap<String, String> params = new HashMap<>();\r\n        params.put(\"id_pedido\", id_pedido);\r\n        JSONObject json = jsonParser.makeHttpRequest(request_url, \"POST\",params);\r\n\r\n        try {\r\n\r\n            key_pedido = json.getString(\"key_pedido\");\r\n\r\n        } catch (JSONException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n\r\n        return key_pedido;\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public int add_Id_Order(String id_pedido, Context context) {\r\n\r\n        DatabaseHandler db = new DatabaseHandler(context);\r\n        int res = db.ADD_ID_PEDIDO(id_pedido);\r\n\r\n        return res;\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\npublic JSONObject get_reportes(String id_pedido){\r\n\r\n    String request_url = \"https://bestdream.store/Admin/ver_reportes_pedidos/?id_pedido=\"+id_pedido;\r\n\r\n    Log.e(\"URL_DETAILS-----\", request_url);\r\n\r\n\r\n    HashMap<String, String> params = new HashMap<>();\r\n    params.put(\"id_pedido\", id_pedido);\r\n\r\n    JSONObject json = jsonParser.makeHttpRequest(request_url, \"POST\",params);\r\n\r\n    return json;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public String get_id_order_admin(Context context){\r\n\r\n        DatabaseHandler db = new DatabaseHandler(context);\r\n\r\n\r\n        JSONArray USER = null;\r\n\r\n        try {\r\n\r\n            USER = db.getID_Order();\r\n\r\n            for(int j = 0; j<USER.length(); j++) {\r\n\r\n                JSONObject json_base = null;\r\n                try {\r\n\r\n                    json_base = USER.getJSONObject(j);\r\n                    JSONArray user_login = json_base.getJSONArray(\"id_order\");\r\n                    JSONObject JSON_NAME = user_login.getJSONObject(0);\r\n                    id_order = JSON_NAME.getString(KEY_ID_PEDIDO);\r\n\r\n\r\n                } catch (JSONException e) {\r\n                    e.printStackTrace();\r\n                }\r\n\r\n            }\r\n\r\n\r\n        } catch (JSONException e) {\r\n            e.printStackTrace();\r\n        } catch (FileNotFoundException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n        return id_order;\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public JSONArray get_jsonarray_cart(Context ctx){\r\n\r\n        JSONArray CART = null;\r\n        JSONObject PRODUCTOS = null;\r\n        JSONArray PRODUCTOS_ARR = null;\r\n\r\n\r\n        DatabaseHandler db = new DatabaseHandler(ctx);\r\n\r\n        try {\r\n\r\n            CART = db.get_Cart_Json();\r\n\r\n\r\n            PRODUCTOS = CART.getJSONObject(0);\r\n            PRODUCTOS_ARR = ordenar_arr_bar_code(PRODUCTOS.getJSONArray(\"productos\"));\r\n\r\n\r\n        } catch (JSONException e) {\r\n            e.printStackTrace();\r\n        } catch (FileNotFoundException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n\r\n        /*2223668454*/\r\n        return PRODUCTOS_ARR;\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\npublic static JSONArray ordenar_arr_bar_code(JSONArray array) {\r\n\r\n        List<JSONObject> jsons = new ArrayList<JSONObject>();\r\n        for (int i = 0; i < array.length(); i++) {\r\n\r\n            try {\r\n\r\n                jsons.add(array.getJSONObject(i));\r\n                Log.i(\"JSON_COMPARE:::\", \"----\" + jsons + \"---\");\r\n            } catch (JSONException e) {\r\n                e.printStackTrace();\r\n            }\r\n\r\n        }\r\n\r\n        Collections.sort(jsons, new Comparator<JSONObject>() {\r\n            @Override\r\n            public int compare(JSONObject lhs, JSONObject rhs) {\r\n                String lid = null;\r\n                String rid = null;\r\n\r\n                try {\r\n\r\n                    if (!lhs.has(\"bar_code\")){\r\n\r\n                        Log.i(\"NO_TIENE_BAR_CODE\", \"-------\");\r\n                        lid = \"0\";\r\n                        rid = \"0\";\r\n\r\n\r\n                    }else{\r\n\r\n                        Log.i(\"SI_TIENE_BAR_CODE\", \"-------\");\r\n                        lid = lhs.getString(\"bar_code\");\r\n                        rid = rhs.getString(\"bar_code\");\r\n\r\n\r\n                    }\r\n\r\n\r\n\r\n                } catch (JSONException e) {\r\n                    e.printStackTrace();\r\n                }\r\n\r\n                // Here you could parse string id to integer and then compare.\r\n                return lid.compareTo(rid);\r\n            }\r\n        });\r\n        return new JSONArray(jsons);\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public boolean insert_all_cart(JSONArray productos, Context ctx){\r\n\r\n        DatabaseHandler db = new DatabaseHandler(ctx);\r\n        return db.insert_all_cart(productos);\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public boolean check_if_isset_in_cart(JSONArray CART_SERVER, String bar_code){\r\n\r\n        boolean res = false;\r\n\r\n\r\n        for (int i=0; i < CART_SERVER.length(); i++){\r\n            JSONObject jsonObject2 = null;\r\n\r\n            try {\r\n\r\n                jsonObject2 = CART_SERVER.getJSONObject(i);\r\n                String id_producto_server = jsonObject2.getString(\"id_producto\");\r\n                if(bar_code.equals(id_producto_server)){\r\n                    res = true;\r\n                }\r\n\r\n            } catch (JSONException e) {\r\n                e.printStackTrace();\r\n            }\r\n\r\n\r\n        }\r\n\r\n        return res;\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public JSONObject add_bar_code_id_server(String id_producto, String bar_code, String permisos){\r\n\r\n        String request_url = \"https://bestdream.store/Admin/add_bar_code_server/\";\r\n\r\n        Log.e(\"PERMISOS-----\", permisos);\r\n\r\n\r\n        HashMap<String, String> params = new HashMap<>();\r\n        params.put(\"bar_code\", bar_code);\r\n        params.put(\"id_producto\", id_producto);\r\n        params.put(\"permisos\", permisos);\r\n\r\n\r\n        JSONObject json = jsonParser.makeHttpRequest(request_url, \"POST\",params);\r\n        // RETORNO JSON\r\n        //Log.e(\"JSON----\", \"Es un Objeto\");\r\n        //Log.e(\"TEST::CREATE_NEW_CUEMTA\", String.valueOf(json));\r\n\r\n        return json;\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public JSONObject check_if_bar_code_exist(String id_prod){\r\n\r\n\r\n        String request_url = \"https://bestdream.store/Admin/check_if_bar_code_exist/?id_producto=\"+id_prod;\r\n        String res =\"\";\r\n\r\n        Log.e(\"URL_DETAILS-----\", request_url);\r\n\r\n\r\n        HashMap<String, String> params = new HashMap<>();\r\n        params.put(\"id_prod\", id_prod);\r\n\r\n        JSONObject json = jsonParser.makeHttpRequest(request_url, \"GET\",params);\r\n\r\n\r\n\r\n        return json;\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bestdreamstore/admin_bestdream/Funciones/Functions.java	(revision e91c935150d5deaad2ee480eb87156b73086cc63)
++++ app/src/main/java/com/bestdreamstore/admin_bestdream/Funciones/Functions.java	(date 1605965163417)
+@@ -106,6 +106,9 @@
+ 
+ 
+ 
++
++
++
+     public String get_name_user(Context context){
+ 
+         DatabaseHandler db = new DatabaseHandler(context);
+@@ -314,6 +317,7 @@
+ 
+ 
+ 
++
+     public int armar_pedido_func(String nombre_user, String id_pedido){
+ 
+         int res = 0;
+@@ -378,6 +382,9 @@
+ 
+ 
+ 
++
++
++
+     public String autorizar_pedido(String codigo_id_pedido){
+ 
+         String res = "null";
+@@ -731,34 +738,6 @@
+ 
+ 
+ 
+-    public boolean check_if_isset_in_cart(JSONArray CART_SERVER, String bar_code){
+-
+-        boolean res = false;
+-
+-
+-        for (int i=0; i < CART_SERVER.length(); i++){
+-            JSONObject jsonObject2 = null;
+-
+-            try {
+-
+-                jsonObject2 = CART_SERVER.getJSONObject(i);
+-                String id_producto_server = jsonObject2.getString("id_producto");
+-                if(bar_code.equals(id_producto_server)){
+-                    res = true;
+-                }
+-
+-            } catch (JSONException e) {
+-                e.printStackTrace();
+-            }
+-
+-
+-        }
+-
+-        return res;
+-
+-    }
+-
+-
+ 
+ 
+ 
+@@ -792,6 +771,33 @@
+ 
+ 
+ 
++
++    public JSONObject details_product_bar_code(String bar_code){
++
++
++        String request_url = "https://bestdream.store/WS/bar_code/"+bar_code;
++        String res ="";
++
++        Log.e("URL_DETAILS-----", request_url);
++
++
++        HashMap<String, String> params = new HashMap<>();
++        params.put("bar_code", bar_code);
++
++        JSONObject json = jsonParser.makeHttpRequest(request_url, "GET",params);
++
++        Log.e("DETAILS_PRODUCT: ", String.valueOf(json));
++
++        return json;
++
++    }
++
++
++
++
++
++
++
+     public JSONObject check_if_bar_code_exist(String id_prod){
+ 
+ 
+Index: app/src/main/java/com/bestdreamstore/admin_bestdream/Armado_Pedidos.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.bestdreamstore.admin_bestdream;\r\n\r\nimport android.annotation.SuppressLint;\r\nimport android.app.Activity;\r\nimport android.content.DialogInterface;\r\nimport android.content.Intent;\r\nimport android.graphics.Color;\r\nimport android.net.Uri;\r\nimport android.os.AsyncTask;\r\nimport android.os.Bundle;\r\nimport android.os.Parcelable;\r\nimport android.support.annotation.NonNull;\r\nimport android.support.design.widget.Snackbar;\r\nimport android.support.v7.app.AlertDialog;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.support.v7.widget.GridLayoutManager;\r\nimport android.support.v7.widget.RecyclerView;\r\nimport android.support.v7.widget.helper.ItemTouchHelper;\r\nimport android.text.Editable;\r\nimport android.text.InputType;\r\nimport android.text.TextWatcher;\r\nimport android.util.Log;\r\nimport android.view.KeyEvent;\r\nimport android.view.MenuItem;\r\nimport android.view.View;\r\nimport android.view.WindowManager;\r\nimport android.view.inputmethod.InputMethodManager;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.ImageButton;\r\nimport android.widget.ImageView;\r\nimport android.widget.LinearLayout;\r\nimport android.widget.TextView;\r\n\r\nimport com.bestdreamstore.admin_bestdream.ADAPTERS.Get_Cart_Adapter;\r\nimport com.bestdreamstore.admin_bestdream.ADAPTERS.SwipeToDeleteCallback;\r\nimport com.bestdreamstore.admin_bestdream.CONTROLLER.Cart_Controller;\r\nimport com.bestdreamstore.admin_bestdream.CONTROLLER.RecyclerCartViewAdapter;\r\nimport com.bestdreamstore.admin_bestdream.CONTROLLER.Web_View_Controller;\r\nimport com.bestdreamstore.admin_bestdream.DATA_BASE.DatabaseHandler;\r\nimport com.bestdreamstore.admin_bestdream.Funciones.Functions;\r\nimport com.bestdreamstore.admin_bestdream.LIBS.HTMLTextView;\r\n\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.Arrays;\r\nimport java.util.List;\r\n\r\n\r\npublic class Armado_Pedidos extends AppCompatActivity{\r\n\r\n\r\n    private static final String KEY_ID_PRODUCTO = \"id_producto\";\r\n    private static final String KEY_NOMBRE = \"nombre_producto\";\r\n    private static final String KEY_PRECIO_PREMIUM = \"precio_premium\";\r\n    private static final String KEY_COSTO_PRODUCTO = \"costo_producto\";\r\n    private static final String KEY_CANTIDAD = \"cantidad\";\r\n    private static final String KEY_COSTO_ENVIO = \"costo_envio\";\r\n    private static final String KEY_MARCA = \"marca\";\r\n    private static final String KEY_PRODUCTO = \"producto\";\r\n    private static final String KEY_BAR_CODE = \"bar_code\";\r\n    private static final String KEY_IMAGEN= \"imagen_comp\";\r\n    private static final String KEY_TIPO_ALTA_CART= \"tipo_alta_cart\";\r\n    private static final String KEY_ERROR= \"key_error\";\r\n    private static final String KEY_ID = \"id\";\r\n\r\n     //GetCartAdapter1.remove(position);\r\n    //recyclerViewadapter.notifyDataSetChanged();\r\n\r\n    private static RecyclerView recyclerView_global;\r\n    private static RecyclerView.Adapter recyclerViewadapter;\r\n    JSONArray feed_todos;\r\n    JSONObject json_base_2;\r\n    private static LinearLayout content_window;\r\n    public static View view;\r\n    public static ArrayList GetCartAdapter1 = new ArrayList<>();\r\n    public static TextView datos_pedido;\r\n    MenuItem fav;\r\n    public static Functions userFunctions;\r\n\r\n    Cart_Controller cart;\r\n    Web_View_Controller web_view_controller;\r\n\r\n    private static final int CODIGO_PERMISOS_CAMARA = 1, CODIGO_INTENT = 2;\r\n    private boolean permisoCamaraConcedido = false, permisoSolicitadoDesdeBoton = false;\r\n\r\n\r\n    EditText bar_code_scanner;\r\n    HTMLTextView datos_clienta;\r\n    ImageView image_prod, image_confirmation;\r\n    JSONObject json;\r\n    String id_pedido;\r\n    Button delivery, borrar, imprimir_guia, reporte;\r\n    Get_Cart_Adapter GetCartAdapter2;\r\n    ImageButton back;\r\n    Parcelable recyclerViewState = null;\r\n    DatabaseHandler db;\r\n    String id_order_fin;\r\n    JSONArray productos, productos_server;\r\n\r\n\r\n\r\n    @SuppressLint(\"NewApi\")\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.armado_pedidos);\r\n\r\n        setFinishOnTouchOutside(false);\r\n\r\n        db = new DatabaseHandler(getApplicationContext());\r\n\r\n\r\n\r\n        cart = new Cart_Controller(getApplicationContext());\r\n        web_view_controller = new Web_View_Controller(getApplicationContext());\r\n\r\n        userFunctions = new Functions();\r\n        GetCartAdapter1.clear();\r\n\r\n\r\n\r\n        String get_extras = get_extras_and_search();\r\n        if(!get_extras.equals(\"null\")){\r\n\r\n            Log.i(\"EXTRAS:::\", \"----\" + get_extras + \"---\");\r\n            id_order_fin = get_extras;\r\n\r\n\r\n\r\n        }else{\r\n\r\n\r\n            Log.i(\"EXTRAS:::\", \"----NO HAY---\");\r\n            id_order_fin = userFunctions.get_id_order_admin(getApplicationContext());\r\n\r\n\r\n\r\n        }\r\n\r\n\r\n\r\n\r\n\r\n        RecyclerView.LayoutManager recyclerViewlayoutManager = new GridLayoutManager(getApplicationContext(), 1);\r\n        recyclerView_global = (RecyclerView)findViewById(R.id.recycler_view);\r\n        recyclerView_global.setHasFixedSize(true);\r\n        recyclerView_global.setLayoutManager(recyclerViewlayoutManager);\r\n\r\n\r\n\r\n        back = (ImageButton)findViewById(R.id.back);\r\n        back.setOnClickListener(new View.OnClickListener() {\r\n\r\n            @Override\r\n            public void onClick(View view) {\r\n\r\n                DatabaseHandler db = new DatabaseHandler(getApplicationContext());\r\n                db.DELETE_CART();\r\n                //MOSTRAR_CARRITO();\r\n                finish();\r\n\r\n\r\n            }\r\n        });\r\n\r\n\r\n\r\n\r\n        bar_code_scanner = (EditText) findViewById(R.id.bar_code_scanner);\r\n\r\n        bar_code_scanner.setInputType(InputType.TYPE_NULL);\r\n        bar_code_scanner.requestFocus();\r\n\r\n\r\n\r\n        bar_code_scanner.setOnKeyListener(new View.OnKeyListener() {\r\n            @Override\r\n            public boolean onKey(View view, int i, KeyEvent keyEvent) {\r\n\r\n                Log.e(\"tag\" , \"Key  Action \"+keyEvent.getAction());\r\n\r\n                if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){\r\n\r\n\r\n                    String data =bar_code_scanner.getText().toString();\r\n\r\n                    bar_code_scanner.getText().clear();\r\n                    Log.e(\"BAR_CODE_TOTAL-----\", data);\r\n                    bar_code_scanner.requestFocus();\r\n\r\n                    Log.e(\"PRODUCTOS-----\", String.valueOf(productos));\r\n\r\n\r\n\r\n\r\n\r\n\r\n                    DELETE_ITEM(data);\r\n\r\n\r\n\r\n\r\n\r\n                }\r\n                return false;\r\n            }\r\n        });\r\n\r\n\r\n\r\n\r\n\r\n        delivery = (Button)findViewById(R.id.procesar_pedido);\r\n        delivery.setText(\"Procesar: \"+id_order_fin+ \" >>\");\r\n        delivery.setOnClickListener(new View.OnClickListener() {\r\n\r\n            @Override\r\n            public void onClick(View view) {\r\n\r\n\r\n                DatabaseHandler db = new DatabaseHandler(getApplicationContext());\r\n                db.DELETE_CART();\r\n                PROCESAR_PETICION(id_order_fin);\r\n                //MOSTRAR_CARRITO();\r\n\r\n\r\n            }\r\n        });\r\n\r\n\r\n\r\n        datos_clienta = (HTMLTextView)findViewById(R.id.datos_clienta);\r\n\r\n\r\n\r\n\r\n\r\n\r\n        reporte = (Button) findViewById(R.id.reporte);\r\n        reporte.setVisibility(View.INVISIBLE);\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n        //MOSTRAR_CARRITO();\r\n        enableSwipeToDeleteAndUndo();\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    @SuppressLint(\"StaticFieldLeak\")\r\n    public void PROCESAR_PETICION(final String id_order){\r\n\r\n        new AsyncTask<Object, Void, JSONObject>() {\r\n\r\n            @Override\r\n            protected void onPreExecute() {\r\n                super.onPreExecute();\r\n                //response_server.setText(\"Espere Un Momento......\");\r\n\r\n            }\r\n\r\n\r\n            @Override\r\n            protected JSONObject doInBackground(Object... params) {\r\n                JSONObject resultados_json = new JSONObject();\r\n\r\n\r\n\r\n                    json = userFunctions.ver_pedido_servidor(id_order);\r\n\r\n                    resultados_json = json;\r\n\r\n\r\n                return resultados_json;\r\n\r\n            }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n            @Override\r\n            protected void onPostExecute(final JSONObject params) {\r\n                super.onPostExecute(params);\r\n\r\n\r\n\r\n                JSONObject pedido_json = new JSONObject();\r\n                JSONObject pedido = new JSONObject();\r\n\r\n\r\n                productos = new JSONArray();\r\n\r\n\r\n                try {\r\n\r\n                    final String quien_armo = params.getString(\"quien_armo\");\r\n                    final String key_pedido = params.getString(\"key_pedido\");\r\n                    final String QUIEN_ARMO_PAS = params.getString(\"quien_armo\");\r\n                    pedido_json = new JSONObject(params.getString(\"pedido_json\"));\r\n                    pedido = new JSONObject(pedido_json.getString(\"pedido\"));\r\n\r\n\r\n                    productos_server = pedido.getJSONArray(\"productos\");\r\n\r\n\r\n\r\n                    JSONObject datos_clientes = pedido.getJSONObject(\"datos_cliente\");\r\n                    JSONObject totales = pedido.getJSONObject(\"totales\");\r\n\r\n                    final String total_pagado = totales.getString(\"total_pagado\");\r\n\r\n                    final String full_name = datos_clientes.getString(\"full_name\");\r\n                    String email = datos_clientes.getString(\"email\");\r\n                    final String calle = datos_clientes.getString(\"calle\");\r\n                    final String numero = datos_clientes.getString(\"numero\");\r\n                    final String colonia = datos_clientes.getString(\"colonia\");\r\n                    final String municipio = datos_clientes.getString(\"municipio\");\r\n                    final String estado = datos_clientes.getString(\"estado\");\r\n                    final String cp = datos_clientes.getString(\"cp\");\r\n                    String referencias = datos_clientes.getString(\"referencias\");\r\n\r\n                    //String datos_gral = full_name\r\n\r\n\r\n                    reporte.setVisibility(View.VISIBLE);\r\n                    reporte.setOnClickListener(new View.OnClickListener() {\r\n                        @Override\r\n                        public void onClick(View view) {\r\n\r\n                            String arr_fin = String.valueOf(GetCartAdapter1);\r\n                            Log.i(\"CARRITO:::\", \"----\" + GetCartAdapter1 + \"---\");\r\n\r\n                            //Log.i(\"ids\", Arrays.toString(GetCartAdapter1));\r\n\r\n\r\n\r\n\r\n\r\n\r\n                         }\r\n                    });\r\n\r\n\r\n\r\n                    if(quien_armo.equals(\"\")){\r\n\r\n\r\n\r\n                        AlertDialog alertDialog = new AlertDialog.Builder(Armado_Pedidos.this).create();\r\n                        alertDialog.setCanceledOnTouchOutside(false);\r\n                        alertDialog.setTitle(\"Bienvenido.\");\r\n                        alertDialog.setMessage(\"Deseas Ser el Administrador del Pedido:\"+id_order_fin+\"??\");\r\n                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, \"ACEPTAR\",\r\n                                new DialogInterface.OnClickListener() {\r\n                                    public void onClick(DialogInterface dialog, int which) {\r\n                                        dialog.dismiss();\r\n\r\n                                        String nombre_user = userFunctions.get_name_user(getApplicationContext());\r\n                                        //String id_pedido  = userFunctions.get_id_order_admin(getApplicationContext());\r\n                                        int res =  userFunctions.armar_pedido_func(nombre_user, id_order_fin);\r\n\r\n                                        if(res == 1){\r\n\r\n                                           datos_clienta.setText(\"<strong>NUEVO ADMINISTRADOR</strong><br>\"+\r\n                                            \"<strong>\"+full_name+\"</strong><br>\"+\r\n                                            calle+\" \"+ numero +\" \"+ colonia +\"<br>\"+\r\n                                            municipio+\" \"+ estado +\" \"+ cp +\"<br>\"+\r\n                                             \"<strong>$\"+total_pagado+\"</strong><br>\"+\r\n                                             \"<strong>Armo: \"+nombre_user+\"</strong><br>\"\r\n                                            );\r\n\r\n\r\n                                        }else{\r\n\r\n                                            finish();\r\n\r\n                                        }\r\n\r\n\r\n                                    }\r\n                                });\r\n                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, \"Cancelar\",\r\n                                new DialogInterface.OnClickListener() {\r\n                                    public void onClick(DialogInterface dialog, int which) {\r\n                                        dialog.dismiss();\r\n\r\n                                        //key_pedido\r\n                                        //upen_url(Armado_Pedidos.this, \"https://bestdream.store/Index/details_order/\"+key_pedido);\r\n                                        finish();\r\n\r\n\r\n\r\n\r\n                                    }\r\n                                });\r\n                        alertDialog.show();\r\n\r\n\r\n\r\n\r\n\r\n                    }else{\r\n\r\n\r\n                        AlertDialog alertDialog = new AlertDialog.Builder(Armado_Pedidos.this).create();\r\n                        alertDialog.setCanceledOnTouchOutside(false);\r\n                        alertDialog.setTitle(\"ALERTA! ALERTA!\");\r\n                        alertDialog.setMessage(\"Este pedido ya ha sido armado con aterioridad por: \"+QUIEN_ARMO_PAS);\r\n                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, \"Armar Sin Ser Administrador\",\r\n                                new DialogInterface.OnClickListener() {\r\n                                    public void onClick(DialogInterface dialog, int which) {\r\n\r\n                                        dialog.dismiss();\r\n\r\n                                    }\r\n                                });\r\n                        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, \"Ver En Web\",\r\n                                new DialogInterface.OnClickListener() {\r\n                                    public void onClick(DialogInterface dialog, int which) {\r\n                                        dialog.dismiss();\r\n\r\n                                        //key_pedido\r\n                                        upen_url(Armado_Pedidos.this, \"https://bestdream.store/Index/details_order/\"+key_pedido);\r\n                                        finish();\r\n\r\n\r\n\r\n                                    }\r\n                                });\r\n\r\n                        alertDialog.show();\r\n\r\n\r\n\r\n                    }\r\n\r\n\r\n\r\n                    datos_clienta.setText(\r\n                            \"<strong>\"+full_name+\"</strong><br>\"+\r\n                                    calle+\" \"+ numero +\" \"+ colonia +\"<br>\"+\r\n                                    municipio+\" \"+ estado +\" \"+ cp +\"<br>\"+\r\n                                    //\"<strong>$\"+total_pagado+\"</strong><br>\"+\r\n                                    \"<strong>Armo: \"+quien_armo+\"</strong><br>\"\r\n                    );\r\n\r\n\r\n\r\n\r\n                } catch (JSONException e) {\r\n                    e.printStackTrace();\r\n                }\r\n\r\n\r\n\r\n                //productos = userFunctions.ordenar_arr_bar_code(productos);\r\n                // MOSTRAR_CARRITO(productos);\r\n\r\n\r\n                if(userFunctions.insert_all_cart(productos_server, getApplicationContext())){\r\n\r\n                    productos = userFunctions.get_jsonarray_cart(getApplicationContext());\r\n                    productos = userFunctions.ordenar_arr_bar_code(productos);\r\n                    MOSTRAR_CARRITO(productos);\r\n                    Log.i(\"SUBIDA:\", \"CORRECTA\");\r\n\r\n                }else{\r\n\r\n                    productos = null;\r\n                    productos_server = null;\r\n                    Log.i(\"SUBIDA:\", \"ERROR SUBIDA\");\r\n\r\n                }\r\n\r\n\r\n\r\n\r\n            } }.execute();\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    public void DELETE_ITEM(String bar_code){\r\n\r\n\r\n        bar_code_scanner.requestFocus();\r\n        json_base_2 = null;\r\n        DatabaseHandler db2 = new DatabaseHandler(getApplicationContext());\r\n\r\n\r\n        for(int i = 0; i<productos.length(); i++) {\r\n\r\n\r\n            try {\r\n\r\n                json_base_2 = productos.getJSONObject(i);\r\n\r\n\r\n\r\n                int chek_if_exist = db2.check_if_product_inf_cart(json_base_2.getString(KEY_BAR_CODE));\r\n\r\n\r\n\r\n\r\n                    if(bar_code.equals(json_base_2.getString(KEY_BAR_CODE))){\r\n                        if(json_base_2.getInt(KEY_CANTIDAD) > 1){\r\n\r\n                            //ELIMINAR 1 DE LA CANTIDAD\r\n                            db2.cambiar_cantidad(json_base_2.getString(KEY_ID_PRODUCTO), json_base_2.getInt(KEY_CANTIDAD));\r\n                            REFRESH_CART();\r\n\r\n                        }else{\r\n\r\n                            //DESAPARECE DEL LISTADO\r\n                            db2.delete(json_base_2.getString(KEY_ID_PRODUCTO));\r\n                            REFRESH_CART();\r\n\r\n\r\n                        }\r\n\r\n\r\n                    }\r\n\r\n\r\n                    /*\r\n                if(chek_if_exist > 0){\r\n\r\n\r\n                }else{\r\n\r\n                    //INSERT_ERROR\r\n                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),\"ERROR: NO EXISTE EN PEDIDO\",Snackbar.LENGTH_SHORT);\r\n                    snackbar.setAction(\"UNDO\", new View.OnClickListener() {\r\n                        @Override\r\n                        public void onClick(View view) {\r\n\r\n                        }\r\n                    });\r\n\r\n                    snackbar.setActionTextColor(Color.YELLOW);\r\n                    snackbar.show();\r\n\r\n                }\r\n\r\n                     */\r\n\r\n\r\n\r\n\r\n            } catch (JSONException e) {\r\n\r\n                e.printStackTrace();\r\n            }\r\n\r\n\r\n\r\n        }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public void MOSTRAR_CARRITO(JSONArray CART){\r\n\r\n        GetCartAdapter1.clear();\r\n\r\n        //JSONArray CART = userFunctions.get_jsonarray_cart(getApplicationContext());\r\n        json_base_2 = null;\r\n\r\n\r\n\r\n        for(int i = 0; i<CART.length(); i++) {\r\n\r\n            GetCartAdapter2 = new Get_Cart_Adapter();\r\n\r\n            try {\r\n\r\n                json_base_2 = CART.getJSONObject(i);\r\n\r\n                //GetCartAdapter2.setid(json_base_2.getInt(KEY_ID));\r\n                GetCartAdapter2.setprecio_premium(Float.parseFloat(json_base_2.getString(KEY_PRECIO_PREMIUM)));\r\n                GetCartAdapter2.setnombre_producto(json_base_2.getString(KEY_NOMBRE));\r\n                GetCartAdapter2.setgetid_producto(json_base_2.getString(KEY_ID_PRODUCTO));\r\n                //GetCartAdapter2.settipo_alta_cart(json_base_2.getString(KEY_TIPO_ALTA_CART));\r\n\r\n                GetCartAdapter2.setqty(json_base_2.getInt(KEY_CANTIDAD));\r\n                //GetCartAdapter2.setkey_error(json_base_2.getString(KEY_ERROR));\r\n                GetCartAdapter2.setimagen_comp(json_base_2.getString(KEY_IMAGEN));\r\n                GetCartAdapter2.setbar_code(json_base_2.getString(KEY_BAR_CODE));\r\n\r\n\r\n            } catch (JSONException e) {\r\n\r\n                e.printStackTrace();\r\n            }\r\n\r\n\r\n            GetCartAdapter1.add(GetCartAdapter2);\r\n\r\n        }\r\n\r\n\r\n\r\n\r\n        recyclerView_global.getLayoutManager().onRestoreInstanceState(recyclerViewState);\r\n        recyclerViewadapter = new RecyclerCartViewAdapter(GetCartAdapter1, getApplicationContext());\r\n        recyclerView_global.setAdapter(recyclerViewadapter);\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    public void REFRESH_CART(){\r\n\r\n        productos = userFunctions.get_jsonarray_cart(getApplicationContext());\r\n        productos = userFunctions.ordenar_arr_bar_code(productos);\r\n        MOSTRAR_CARRITO(productos);\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n    @Override\r\n    public void onBackPressed() {\r\n\r\n        DatabaseHandler db = new DatabaseHandler(getApplicationContext());\r\n        db.DELETE_CART();\r\n        //MOSTRAR_CARRITO();\r\n        finish();\r\n    }\r\n\r\n\r\n\r\n\r\n    private void enableSwipeToDeleteAndUndo() {\r\n\r\n\r\n\r\n        SwipeToDeleteCallback swipeToDeleteCallback = new SwipeToDeleteCallback(getApplicationContext()) {\r\n            @Override\r\n            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {\r\n\r\n                final int position = viewHolder.getAdapterPosition();\r\n                recyclerViewadapter.notifyItemRemoved(position);\r\n\r\n                GetCartAdapter1.remove(position);\r\n                recyclerViewadapter.notifyDataSetChanged();\r\n\r\n\r\n\r\n\r\n                /*\r\n\r\n                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),\"Borrar: \"+res,Snackbar.LENGTH_SHORT);\r\n                snackbar.setAction(\"UNDO\", new View.OnClickListener() {\r\n                    @Override\r\n                    public void onClick(View view) {\r\n\r\n                    }\r\n                });\r\n\r\n                snackbar.setActionTextColor(Color.YELLOW);\r\n                snackbar.show();\r\n                */\r\n\r\n\r\n            }\r\n        };\r\n\r\n        ItemTouchHelper itemTouchhelper = new ItemTouchHelper(swipeToDeleteCallback);\r\n        itemTouchhelper.attachToRecyclerView(recyclerView_global);\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n    void upen_url(Activity activity, String url) {\r\n\r\n        Uri uri = Uri.parse(\"googlechrome://navigate?url=\" + url);\r\n        Intent i = new Intent(Intent.ACTION_VIEW, uri);\r\n        if (i.resolveActivity(activity.getPackageManager()) == null) {\r\n            i.setData(Uri.parse(url));\r\n        }\r\n        activity.startActivity(i);\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    public String get_extras_and_search(){\r\n\r\n        String categoria_entrante = \"null\";\r\n        Intent intent = getIntent();\r\n        Bundle extras = intent.getExtras();\r\n        if (extras != null) {\r\n            if (extras.containsKey(\"id_pedido\")) {\r\n\r\n                categoria_entrante = extras.getString(\"id_pedido\");\r\n\r\n            }\r\n        }else{\r\n\r\n            categoria_entrante = \"null\";\r\n\r\n        }\r\n\r\n\r\n        return categoria_entrante;\r\n\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bestdreamstore/admin_bestdream/Armado_Pedidos.java	(revision e91c935150d5deaad2ee480eb87156b73086cc63)
++++ app/src/main/java/com/bestdreamstore/admin_bestdream/Armado_Pedidos.java	(date 1606313392758)
+@@ -2,13 +2,18 @@
+ 
+ import android.annotation.SuppressLint;
+ import android.app.Activity;
++import android.app.Service;
+ import android.content.DialogInterface;
+ import android.content.Intent;
+ import android.graphics.Color;
++import android.media.AudioManager;
++import android.media.MediaPlayer;
++import android.media.SoundPool;
+ import android.net.Uri;
+ import android.os.AsyncTask;
+ import android.os.Bundle;
+ import android.os.Parcelable;
++import android.os.Vibrator;
+ import android.support.annotation.NonNull;
+ import android.support.design.widget.Snackbar;
+ import android.support.v7.app.AlertDialog;
+@@ -24,6 +29,7 @@
+ import android.view.MenuItem;
+ import android.view.View;
+ import android.view.WindowManager;
++import android.view.inputmethod.EditorInfo;
+ import android.view.inputmethod.InputMethodManager;
+ import android.widget.Button;
+ import android.widget.EditText;
+@@ -31,6 +37,7 @@
+ import android.widget.ImageView;
+ import android.widget.LinearLayout;
+ import android.widget.TextView;
++import android.widget.Toast;
+ 
+ import com.bestdreamstore.admin_bestdream.ADAPTERS.Get_Cart_Adapter;
+ import com.bestdreamstore.admin_bestdream.ADAPTERS.SwipeToDeleteCallback;
+@@ -74,7 +81,7 @@
+     private static RecyclerView.Adapter recyclerViewadapter;
+     JSONArray feed_todos;
+     JSONObject json_base_2;
+-    private static LinearLayout content_window;
++    private static LinearLayout all_window;
+     public static View view;
+     public static ArrayList GetCartAdapter1 = new ArrayList<>();
+     public static TextView datos_pedido;
+@@ -84,8 +91,8 @@
+     Cart_Controller cart;
+     Web_View_Controller web_view_controller;
+ 
+-    private static final int CODIGO_PERMISOS_CAMARA = 1, CODIGO_INTENT = 2;
+-    private boolean permisoCamaraConcedido = false, permisoSolicitadoDesdeBoton = false;
++
++    boolean is_key_enter = false;
+ 
+ 
+     EditText bar_code_scanner;
+@@ -118,6 +125,8 @@
+         cart = new Cart_Controller(getApplicationContext());
+         web_view_controller = new Web_View_Controller(getApplicationContext());
+ 
++        all_window = (LinearLayout)findViewById(R.id.linear);
++
+         userFunctions = new Functions();
+         GetCartAdapter1.clear();
+ 
+@@ -149,9 +158,11 @@
+         recyclerView_global = (RecyclerView)findViewById(R.id.recycler_view);
+         recyclerView_global.setHasFixedSize(true);
+         recyclerView_global.setLayoutManager(recyclerViewlayoutManager);
++        recyclerView_global.setFocusable(false);
+ 
+ 
+ 
++        /*
+         back = (ImageButton)findViewById(R.id.back);
+         back.setOnClickListener(new View.OnClickListener() {
+ 
+@@ -167,7 +178,7 @@
+             }
+         });
+ 
+-
++*/
+ 
+ 
+         bar_code_scanner = (EditText) findViewById(R.id.bar_code_scanner);
+@@ -177,41 +188,37 @@
+ 
+ 
+ 
++
++
++
+         bar_code_scanner.setOnKeyListener(new View.OnKeyListener() {
+             @Override
+-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
++            public boolean onKey(View v, int keyCode, KeyEvent event) {
+ 
+-                Log.e("tag" , "Key  Action "+keyEvent.getAction());
++                if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction()==0) {
+ 
+-                if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){
+-
++                        Log.e("tag" , "EVENT:  "+keyCode + " -- ACCION: "+event.getAction());
+ 
+-                    String data =bar_code_scanner.getText().toString();
+-
+-                    bar_code_scanner.getText().clear();
+-                    Log.e("BAR_CODE_TOTAL-----", data);
+-                    bar_code_scanner.requestFocus();
+-
+-                    Log.e("PRODUCTOS-----", String.valueOf(productos));
+-
+-
+-
+-
+-
++                        String data =bar_code_scanner.getText().toString();
++                        Log.e("BAR_CODE_TOTAL-----", data);
+ 
+-                    DELETE_ITEM(data);
++                        DELETE_ITEM(data);
+ 
++                        bar_code_scanner.setText("");
++                        bar_code_scanner.requestFocus();
++
++                        recyclerView_global.setFocusable(false);
++                        return true;
+ 
+ 
++                }
+ 
++                recyclerView_global.setFocusable(false);
+ 
+-                }
+-                return false;
++              return false;
++
+             }
+         });
+-
+-
+-
+ 
+ 
+         delivery = (Button)findViewById(R.id.procesar_pedido);
+@@ -231,27 +238,12 @@
+             }
+         });
+ 
+-
+-
+         datos_clienta = (HTMLTextView)findViewById(R.id.datos_clienta);
+ 
+ 
+-
+-
+-
+-
+         reporte = (Button) findViewById(R.id.reporte);
+         reporte.setVisibility(View.INVISIBLE);
+ 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+         //MOSTRAR_CARRITO();
+         enableSwipeToDeleteAndUndo();
+ 
+@@ -265,9 +257,6 @@
+ 
+ 
+ 
+-
+-
+-
+     @SuppressLint("StaticFieldLeak")
+     public void PROCESAR_PETICION(final String id_order){
+ 
+@@ -297,12 +286,6 @@
+             }
+ 
+ 
+-
+-
+-
+-
+-
+-
+             @Override
+             protected void onPostExecute(final JSONObject params) {
+                 super.onPostExecute(params);
+@@ -511,11 +494,11 @@
+ 
+     public void DELETE_ITEM(String bar_code){
+ 
+-
+-        bar_code_scanner.requestFocus();
+         json_base_2 = null;
+         DatabaseHandler db2 = new DatabaseHandler(getApplicationContext());
+ 
++        bar_code_scanner.requestFocus();
++
+ 
+         for(int i = 0; i<productos.length(); i++) {
+ 
+@@ -526,38 +509,61 @@
+ 
+ 
+ 
+-                int chek_if_exist = db2.check_if_product_inf_cart(json_base_2.getString(KEY_BAR_CODE));
+-
++                boolean chek_if_exist = db2.check_if_product_inf_cart(bar_code);
+ 
++                if(chek_if_exist){
+ 
+-
++                    Toast.makeText(Armado_Pedidos.this, "BAR_CODE "+ bar_code +" SI EXISTE", Toast.LENGTH_LONG).show();
+                     if(bar_code.equals(json_base_2.getString(KEY_BAR_CODE))){
++
+                         if(json_base_2.getInt(KEY_CANTIDAD) > 1){
+ 
+                             //ELIMINAR 1 DE LA CANTIDAD
+                             db2.cambiar_cantidad(json_base_2.getString(KEY_ID_PRODUCTO), json_base_2.getInt(KEY_CANTIDAD));
+-                            REFRESH_CART();
+ 
+                         }else{
+ 
+                             //DESAPARECE DEL LISTADO
+                             db2.delete(json_base_2.getString(KEY_ID_PRODUCTO));
+-                            REFRESH_CART();
++
++
++                        }
++
++
++                        REFRESH_CART();
++                        return;
+ 
+ 
+-                        }
+-
+-
+                     }
+-
+-
+-                    /*
+-                if(chek_if_exist > 0){
+ 
+ 
+                 }else{
+ 
++
++                   // Toast.makeText(Armado_Pedidos.this, "BAR_CODE "+ bar_code +" NO EXISTE", Toast.LENGTH_LONG).show();
++
++                    Vibrator v = (Vibrator) getSystemService(getApplicationContext().VIBRATOR_SERVICE);
++                    v.vibrate(300);
++
++                    MediaPlayer song = MediaPlayer.create(getApplicationContext(), R.raw.error_sound);
++                    song.start();
++
++
++
++                    JSONObject arr_producto_error = userFunctions.details_product_bar_code(bar_code);
++                    JSONArray feed_todos = arr_producto_error.getJSONArray("feed_todos");
++                    JSONObject json_arr = feed_todos.getJSONObject(0);
++
++                    JSONObject json_json = json_arr.getJSONObject("json");
++
++                    int precio_mayoreo_url = json_json.getInt("precio_mayoreo");
++                    int decimales_mayoreo_url = json_json.getInt("decimales_mayoreo");
++
++                    Log.i("NOMBRE_PRODUCTO: ", json_json.getString("nombre"));
++
++
+                     //INSERT_ERROR
++                    /*
+                     Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),"ERROR: NO EXISTE EN PEDIDO",Snackbar.LENGTH_SHORT);
+                     snackbar.setAction("UNDO", new View.OnClickListener() {
+                         @Override
+@@ -568,10 +574,13 @@
+ 
+                     snackbar.setActionTextColor(Color.YELLOW);
+                     snackbar.show();
++                    */
++
+ 
+                 }
+ 
+-                     */
++
++
+ 
+ 
+ 
+@@ -661,6 +670,9 @@
+         MOSTRAR_CARRITO(productos);
+ 
+ 
++
++
++
+     }
+ 
+ 
+Index: app/src/main/res/layout/armado_pedidos.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:orientation=\"vertical\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:gravity=\"center\"\r\n    android:layout_margin=\"10dp\"\r\n    android:id=\"@+id/linear\">\r\n\r\n\r\n\r\n\r\n    <LinearLayout\r\n        android:weightSum=\"1\"\r\n        android:orientation=\"horizontal\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n\r\n\r\n\r\n        <LinearLayout\r\n            android:layout_gravity=\"left\"\r\n            android:layout_weight=\".3\"\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"wrap_content\">\r\n\r\n\r\n            <ImageButton\r\n                android:layout_gravity=\"left\"\r\n                android:background=\"@drawable/icon_back_black\"\r\n                android:layout_width=\"30dp\"\r\n                android:layout_height=\"30dp\"\r\n                android:id=\"@+id/back\"/>\r\n\r\n\r\n\r\n        </LinearLayout>\r\n\r\n\r\n\r\n        <LinearLayout\r\n            android:layout_gravity=\"right\"\r\n            android:layout_weight=\".7\"\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"wrap_content\">\r\n\r\n            <EditText\r\n                android:id=\"@+id/bar_code_scanner\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"/>\r\n\r\n\r\n        </LinearLayout>\r\n\r\n\r\n\r\n\r\n    </LinearLayout>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    <android.support.v7.widget.RecyclerView\r\n        android:layout_margin=\"10px\"\r\n        android:layout_weight=\"4\"\r\n        android:orientation=\"vertical\"\r\n        android:id=\"@+id/recycler_view\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\">\r\n\r\n    </android.support.v7.widget.RecyclerView>\r\n\r\n\r\n\r\n\r\n\r\n\r\n    <Button\r\n        android:layout_gravity=\"left\"\r\n        android:id=\"@+id/procesar_pedido\"\r\n        android:textColor=\"@color/theme_background\"\r\n        android:text=\"Procesar >> \"\r\n        android:background=\"@color/colorPrimary\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"/>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_gravity=\"right\"\r\n\r\n        android:orientation=\"horizontal\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:weightSum=\"2\"\r\n        >\r\n\r\n\r\n\r\n\r\n\r\n        <com.bestdreamstore.admin_bestdream.LIBS.HTMLTextView\r\n            android:textSize=\"10dip\"\r\n            android:textColor=\"#333333\"\r\n            android:padding=\"5dip\"\r\n            android:layout_gravity=\"right\"\r\n            android:id=\"@+id/datos_clienta\"\r\n            android:layout_weight=\"1.8\"\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"wrap_content\"/>\r\n\r\n\r\n\r\n\r\n        <Button\r\n            android:textSize=\"10dip\"\r\n            android:layout_gravity=\"right\"\r\n            android:id=\"@+id/reporte\"\r\n            android:text=\"Enviar Faltantes\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"/>\r\n\r\n\r\n\r\n    </LinearLayout>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n</LinearLayout>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/armado_pedidos.xml	(revision e91c935150d5deaad2ee480eb87156b73086cc63)
++++ app/src/main/res/layout/armado_pedidos.xml	(date 1605928997052)
+@@ -19,6 +19,7 @@
+ 
+ 
+ 
++<!--
+ 
+         <LinearLayout
+             android:layout_gravity="left"
+@@ -38,15 +39,16 @@
+ 
+         </LinearLayout>
+ 
++-->
+ 
+ 
+         <LinearLayout
+             android:layout_gravity="right"
+-            android:layout_weight=".7"
+-            android:layout_width="0dp"
++            android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+ 
+             <EditText
++                android:inputType="text"
+                 android:id="@+id/bar_code_scanner"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"/>
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    package=\"com.bestdreamstore.admin_bestdream\">\r\n\r\n    <meta-data android:name=\"com.google.android.gms.vision.DEPENDENCIES\" android:value=\"barcode\" />\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n\r\n    <uses-feature\r\n        android:name=\"android.hardware.camera\"\r\n        android:required=\"true\" />\r\n    <uses-permission android:name=\"android.permission.CAMERA\" />\r\n    <uses-permission android:name=\"android.permission.VIBRATE\" />\r\n\r\n    <uses-permission android:name=\"android.permission.SYSTEM_ALERT_WINDOW\"/>\r\n\r\n    <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />\r\n    <uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/AppTheme\">\r\n\r\n\r\n\r\n        <activity\r\n            android:name=\".Login\"\r\n            android:label=\"@string/app_name\"\r\n            android:configChanges=\"orientation\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:windowSoftInputMode=\"stateAlwaysHidden\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n\r\n\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:configChanges=\"orientation\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:label=\"@string/app_name\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\"\r\n            >\r\n        </activity>\r\n\r\n\r\n        <activity\r\n            android:name=\".Comparar_Pedidos_2\"\r\n            android:label=\"\"\r\n            android:configChanges=\"orientation\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\"\r\n\r\n            >\r\n        </activity>\r\n\r\n\r\n\r\n\r\n\r\n        <activity\r\n            android:name=\".Armado_Pedidos\"\r\n            android:label=\"\"\r\n            android:configChanges=\"orientation\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\"\r\n\r\n            >\r\n        </activity>\r\n\r\n\r\n\r\n        <activity\r\n            android:name=\".Faltantes_Productos\"\r\n            android:label=\"\"\r\n            android:configChanges=\"orientation\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\"\r\n\r\n            >\r\n        </activity>\r\n\r\n\r\n\r\n        <activity\r\n            android:name=\".Autorizar_Pedidos\"\r\n            android:label=\"\"\r\n            android:configChanges=\"orientation\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\"\r\n            >\r\n        </activity>\r\n\r\n\r\n\r\n        <activity\r\n            android:name=\".Escanner\"\r\n            android:label=\"\"\r\n            android:configChanges=\"orientation\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\"\r\n\r\n            >\r\n        </activity>\r\n\r\n\r\n\r\n\r\n\r\n        <activity\r\n            android:name=\".Get_Image_Pedido\"\r\n            android:label=\"\"\r\n            android:configChanges=\"orientation\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\"\r\n\r\n            >\r\n        </activity>\r\n\r\n\r\n\r\n        <activity\r\n            android:name=\".Pedido_ID\"\r\n            android:label=\"\"\r\n            android:configChanges=\"orientation\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\"\r\n\r\n            >\r\n        </activity>\r\n\r\n\r\n        <activity\r\n            android:name=\".Add_Bar_Code\"\r\n            android:label=\"Busqueda\"\r\n            android:configChanges=\"orientation\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\"\r\n\r\n            >\r\n        </activity>\r\n\r\n\r\n\r\n        <activity\r\n            android:name=\".Add_Bar_Code_ID\"\r\n            android:label=\"\"\r\n            android:configChanges=\"orientation\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\"\r\n\r\n            >\r\n        </activity>\r\n\r\n\r\n\r\n        <activity\r\n            android:name=\".ActivityEscanear\"\r\n            android:label=\"\"\r\n            android:configChanges=\"orientation\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\"\r\n\r\n            >\r\n        </activity>\r\n\r\n\r\n\r\n        <activity\r\n            android:name=\".Searchs\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\"\r\n            android:label=\"@string/app_name\"\r\n\r\n            >\r\n        </activity>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n        <provider\r\n            android:name=\"android.support.v4.content.FileProvider\"\r\n            android:authorities=\"com.bestdreamstore.admin_bestdream.FileProvider\"\r\n            android:enabled=\"true\"\r\n            android:grantUriPermissions=\"true\">\r\n            <meta-data\r\n                android:name=\"android.support.FILE_PROVIDER_PATHS\"\r\n                android:resource=\"@xml/rastreo_img\"/>\r\n        </provider>\r\n\r\n\r\n\r\n\r\n\r\n\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision e91c935150d5deaad2ee480eb87156b73086cc63)
++++ app/src/main/AndroidManifest.xml	(date 1605958779204)
+@@ -11,7 +11,7 @@
+         android:required="true" />
+     <uses-permission android:name="android.permission.CAMERA" />
+     <uses-permission android:name="android.permission.VIBRATE" />
+-
++    <uses-permission android:name="android.permission.VIBRATE" />
+     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+ 
+     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/encodings.xml	(date 1605924739824)
++++ .idea/encodings.xml	(date 1605924739824)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding">
++    <file url="file://$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/localbroadcastmanager/R.java" charset="ISO-8859-1" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>apply plugin: 'com.android.application'\r\n\r\nandroid {\r\n    compileSdkVersion 28\r\n    defaultConfig {\r\n        applicationId \"com.bestdreamstore.admin_bestdream\"\r\n        minSdkVersion 15\r\n        targetSdkVersion 28\r\n        versionCode 29\r\n        versionName \"1.0\"\r\n        testInstrumentationRunner \"android.support.test.runner.AndroidJUnitRunner\"\r\n    }\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n}\r\n\r\ndependencies {\r\n    implementation fileTree(dir: 'libs', include: ['*.jar'])\r\n    implementation 'com.android.support:appcompat-v7:28.0.0'\r\n    implementation 'com.android.support:design:28.0.0'\r\n    implementation 'com.android.support.constraint:constraint-layout:1.1.3'\r\n    testImplementation 'junit:junit:4.12'\r\n    androidTestImplementation 'com.android.support.test:runner:1.0.2'\r\n    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'\r\n    implementation 'me.dm7.barcodescanner:zxing:1.9.13'\r\n    implementation 'com.android.volley:volley:1.1.0'\r\n    implementation 'com.squareup.picasso:picasso:2.71828'\r\n    implementation 'net.gotev:uploadservice:2.1'\r\n    implementation 'com.google.android.gms:play-services-vision:10.2.1'\r\n    implementation 'me.dm7.barcodescanner:zbar:1.9.13'\r\n    implementation 'com.journeyapps:zxing-android-embedded:3.1.0@aar'\r\n    implementation 'com.android.support:design:28.0.0-beta01'\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision e91c935150d5deaad2ee480eb87156b73086cc63)
++++ app/build.gradle	(date 1605924914794)
+@@ -1,11 +1,11 @@
+ apply plugin: 'com.android.application'
+ 
+ android {
+-    compileSdkVersion 28
++    compileSdkVersion 29
+     defaultConfig {
+         applicationId "com.bestdreamstore.admin_bestdream"
+         minSdkVersion 15
+-        targetSdkVersion 28
++        targetSdkVersion 29
+         versionCode 29
+         versionName "1.0"
+         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(date 1605923690765)
++++ .idea/vcs.xml	(date 1605923690765)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file

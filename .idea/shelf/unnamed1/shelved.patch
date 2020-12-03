@@ -1,0 +1,217 @@
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"PLATFORM\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/gradle.xml	(revision e91c935150d5deaad2ee480eb87156b73086cc63)
++++ .idea/gradle.xml	(date 1605756442026)
+@@ -14,6 +14,7 @@
+           </set>
+         </option>
+         <option name="resolveModulePerSourceSet" value="false" />
++        <option name="useQualifiedModuleNames" value="true" />
+       </GradleProjectSettings>
+     </option>
+   </component>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_7\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision e91c935150d5deaad2ee480eb87156b73086cc63)
++++ .idea/misc.xml	(date 1605756898986)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/jarRepositories.xml	(date 1605756986913)
++++ .idea/jarRepositories.xml	(date 1605756986913)
+@@ -0,0 +1,45 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="BintrayJCenter" />
++      <option name="name" value="BintrayJCenter" />
++      <option name="url" value="https://jcenter.bintray.com/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="maven" />
++      <option name="name" value="maven" />
++      <option name="url" value="https://jitpack.io" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="Google" />
++      <option name="name" value="Google" />
++      <option name="url" value="https://dl.google.com/dl/android/maven2/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="C:\Users\MI PC\AppData\Local\Android\Sdk\extras\android\m2repository" />
++      <option name="name" value="C:\Users\MI PC\AppData\Local\Android\Sdk\extras\android\m2repository" />
++      <option name="url" value="file:/$PROJECT_DIR$/../../../MI%20PC/AppData/Local/Android/Sdk/extras/android/m2repository/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="C:\Users\MI PC\AppData\Local\Android\Sdk\extras\m2repository" />
++      <option name="name" value="C:\Users\MI PC\AppData\Local\Android\Sdk\extras\m2repository" />
++      <option name="url" value="file:/$PROJECT_DIR$/../../../MI%20PC/AppData/Local/Android/Sdk/extras/m2repository/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="C:\Users\MI PC\AppData\Local\Android\Sdk\extras\google\m2repository" />
++      <option name="name" value="C:\Users\MI PC\AppData\Local\Android\Sdk\extras\google\m2repository" />
++      <option name="url" value="file:/$PROJECT_DIR$/../../../MI%20PC/AppData/Local/Android/Sdk/extras/google/m2repository/" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.gitignore	(date 1605754983855)
++++ .idea/.gitignore	(date 1605754983855)
+@@ -0,0 +1,3 @@
++
++# Default ignored files
++/shelf/
+\ No newline at end of file
+Index: app/src/main/java/com/bestdreamstore/admin_bestdream/Armado_Pedidos.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.bestdreamstore.admin_bestdream;\r\n\r\nimport android.annotation.SuppressLint;\r\nimport android.app.Activity;\r\nimport android.content.DialogInterface;\r\nimport android.content.Intent;\r\nimport android.graphics.Color;\r\nimport android.net.Uri;\r\nimport android.os.AsyncTask;\r\nimport android.os.Bundle;\r\nimport android.os.Parcelable;\r\nimport android.support.annotation.NonNull;\r\nimport android.support.design.widget.Snackbar;\r\nimport android.support.v7.app.AlertDialog;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.support.v7.widget.GridLayoutManager;\r\nimport android.support.v7.widget.RecyclerView;\r\nimport android.support.v7.widget.helper.ItemTouchHelper;\r\nimport android.text.Editable;\r\nimport android.text.InputType;\r\nimport android.text.TextWatcher;\r\nimport android.util.Log;\r\nimport android.view.KeyEvent;\r\nimport android.view.MenuItem;\r\nimport android.view.View;\r\nimport android.view.WindowManager;\r\nimport android.view.inputmethod.InputMethodManager;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.ImageButton;\r\nimport android.widget.ImageView;\r\nimport android.widget.LinearLayout;\r\nimport android.widget.TextView;\r\n\r\nimport com.bestdreamstore.admin_bestdream.ADAPTERS.Get_Cart_Adapter;\r\nimport com.bestdreamstore.admin_bestdream.ADAPTERS.SwipeToDeleteCallback;\r\nimport com.bestdreamstore.admin_bestdream.CONTROLLER.Cart_Controller;\r\nimport com.bestdreamstore.admin_bestdream.CONTROLLER.RecyclerCartViewAdapter;\r\nimport com.bestdreamstore.admin_bestdream.CONTROLLER.Web_View_Controller;\r\nimport com.bestdreamstore.admin_bestdream.DATA_BASE.DatabaseHandler;\r\nimport com.bestdreamstore.admin_bestdream.Funciones.Functions;\r\nimport com.bestdreamstore.admin_bestdream.LIBS.HTMLTextView;\r\n\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.Arrays;\r\nimport java.util.List;\r\n\r\n\r\npublic class Armado_Pedidos extends AppCompatActivity{\r\n\r\n\r\n    private static final String KEY_ID_PRODUCTO = \"id_producto\";\r\n    private static final String KEY_NOMBRE = \"nombre_producto\";\r\n    private static final String KEY_PRECIO_PREMIUM = \"precio_premium\";\r\n    private static final String KEY_COSTO_PRODUCTO = \"costo_producto\";\r\n    private static final String KEY_CANTIDAD = \"cantidad\";\r\n    private static final String KEY_COSTO_ENVIO = \"costo_envio\";\r\n    private static final String KEY_MARCA = \"marca\";\r\n    private static final String KEY_PRODUCTO = \"producto\";\r\n    private static final String KEY_BAR_CODE = \"bar_code\";\r\n    private static final String KEY_IMAGEN= \"imagen_comp\";\r\n    private static final String KEY_TIPO_ALTA_CART= \"tipo_alta_cart\";\r\n    private static final String KEY_ERROR= \"key_error\";\r\n    private static final String KEY_ID = \"id\";\r\n\r\n     //GetCartAdapter1.remove(position);\r\n    //recyclerViewadapter.notifyDataSetChanged();\r\n\r\n    private static RecyclerView recyclerView_global;\r\n    private static RecyclerView.Adapter recyclerViewadapter;\r\n    JSONArray feed_todos;\r\n    JSONObject json_base_2;\r\n    private static LinearLayout content_window;\r\n    public static View view;\r\n    public static ArrayList GetCartAdapter1 = new ArrayList<>();\r\n    public static TextView datos_pedido;\r\n    MenuItem fav;\r\n    public static Functions userFunctions;\r\n\r\n    Cart_Controller cart;\r\n    Web_View_Controller web_view_controller;\r\n\r\n    private static final int CODIGO_PERMISOS_CAMARA = 1, CODIGO_INTENT = 2;\r\n    private boolean permisoCamaraConcedido = false, permisoSolicitadoDesdeBoton = false;\r\n\r\n\r\n    EditText bar_code_scanner;\r\n    HTMLTextView datos_clienta;\r\n    ImageView image_prod, image_confirmation;\r\n    JSONObject json;\r\n    String id_pedido;\r\n    Button delivery, borrar, imprimir_guia, reporte;\r\n    Get_Cart_Adapter GetCartAdapter2;\r\n    ImageButton back;\r\n    Parcelable recyclerViewState = null;\r\n    DatabaseHandler db;\r\n    String id_order_fin;\r\n    JSONArray productos, productos_server;\r\n\r\n\r\n\r\n    @SuppressLint(\"NewApi\")\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.armado_pedidos);\r\n\r\n        setFinishOnTouchOutside(false);\r\n\r\n        db = new DatabaseHandler(getApplicationContext());\r\n\r\n\r\n\r\n        cart = new Cart_Controller(getApplicationContext());\r\n        web_view_controller = new Web_View_Controller(getApplicationContext());\r\n\r\n        userFunctions = new Functions();\r\n        GetCartAdapter1.clear();\r\n\r\n\r\n\r\n        String get_extras = get_extras_and_search();\r\n        if(!get_extras.equals(\"null\")){\r\n\r\n            Log.i(\"EXTRAS:::\", \"----\" + get_extras + \"---\");\r\n            id_order_fin = get_extras;\r\n\r\n\r\n\r\n        }else{\r\n\r\n\r\n            Log.i(\"EXTRAS:::\", \"----NO HAY---\");\r\n            id_order_fin = userFunctions.get_id_order_admin(getApplicationContext());\r\n\r\n\r\n\r\n        }\r\n\r\n\r\n\r\n\r\n\r\n        RecyclerView.LayoutManager recyclerViewlayoutManager = new GridLayoutManager(getApplicationContext(), 1);\r\n        recyclerView_global = (RecyclerView)findViewById(R.id.recycler_view);\r\n        recyclerView_global.setHasFixedSize(true);\r\n        recyclerView_global.setLayoutManager(recyclerViewlayoutManager);\r\n\r\n\r\n\r\n        back = (ImageButton)findViewById(R.id.back);\r\n        back.setOnClickListener(new View.OnClickListener() {\r\n\r\n            @Override\r\n            public void onClick(View view) {\r\n\r\n                DatabaseHandler db = new DatabaseHandler(getApplicationContext());\r\n                db.DELETE_CART();\r\n                //MOSTRAR_CARRITO();\r\n                finish();\r\n\r\n\r\n            }\r\n        });\r\n\r\n\r\n\r\n\r\n        bar_code_scanner = (EditText) findViewById(R.id.bar_code_scanner);\r\n\r\n        bar_code_scanner.setInputType(InputType.TYPE_NULL);\r\n        bar_code_scanner.requestFocus();\r\n\r\n\r\n\r\n        bar_code_scanner.setOnKeyListener(new View.OnKeyListener() {\r\n            @Override\r\n            public boolean onKey(View view, int i, KeyEvent keyEvent) {\r\n\r\n                Log.e(\"tag\" , \"Key  Action \"+keyEvent.getAction());\r\n\r\n                if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){\r\n\r\n\r\n                    String data =bar_code_scanner.getText().toString();\r\n\r\n                    bar_code_scanner.getText().clear();\r\n                    Log.e(\"BAR_CODE_TOTAL-----\", data);\r\n                    bar_code_scanner.requestFocus();\r\n\r\n                    Log.e(\"PRODUCTOS-----\", String.valueOf(productos));\r\n\r\n\r\n\r\n\r\n\r\n\r\n                    DELETE_ITEM(data);\r\n\r\n\r\n\r\n\r\n\r\n                }\r\n                return false;\r\n            }\r\n        });\r\n\r\n\r\n\r\n\r\n\r\n        delivery = (Button)findViewById(R.id.procesar_pedido);\r\n        delivery.setText(\"Procesar: \"+id_order_fin+ \" >>\");\r\n        delivery.setOnClickListener(new View.OnClickListener() {\r\n\r\n            @Override\r\n            public void onClick(View view) {\r\n\r\n\r\n                DatabaseHandler db = new DatabaseHandler(getApplicationContext());\r\n                db.DELETE_CART();\r\n                PROCESAR_PETICION(id_order_fin);\r\n                //MOSTRAR_CARRITO();\r\n\r\n\r\n            }\r\n        });\r\n\r\n\r\n\r\n        datos_clienta = (HTMLTextView)findViewById(R.id.datos_clienta);\r\n\r\n\r\n\r\n\r\n\r\n\r\n        reporte = (Button) findViewById(R.id.reporte);\r\n        reporte.setVisibility(View.INVISIBLE);\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n        //MOSTRAR_CARRITO();\r\n        enableSwipeToDeleteAndUndo();\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    @SuppressLint(\"StaticFieldLeak\")\r\n    public void PROCESAR_PETICION(final String id_order){\r\n\r\n        new AsyncTask<Object, Void, JSONObject>() {\r\n\r\n            @Override\r\n            protected void onPreExecute() {\r\n                super.onPreExecute();\r\n                //response_server.setText(\"Espere Un Momento......\");\r\n\r\n            }\r\n\r\n\r\n            @Override\r\n            protected JSONObject doInBackground(Object... params) {\r\n                JSONObject resultados_json = new JSONObject();\r\n\r\n\r\n\r\n                    json = userFunctions.ver_pedido_servidor(id_order);\r\n\r\n                    resultados_json = json;\r\n\r\n\r\n                return resultados_json;\r\n\r\n            }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n            @Override\r\n            protected void onPostExecute(final JSONObject params) {\r\n                super.onPostExecute(params);\r\n\r\n\r\n\r\n                JSONObject pedido_json = new JSONObject();\r\n                JSONObject pedido = new JSONObject();\r\n\r\n\r\n                productos = new JSONArray();\r\n\r\n\r\n                try {\r\n\r\n                    final String quien_armo = params.getString(\"quien_armo\");\r\n                    final String key_pedido = params.getString(\"key_pedido\");\r\n                    final String QUIEN_ARMO_PAS = params.getString(\"quien_armo\");\r\n                    pedido_json = new JSONObject(params.getString(\"pedido_json\"));\r\n                    pedido = new JSONObject(pedido_json.getString(\"pedido\"));\r\n\r\n\r\n                    productos_server = pedido.getJSONArray(\"productos\");\r\n\r\n\r\n\r\n                    JSONObject datos_clientes = pedido.getJSONObject(\"datos_cliente\");\r\n                    JSONObject totales = pedido.getJSONObject(\"totales\");\r\n\r\n                    final String total_pagado = totales.getString(\"total_pagado\");\r\n\r\n                    final String full_name = datos_clientes.getString(\"full_name\");\r\n                    String email = datos_clientes.getString(\"email\");\r\n                    final String calle = datos_clientes.getString(\"calle\");\r\n                    final String numero = datos_clientes.getString(\"numero\");\r\n                    final String colonia = datos_clientes.getString(\"colonia\");\r\n                    final String municipio = datos_clientes.getString(\"municipio\");\r\n                    final String estado = datos_clientes.getString(\"estado\");\r\n                    final String cp = datos_clientes.getString(\"cp\");\r\n                    String referencias = datos_clientes.getString(\"referencias\");\r\n\r\n                    //String datos_gral = full_name\r\n\r\n\r\n                    reporte.setVisibility(View.VISIBLE);\r\n                    reporte.setOnClickListener(new View.OnClickListener() {\r\n                        @Override\r\n                        public void onClick(View view) {\r\n\r\n                            String arr_fin = String.valueOf(GetCartAdapter1);\r\n                            Log.i(\"CARRITO:::\", \"----\" + GetCartAdapter1 + \"---\");\r\n\r\n                            //Log.i(\"ids\", Arrays.toString(GetCartAdapter1));\r\n\r\n\r\n\r\n\r\n\r\n\r\n                         }\r\n                    });\r\n\r\n\r\n\r\n                    if(quien_armo.equals(\"\")){\r\n\r\n\r\n\r\n                        AlertDialog alertDialog = new AlertDialog.Builder(Armado_Pedidos.this).create();\r\n                        alertDialog.setCanceledOnTouchOutside(false);\r\n                        alertDialog.setTitle(\"Bienvenido.\");\r\n                        alertDialog.setMessage(\"Deseas Ser el Administrador del Pedido:\"+id_order_fin+\"??\");\r\n                        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, \"ACEPTAR\",\r\n                                new DialogInterface.OnClickListener() {\r\n                                    public void onClick(DialogInterface dialog, int which) {\r\n                                        dialog.dismiss();\r\n\r\n                                        String nombre_user = userFunctions.get_name_user(getApplicationContext());\r\n                                        //String id_pedido  = userFunctions.get_id_order_admin(getApplicationContext());\r\n                                        int res =  userFunctions.armar_pedido_func(nombre_user, id_order_fin);\r\n\r\n                                        if(res == 1){\r\n\r\n                                           datos_clienta.setText(\"<strong>NUEVO ADMINISTRADOR</strong><br>\"+\r\n                                            \"<strong>\"+full_name+\"</strong><br>\"+\r\n                                            calle+\" \"+ numero +\" \"+ colonia +\"<br>\"+\r\n                                            municipio+\" \"+ estado +\" \"+ cp +\"<br>\"+\r\n                                             \"<strong>$\"+total_pagado+\"</strong><br>\"+\r\n                                             \"<strong>Armo: \"+nombre_user+\"</strong><br>\"\r\n                                            );\r\n\r\n\r\n                                        }else{\r\n\r\n                                            finish();\r\n\r\n                                        }\r\n\r\n\r\n                                    }\r\n                                });\r\n                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, \"Cancelar\",\r\n                                new DialogInterface.OnClickListener() {\r\n                                    public void onClick(DialogInterface dialog, int which) {\r\n                                        dialog.dismiss();\r\n\r\n                                        //key_pedido\r\n                                        //upen_url(Armado_Pedidos.this, \"https://bestdream.store/Index/details_order/\"+key_pedido);\r\n                                        finish();\r\n\r\n\r\n\r\n\r\n                                    }\r\n                                });\r\n                        alertDialog.show();\r\n\r\n\r\n\r\n\r\n\r\n                    }else{\r\n\r\n\r\n                        AlertDialog alertDialog = new AlertDialog.Builder(Armado_Pedidos.this).create();\r\n                        alertDialog.setCanceledOnTouchOutside(false);\r\n                        alertDialog.setTitle(\"ALERTA! ALERTA!\");\r\n                        alertDialog.setMessage(\"Este pedido ya ha sido armado con aterioridad por: \"+QUIEN_ARMO_PAS);\r\n                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, \"Armar Sin Ser Administrador\",\r\n                                new DialogInterface.OnClickListener() {\r\n                                    public void onClick(DialogInterface dialog, int which) {\r\n\r\n                                        dialog.dismiss();\r\n\r\n                                    }\r\n                                });\r\n                        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, \"Ver En Web\",\r\n                                new DialogInterface.OnClickListener() {\r\n                                    public void onClick(DialogInterface dialog, int which) {\r\n                                        dialog.dismiss();\r\n\r\n                                        //key_pedido\r\n                                        upen_url(Armado_Pedidos.this, \"https://bestdream.store/Index/details_order/\"+key_pedido);\r\n                                        finish();\r\n\r\n\r\n\r\n                                    }\r\n                                });\r\n\r\n                        alertDialog.show();\r\n\r\n\r\n\r\n                    }\r\n\r\n\r\n\r\n                    datos_clienta.setText(\r\n                            \"<strong>\"+full_name+\"</strong><br>\"+\r\n                                    calle+\" \"+ numero +\" \"+ colonia +\"<br>\"+\r\n                                    municipio+\" \"+ estado +\" \"+ cp +\"<br>\"+\r\n                                    //\"<strong>$\"+total_pagado+\"</strong><br>\"+\r\n                                    \"<strong>Armo: \"+quien_armo+\"</strong><br>\"\r\n                    );\r\n\r\n\r\n\r\n\r\n                } catch (JSONException e) {\r\n                    e.printStackTrace();\r\n                }\r\n\r\n\r\n\r\n                //productos = userFunctions.ordenar_arr_bar_code(productos);\r\n                // MOSTRAR_CARRITO(productos);\r\n\r\n\r\n                if(userFunctions.insert_all_cart(productos_server, getApplicationContext())){\r\n\r\n                    productos = userFunctions.get_jsonarray_cart(getApplicationContext());\r\n                    productos = userFunctions.ordenar_arr_bar_code(productos);\r\n                    MOSTRAR_CARRITO(productos);\r\n                    Log.i(\"SUBIDA:\", \"CORRECTA\");\r\n\r\n                }else{\r\n\r\n                    productos = null;\r\n                    productos_server = null;\r\n                    Log.i(\"SUBIDA:\", \"ERROR SUBIDA\");\r\n\r\n                }\r\n\r\n\r\n\r\n\r\n            } }.execute();\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    public void DELETE_ITEM(String bar_code){\r\n\r\n\r\n        bar_code_scanner.requestFocus();\r\n        json_base_2 = null;\r\n        DatabaseHandler db2 = new DatabaseHandler(getApplicationContext());\r\n\r\n\r\n        for(int i = 0; i<productos.length(); i++) {\r\n\r\n\r\n            try {\r\n\r\n                json_base_2 = productos.getJSONObject(i);\r\n\r\n\r\n\r\n                int chek_if_exist = db2.check_if_product_inf_cart(json_base_2.getString(KEY_BAR_CODE));\r\n\r\n\r\n\r\n\r\n                    if(bar_code.equals(json_base_2.getString(KEY_BAR_CODE))){\r\n                        if(json_base_2.getInt(KEY_CANTIDAD) > 1){\r\n\r\n                            //ELIMINAR 1 DE LA CANTIDAD\r\n                            db2.cambiar_cantidad(json_base_2.getString(KEY_ID_PRODUCTO), json_base_2.getInt(KEY_CANTIDAD));\r\n                            REFRESH_CART();\r\n\r\n                        }else{\r\n\r\n                            //DESAPARECE DEL LISTADO\r\n                            db2.delete(json_base_2.getString(KEY_ID_PRODUCTO));\r\n                            REFRESH_CART();\r\n\r\n\r\n                        }\r\n\r\n\r\n                    }\r\n\r\n\r\n                    /*\r\n                if(chek_if_exist > 0){\r\n\r\n\r\n                }else{\r\n\r\n                    //INSERT_ERROR\r\n                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),\"ERROR: NO EXISTE EN PEDIDO\",Snackbar.LENGTH_SHORT);\r\n                    snackbar.setAction(\"UNDO\", new View.OnClickListener() {\r\n                        @Override\r\n                        public void onClick(View view) {\r\n\r\n                        }\r\n                    });\r\n\r\n                    snackbar.setActionTextColor(Color.YELLOW);\r\n                    snackbar.show();\r\n\r\n                }\r\n\r\n                     */\r\n\r\n\r\n\r\n\r\n            } catch (JSONException e) {\r\n\r\n                e.printStackTrace();\r\n            }\r\n\r\n\r\n\r\n        }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public void MOSTRAR_CARRITO(JSONArray CART){\r\n\r\n        GetCartAdapter1.clear();\r\n\r\n        //JSONArray CART = userFunctions.get_jsonarray_cart(getApplicationContext());\r\n        json_base_2 = null;\r\n\r\n\r\n\r\n        for(int i = 0; i<CART.length(); i++) {\r\n\r\n            GetCartAdapter2 = new Get_Cart_Adapter();\r\n\r\n            try {\r\n\r\n                json_base_2 = CART.getJSONObject(i);\r\n\r\n                //GetCartAdapter2.setid(json_base_2.getInt(KEY_ID));\r\n                GetCartAdapter2.setprecio_premium(Float.parseFloat(json_base_2.getString(KEY_PRECIO_PREMIUM)));\r\n                GetCartAdapter2.setnombre_producto(json_base_2.getString(KEY_NOMBRE));\r\n                GetCartAdapter2.setgetid_producto(json_base_2.getString(KEY_ID_PRODUCTO));\r\n                //GetCartAdapter2.settipo_alta_cart(json_base_2.getString(KEY_TIPO_ALTA_CART));\r\n\r\n                GetCartAdapter2.setqty(json_base_2.getInt(KEY_CANTIDAD));\r\n                //GetCartAdapter2.setkey_error(json_base_2.getString(KEY_ERROR));\r\n                GetCartAdapter2.setimagen_comp(json_base_2.getString(KEY_IMAGEN));\r\n                GetCartAdapter2.setbar_code(json_base_2.getString(KEY_BAR_CODE));\r\n\r\n\r\n            } catch (JSONException e) {\r\n\r\n                e.printStackTrace();\r\n            }\r\n\r\n\r\n            GetCartAdapter1.add(GetCartAdapter2);\r\n\r\n        }\r\n\r\n\r\n\r\n\r\n        recyclerView_global.getLayoutManager().onRestoreInstanceState(recyclerViewState);\r\n        recyclerViewadapter = new RecyclerCartViewAdapter(GetCartAdapter1, getApplicationContext());\r\n        recyclerView_global.setAdapter(recyclerViewadapter);\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    public void REFRESH_CART(){\r\n\r\n        productos = userFunctions.get_jsonarray_cart(getApplicationContext());\r\n        productos = userFunctions.ordenar_arr_bar_code(productos);\r\n        MOSTRAR_CARRITO(productos);\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n    @Override\r\n    public void onBackPressed() {\r\n\r\n        DatabaseHandler db = new DatabaseHandler(getApplicationContext());\r\n        db.DELETE_CART();\r\n        //MOSTRAR_CARRITO();\r\n        finish();\r\n    }\r\n\r\n\r\n\r\n\r\n    private void enableSwipeToDeleteAndUndo() {\r\n\r\n\r\n\r\n        SwipeToDeleteCallback swipeToDeleteCallback = new SwipeToDeleteCallback(getApplicationContext()) {\r\n            @Override\r\n            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {\r\n\r\n                final int position = viewHolder.getAdapterPosition();\r\n                recyclerViewadapter.notifyItemRemoved(position);\r\n\r\n                GetCartAdapter1.remove(position);\r\n                recyclerViewadapter.notifyDataSetChanged();\r\n\r\n\r\n\r\n\r\n                /*\r\n\r\n                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),\"Borrar: \"+res,Snackbar.LENGTH_SHORT);\r\n                snackbar.setAction(\"UNDO\", new View.OnClickListener() {\r\n                    @Override\r\n                    public void onClick(View view) {\r\n\r\n                    }\r\n                });\r\n\r\n                snackbar.setActionTextColor(Color.YELLOW);\r\n                snackbar.show();\r\n                */\r\n\r\n\r\n            }\r\n        };\r\n\r\n        ItemTouchHelper itemTouchhelper = new ItemTouchHelper(swipeToDeleteCallback);\r\n        itemTouchhelper.attachToRecyclerView(recyclerView_global);\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n    void upen_url(Activity activity, String url) {\r\n\r\n        Uri uri = Uri.parse(\"googlechrome://navigate?url=\" + url);\r\n        Intent i = new Intent(Intent.ACTION_VIEW, uri);\r\n        if (i.resolveActivity(activity.getPackageManager()) == null) {\r\n            i.setData(Uri.parse(url));\r\n        }\r\n        activity.startActivity(i);\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    public String get_extras_and_search(){\r\n\r\n        String categoria_entrante = \"null\";\r\n        Intent intent = getIntent();\r\n        Bundle extras = intent.getExtras();\r\n        if (extras != null) {\r\n            if (extras.containsKey(\"id_pedido\")) {\r\n\r\n                categoria_entrante = extras.getString(\"id_pedido\");\r\n\r\n            }\r\n        }else{\r\n\r\n            categoria_entrante = \"null\";\r\n\r\n        }\r\n\r\n\r\n        return categoria_entrante;\r\n\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bestdreamstore/admin_bestdream/Armado_Pedidos.java	(revision e91c935150d5deaad2ee480eb87156b73086cc63)
++++ app/src/main/java/com/bestdreamstore/admin_bestdream/Armado_Pedidos.java	(date 1605826157508)
+@@ -2,6 +2,7 @@
+ 
+ import android.annotation.SuppressLint;
+ import android.app.Activity;
++import android.app.Service;
+ import android.content.DialogInterface;
+ import android.content.Intent;
+ import android.graphics.Color;
+@@ -186,23 +187,18 @@
+                 if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){
+ 
+ 
++
+                     String data =bar_code_scanner.getText().toString();
+-
+-                    bar_code_scanner.getText().clear();
+                     Log.e("BAR_CODE_TOTAL-----", data);
+-                    bar_code_scanner.requestFocus();
+-
+-                    Log.e("PRODUCTOS-----", String.valueOf(productos));
+-
+-
+-
+-
+-
+ 
+                     DELETE_ITEM(data);
+ 
++                    bar_code_scanner.setText("");
++                    bar_code_scanner.requestFocus();
+ 
++                    recyclerView_global.setFocusable(false);
+ 
++                    return true;
+ 
+ 
+                 }
+@@ -511,8 +507,6 @@
+ 
+     public void DELETE_ITEM(String bar_code){
+ 
+-
+-        bar_code_scanner.requestFocus();
+         json_base_2 = null;
+         DatabaseHandler db2 = new DatabaseHandler(getApplicationContext());
+ 
+Index: app/src/main/res/layout/armado_pedidos.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:orientation=\"vertical\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:gravity=\"center\"\r\n    android:layout_margin=\"10dp\"\r\n    android:id=\"@+id/linear\">\r\n\r\n\r\n\r\n\r\n    <LinearLayout\r\n        android:weightSum=\"1\"\r\n        android:orientation=\"horizontal\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n\r\n\r\n\r\n        <LinearLayout\r\n            android:layout_gravity=\"left\"\r\n            android:layout_weight=\".3\"\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"wrap_content\">\r\n\r\n\r\n            <ImageButton\r\n                android:layout_gravity=\"left\"\r\n                android:background=\"@drawable/icon_back_black\"\r\n                android:layout_width=\"30dp\"\r\n                android:layout_height=\"30dp\"\r\n                android:id=\"@+id/back\"/>\r\n\r\n\r\n\r\n        </LinearLayout>\r\n\r\n\r\n\r\n        <LinearLayout\r\n            android:layout_gravity=\"right\"\r\n            android:layout_weight=\".7\"\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"wrap_content\">\r\n\r\n            <EditText\r\n                android:id=\"@+id/bar_code_scanner\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"/>\r\n\r\n\r\n        </LinearLayout>\r\n\r\n\r\n\r\n\r\n    </LinearLayout>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    <android.support.v7.widget.RecyclerView\r\n        android:layout_margin=\"10px\"\r\n        android:layout_weight=\"4\"\r\n        android:orientation=\"vertical\"\r\n        android:id=\"@+id/recycler_view\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\">\r\n\r\n    </android.support.v7.widget.RecyclerView>\r\n\r\n\r\n\r\n\r\n\r\n\r\n    <Button\r\n        android:layout_gravity=\"left\"\r\n        android:id=\"@+id/procesar_pedido\"\r\n        android:textColor=\"@color/theme_background\"\r\n        android:text=\"Procesar >> \"\r\n        android:background=\"@color/colorPrimary\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"/>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_gravity=\"right\"\r\n\r\n        android:orientation=\"horizontal\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:weightSum=\"2\"\r\n        >\r\n\r\n\r\n\r\n\r\n\r\n        <com.bestdreamstore.admin_bestdream.LIBS.HTMLTextView\r\n            android:textSize=\"10dip\"\r\n            android:textColor=\"#333333\"\r\n            android:padding=\"5dip\"\r\n            android:layout_gravity=\"right\"\r\n            android:id=\"@+id/datos_clienta\"\r\n            android:layout_weight=\"1.8\"\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"wrap_content\"/>\r\n\r\n\r\n\r\n\r\n        <Button\r\n            android:textSize=\"10dip\"\r\n            android:layout_gravity=\"right\"\r\n            android:id=\"@+id/reporte\"\r\n            android:text=\"Enviar Faltantes\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"/>\r\n\r\n\r\n\r\n    </LinearLayout>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n</LinearLayout>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/armado_pedidos.xml	(revision e91c935150d5deaad2ee480eb87156b73086cc63)
++++ app/src/main/res/layout/armado_pedidos.xml	(date 1605825044952)
+@@ -47,6 +47,7 @@
+             android:layout_height="wrap_content">
+ 
+             <EditText
++                android:singleLine="true"
+                 android:id="@+id/bar_code_scanner"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"/>
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(date 1605754732395)
++++ .idea/vcs.xml	(date 1605754732395)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/render.experimental.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/render.experimental.xml	(date 1605825047928)
++++ .idea/render.experimental.xml	(date 1605825047928)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RenderSettings">
++    <option name="showDecorations" value="true" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(date 1605756899508)
++++ .idea/compiler.xml	(date 1605756899508)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="1.8" />
++  </component>
++</project>
+\ No newline at end of file
