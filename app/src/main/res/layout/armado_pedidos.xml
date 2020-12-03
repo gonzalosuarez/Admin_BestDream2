@@ -11,8 +11,11 @@
 
 
 
+
+
+
     <LinearLayout
-        android:weightSum="1"
+        android:weightSum="6"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -20,25 +23,24 @@
 
 
 
-        <LinearLayout
-            android:layout_gravity="left"
-            android:layout_weight=".3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
-
-
             <ImageButton
                 android:layout_gravity="left"
                 android:background="@drawable/icon_back_black"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:id="@+id/back"/>
 
 
-
-        </LinearLayout>
-
-
+            <com.bestdreamstore.admin_bestdream.LIBS.HTMLTextView
+                android:textSize="8dip"
+                android:textColor="#333333"
+                android:padding="5dip"
+                android:layout_gravity="right"
+                android:id="@+id/datos_clienta"
+                android:layout_weight="5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
 
 
 
@@ -48,32 +50,46 @@
 
 
 
-
+<LinearLayout
+    android:orientation="vertical"
+    android:weightSum="8"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
 
 
     <android.support.v7.widget.RecyclerView
         android:layout_margin="10px"
-        android:layout_weight="4"
+        android:layout_weight="5.8"
         android:orientation="vertical"
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp">
 
     </android.support.v7.widget.RecyclerView>
 
 
 
 
+    <ListView
+        android:background="#74FF4E4E"
+        android:layout_weight="2"
+        android:id="@+id/errores"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"/>
+
+
 
 
     <Button
+        android:layout_weight=".2"
         android:layout_gravity="left"
         android:id="@+id/procesar_pedido"
         android:textColor="@color/theme_background"
         android:text="Procesar >> "
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -81,48 +97,7 @@
 
 
 
-
-
-    <LinearLayout
-        android:layout_gravity="right"
-
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2"
-        >
-
-
-
-
-
-        <com.bestdreamstore.admin_bestdream.LIBS.HTMLTextView
-            android:textSize="10dip"
-            android:textColor="#333333"
-            android:padding="5dip"
-            android:layout_gravity="right"
-            android:id="@+id/datos_clienta"
-            android:layout_weight="1.8"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
-
-
-
-
-        <Button
-            android:textSize="10dip"
-            android:layout_gravity="right"
-            android:id="@+id/poopu_err"
-            android:text="Ver Errores"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-
-    </LinearLayout>
-
-
-
+</LinearLayout>
 
 
 

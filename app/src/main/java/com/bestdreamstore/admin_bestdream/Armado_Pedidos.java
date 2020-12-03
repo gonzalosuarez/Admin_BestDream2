@@ -29,6 +29,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -105,7 +106,7 @@ public class Armado_Pedidos extends AppCompatActivity{
     ImageView image_prod, image_confirmation;
     JSONObject json;
     String id_pedido;
-    Button delivery, poopu_err;
+    Button delivery;
     Get_Cart_Adapter GetCartAdapter2;
     ImageButton back;
     Parcelable recyclerViewState = null;
@@ -114,6 +115,7 @@ public class Armado_Pedidos extends AppCompatActivity{
     JSONArray productos, productos_server;
     View popupView;
     String barcode = "";
+    ListView myListView;
 
 
     @SuppressLint("NewApi")
@@ -178,18 +180,6 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
-        poopu_err = (Button)findViewById(R.id.poopu_err);
-        poopu_err.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                open_poop_up_errores();
-
-
-            }
-        });
-
 
         back = (ImageButton)findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -207,6 +197,9 @@ public class Armado_Pedidos extends AppCompatActivity{
         });
 
 
+
+
+        myListView = (ListView)findViewById(R.id.errores);
 
 
 
@@ -253,30 +246,6 @@ public class Armado_Pedidos extends AppCompatActivity{
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent e) {
-
-        /*
-        if(popupView.isShown()){
-
-            MediaPlayer mp = MediaPlayer.create(this, R.raw.error_sound3);
-            mp.start();
-
-        }else{
-
-            if(e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() != KeyEvent.KEYCODE_ENTER){ //Not Adding ENTER_KEY to barcode String
-                char pressedKey = (char) e.getUnicodeChar();
-                barcode += pressedKey;
-            }
-
-            if (e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-                Log.e("BAR_CODE_SCANNER-----", barcode);
-                DELETE_ITEM(barcode);
-
-                barcode="";
-            }
-
-        }
-
-       */
 
 
         if(e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() != KeyEvent.KEYCODE_ENTER){ //Not Adding ENTER_KEY to barcode String
@@ -589,7 +558,7 @@ public class Armado_Pedidos extends AppCompatActivity{
             }
 
             Log.i("NO EXISTE: "," :: "+ bar_code);
-            open_poop_up_errores();
+            show_errores();
 
 
 
@@ -608,54 +577,26 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
-    public void open_poop_up_errores(){
+    public void show_errores(){
 
 
-        LayoutInflater layoutInflater = (LayoutInflater)getBaseContext()
-                .getSystemService(LAYOUT_INFLATER_SERVICE);
+       final  ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.text_size_err_listview, errores_list);
 
-        popupView = layoutInflater.inflate(R.layout.poop_up_errores, null);
-
-        popupWindow = new PopupWindow(popupView,
-                LinearLayout.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.MATCH_PARENT,
-                true);
-
-        popupWindow.setTouchable(true);
-        popupWindow.setFocusable(true);
-
-        popupWindow.showAtLocation(popupView, Gravity.CENTER, 0, 0);
-
-
-        final ListView myListView = (ListView)popupView.findViewById(R.id.errores);
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, errores_list);
         myListView.setAdapter(arrayAdapter);
 
 
 
 
-        ((ImageButton) popupView.findViewById(R.id.close))
-                .setOnClickListener(new View.OnClickListener() {
 
-                    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
-                    public void onClick(View arg0) {
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                        popupWindow.dismiss();
+                myListView.invalidateViews();
+                arrayAdapter.remove(arrayAdapter.getItem(position));
 
-                    }
-                });
-
-
-                myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                        myListView.invalidateViews();
-                        arrayAdapter.remove(arrayAdapter.getItem(position));
-
-                    }
-                });
-
-
+            }
+        });
 
         }
 
