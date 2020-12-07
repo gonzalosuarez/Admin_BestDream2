@@ -24,6 +24,7 @@
 
 
             <ImageButton
+                android:layout_weight=".1"
                 android:layout_gravity="left"
                 android:background="@drawable/icon_back_black"
                 android:layout_width="30dp"
@@ -37,13 +38,14 @@
                 android:padding="5dip"
                 android:layout_gravity="right"
                 android:id="@+id/datos_clienta"
-                android:layout_weight="4"
+                android:layout_weight="4.8"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
 
 
 
         <ImageButton
+            android:layout_weight=".1"
             android:layout_gravity="right"
             android:background="@drawable/ic_baseline_account_balance_24"
             android:layout_width="30dp"
@@ -81,7 +83,7 @@
 
 
     <ListView
-        android:background="#74FF4E4E"
+
         android:layout_weight="2"
         android:id="@+id/errores"
         android:layout_width="match_parent"

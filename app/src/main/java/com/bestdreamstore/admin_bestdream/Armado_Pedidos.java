@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -81,7 +82,7 @@ public class Armado_Pedidos extends AppCompatActivity{
 
     PopupWindow popupWindow;
 
-     //GetCartAdapter1.remove(position);
+    //GetCartAdapter1.remove(position);
     //recyclerViewadapter.notifyDataSetChanged();
 
     private static RecyclerView recyclerView_global;
@@ -118,7 +119,7 @@ public class Armado_Pedidos extends AppCompatActivity{
     ListView myListView;
 
 
-    @SuppressLint("NewApi")
+    @SuppressLint({"NewApi", "ResourceAsColor"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -180,16 +181,43 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
-        add_monedero = (ImageButton)findViewById(R.id.back);
+
+        add_monedero = (ImageButton)findViewById(R.id.add_monedero);
         add_monedero.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
+                Log.e("MONEDERO ACULUMADO: ", productos.toString());
+                Log.e("MONEDERO QUE QUEDA: ", String.valueOf(productos.length()));
 
+                AlertDialog alertDialog = new AlertDialog.Builder(Armado_Pedidos.this).create();
+                alertDialog.setCanceledOnTouchOutside(false);
+                alertDialog.setTitle("Bienvenido.");
+                alertDialog.setMessage("Estas seguro de mandar a Monedero?");
+                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "ACEPTAR",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                enviar_monedero_server();
 
+                            }
+                        });
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Cancelar",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                dialog.dismiss();
+
+                            }
+                        });
+                alertDialog.show();
             }
         });
+
+
+
+
 
 
         back = (ImageButton)findViewById(R.id.back);
@@ -211,6 +239,7 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
         myListView = (ListView)findViewById(R.id.errores);
+        myListView.setBackgroundColor(getResources().getColor(R.color.white));
 
 
 
@@ -299,9 +328,9 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
-                    json = userFunctions.ver_pedido_servidor(id_order);
+                json = userFunctions.ver_pedido_servidor(id_order);
 
-                    resultados_json = json;
+                resultados_json = json;
 
 
                 return resultados_json;
@@ -381,12 +410,12 @@ public class Armado_Pedidos extends AppCompatActivity{
 
                                         if(res == 1){
 
-                                           datos_clienta.setText("<strong>NUEVO ADMINISTRADOR</strong><br>"+
-                                            "<strong>"+full_name+"</strong><br>"+
-                                            //calle+" "+ numero +" "+ colonia +"<br>"+
-                                            //municipio+" "+ estado +" "+ cp +"<br>"+
-                                             //"<strong>$"+total_pagado+"</strong><br>"+
-                                             "<strong>Armo: "+nombre_user+"</strong><br>"
+                                            datos_clienta.setText("<strong>NUEVO ADMINISTRADOR</strong><br>"+
+                                                    "<strong>"+full_name+"</strong><br>"+
+                                                    //calle+" "+ numero +" "+ colonia +"<br>"+
+                                                    //municipio+" "+ estado +" "+ cp +"<br>"+
+                                                    //"<strong>$"+total_pagado+"</strong><br>"+
+                                                    "<strong>Armo: "+nombre_user+"</strong><br>"
                                             );
 
 
@@ -457,11 +486,11 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
                     datos_clienta.setText(
-                            "<strong>"+full_name+"</strong><br>"+
+                            "Nombre Cliente: <strong>"+full_name+"</strong><br>"+
                                     //calle+" "+ numero +" "+ colonia +"<br>"+
-                                   // municipio+" "+ estado +" "+ cp +"<br>"+
+                                    // municipio+" "+ estado +" "+ cp +"<br>"+
                                     //"<strong>$"+total_pagado+"</strong><br>"+
-                                    "<strong>Armo: "+quien_armo+"</strong><br>"
+                                    "<strong>Usuario Interno: "+quien_armo+"</strong><br>"
                     );
 
 
@@ -558,7 +587,7 @@ public class Armado_Pedidos extends AppCompatActivity{
             MediaPlayer mp = MediaPlayer.create(this, R.raw.error_sound2);
             mp.start();
 
-                JSONObject datos_producto = userFunctions.get_details_bar_code(bar_code);
+            JSONObject datos_producto = userFunctions.get_details_bar_code(bar_code);
 
             try {
 
@@ -591,9 +620,10 @@ public class Armado_Pedidos extends AppCompatActivity{
     public void show_errores(){
 
 
-       final  ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.text_size_err_listview, errores_list);
+        final  ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.text_size_err_listview, errores_list);
 
         myListView.setAdapter(arrayAdapter);
+        myListView.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
 
 
 
@@ -605,11 +635,16 @@ public class Armado_Pedidos extends AppCompatActivity{
 
                 myListView.invalidateViews();
                 arrayAdapter.remove(arrayAdapter.getItem(position));
+                if(myListView.getAdapter().getCount() <= 0){
+
+                    myListView.setBackgroundColor(getResources().getColor(R.color.white));
+
+                }
 
             }
         });
 
-        }
+    }
 
 
 
@@ -679,6 +714,10 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
+
+
+
+
     @Override
     public void onBackPressed() {
 
@@ -691,10 +730,17 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
+
+
+
+
+
     private void enableSwipeToDeleteAndUndo() {
 
 
+
         SwipeToDeleteCallback swipeToDeleteCallback = new SwipeToDeleteCallback(getApplicationContext()) {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
 
@@ -703,6 +749,7 @@ public class Armado_Pedidos extends AppCompatActivity{
 
                 GetCartAdapter1.remove(position);
                 recyclerViewadapter.notifyDataSetChanged();
+                productos.remove(position);
 
 
             }
@@ -732,6 +779,92 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
+    @SuppressLint("StaticFieldLeak")
+    public void enviar_monedero_server(){
+
+            final String user_admin = userFunctions.get_name_user(getApplicationContext());
+            final String id_pedido = id_order_fin;
+            final String productos_monedero = productos.toString();
+
+
+        new AsyncTask<Object, Void, JSONObject>() {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+                delivery.setText("Enviando Peticion.....");
+                delivery.setBackgroundColor(getResources().getColor(R.color.blue));
+
+            }
+
+
+
+            @Override
+            protected JSONObject doInBackground(Object... params) {
+
+                return userFunctions.enviar_peticion_monedero(user_admin, id_pedido, productos_monedero);
+
+            }
+
+
+            @Override
+            protected void onPostExecute(final JSONObject params) {
+                super.onPostExecute(params);
+
+
+                try {
+
+                    String success = params.getString("success");
+
+                    if(success.equals("1")){
+
+
+                        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.ok_1);
+                        mp.start();
+
+                        delivery.setText("Enviado con Exito!!");
+                        delivery.setBackgroundColor(getResources().getColor(R.color.green));
+                        finish();
+
+                    }else if(success.equals("3")){
+
+
+                        delivery.setText("Ya has enviado Previamente!");
+                        delivery.setBackgroundColor(getResources().getColor(R.color.yellow));
+
+
+                    }else{
+
+                        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.error_sound2);
+                        mp.start();
+
+                        delivery.setText("Falla. Pregunta en sistma.");
+                        delivery.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+
+                    }
+
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
+
+            } }.execute();
+
+
+
+
+
+
+
+
+    }
+
+
     public String get_extras_and_search(){
 
         String categoria_entrante = "null";
@@ -756,4 +889,3 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 }
-

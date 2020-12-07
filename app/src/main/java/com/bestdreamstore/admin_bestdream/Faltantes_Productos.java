@@ -1,17 +1,12 @@
 package com.bestdreamstore.admin_bestdream;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -26,11 +21,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bestdreamstore.admin_bestdream.ADAPTERS.Get_Cart_Adapter;
 import com.bestdreamstore.admin_bestdream.ADAPTERS.Get_Faltantes_Adapter;
 import com.bestdreamstore.admin_bestdream.ADAPTERS.SwipeToDeleteCallback;
 import com.bestdreamstore.admin_bestdream.CONTROLLER.Cart_Controller;
-import com.bestdreamstore.admin_bestdream.CONTROLLER.RecyclerCartViewAdapter;
 import com.bestdreamstore.admin_bestdream.CONTROLLER.RecyclerView_List_Faltantes_Adapter;
 import com.bestdreamstore.admin_bestdream.CONTROLLER.Web_View_Controller;
 import com.bestdreamstore.admin_bestdream.DATA_BASE.DatabaseHandler;
@@ -42,7 +35,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 public class Faltantes_Productos extends AppCompatActivity{

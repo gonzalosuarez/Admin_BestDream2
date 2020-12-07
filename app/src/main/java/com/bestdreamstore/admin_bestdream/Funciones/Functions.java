@@ -273,6 +273,11 @@ public class Functions {
 
 
 
+
+
+
+
+
     public JSONObject get_details_bar_code(String bar_code){
 
 
@@ -453,6 +458,27 @@ public class Functions {
 
 
         return res;
+
+
+    }
+
+
+
+
+
+
+
+    public JSONObject enviar_peticion_monedero(String user_admin, String id_pedido, String productos){
+
+        String urlfin = "https://bestdream.store/Android/enviar_peticion_monedero/";
+        HashMap<String, String> params = new HashMap<>();
+        params.put("id_pedido", id_pedido);
+        params.put("user_admin", user_admin);
+        params.put("productos", productos);
+
+        JSONObject json = jsonParser.makeHttpRequest(urlfin, "POST",params);
+
+        return json;
 
 
     }
