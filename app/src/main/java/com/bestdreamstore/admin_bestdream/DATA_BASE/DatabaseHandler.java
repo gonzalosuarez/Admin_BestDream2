@@ -607,6 +607,17 @@ public boolean insert_all_cart(JSONArray CART){
 
 
 
+    public boolean delete_id_position(int id_position){
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        return db.delete(TABLE_CART, KEY_ID + "="+id_position, null) > 0;
+
+
+    }
+
+
+
 
     public int Count_Cart() {
 

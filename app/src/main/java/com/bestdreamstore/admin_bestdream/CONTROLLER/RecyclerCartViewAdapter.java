@@ -5,7 +5,11 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +20,14 @@ import android.widget.TextView;
 
 import com.android.volley.toolbox.NetworkImageView;
 import com.bestdreamstore.admin_bestdream.ADAPTERS.Get_Cart_Adapter;
+import com.bestdreamstore.admin_bestdream.ADAPTERS.SwipeToDeleteCallback;
 import com.bestdreamstore.admin_bestdream.DATA_BASE.DatabaseHandler;
 import com.bestdreamstore.admin_bestdream.R;
 import com.squareup.picasso.Picasso;
 import android.widget.ImageView;
 import java.util.List;
+
+import static com.bestdreamstore.admin_bestdream.CONTROLLER.Cart_Controller.GetCartAdapter1;
 
 
 /**
@@ -32,7 +39,7 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
     Context context;
     List<Get_Cart_Adapter> getDataAdapter;
     ImageView iv_cart, tipo_alta_pedido;
-    private static RecyclerView recyclerView_global;
+    RecyclerView recyclerView_global;
     Cart_Controller cart = new Cart_Controller(context);
     int qty, multi_fin, id;
     float precio_premium, SUBTOTAL_PROD;
@@ -160,6 +167,8 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
         public TextView textView_item, QTY;
         public ImageView iv_cart, tipo_alta_cart, details_img;
 
+        public RecyclerView recyclerView_global;
+
 
         public NetworkImageView networkImageView;
         public Button button_cantidad;
@@ -170,6 +179,31 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
         public ViewHolder(final View itemView) {
 
             super(itemView);
+
+
+            /*
+            recyclerView_global = (RecyclerView)itemView.findViewById(R.id.recycler_view);
+            SwipeToDeleteCallback swipeToDeleteCallback = new SwipeToDeleteCallback(context) {
+                @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                @Override
+                public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+
+                    final int position = viewHolder.getAdapterPosition();
+                    GetCartAdapter1.remove(position);
+
+
+
+            ItemTouchHelper itemTouchhelper = new ItemTouchHelper(swipeToDeleteCallback);
+            itemTouchhelper.attachToRecyclerView(recyclerView_global);
+
+
+                }
+            };
+            */
+
+
+
+
 
 
 
