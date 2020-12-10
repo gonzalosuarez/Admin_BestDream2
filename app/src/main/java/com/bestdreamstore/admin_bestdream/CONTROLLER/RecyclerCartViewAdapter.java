@@ -31,7 +31,7 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
 
     Context context;
     List<Get_Cart_Adapter> getDataAdapter;
-    ImageView iv_cart, tipo_alta_pedido;
+    ImageView iv_cart, delete_item;
     private static RecyclerView recyclerView_global;
     Cart_Controller cart = new Cart_Controller(context);
     int qty, multi_fin, id;
@@ -90,13 +90,6 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
         Picasso.get().load(getDataAdapter1.getimagen_comp()).into(Viewholder.iv_cart);
 
 
-        Picasso.get().load("https://bestdream.store/Views/Default/img/flecha_amarilla_derecha.jpg").into(Viewholder.tipo_alta_cart);
-
-
-
-
-
-
 
 
 
@@ -125,7 +118,7 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
 
         //Viewholder.totales.setText("$"+precio_p);
         //Log.e("PRODUCTO PRECIO:", String.valueOf(precio_premium));
-        Viewholder.textView_item.setText(getDataAdapter1.getnombre_producto()+" -- ID: "+getDataAdapter1.getid_producto()+" -- "+getDataAdapter1.getbar_code());
+        Viewholder.ID_PRODUCTO.setText(getDataAdapter1.getid_producto());
         Viewholder.QTY.setText("QTY --  "+String.valueOf(qty));
 
 
@@ -157,8 +150,8 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
         DatabaseHandler db;
 
         public TextView cantidad_txt;
-        public TextView textView_item, QTY;
-        public ImageView iv_cart, tipo_alta_cart, details_img;
+        public TextView ID_PRODUCTO, QTY;
+        public ImageView iv_cart, delete_item, details_img;
 
 
         public NetworkImageView networkImageView;
@@ -173,11 +166,27 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
 
 
 
-            textView_item = (TextView) itemView.findViewById(R.id.textView_item);
+            ID_PRODUCTO = (TextView) itemView.findViewById(R.id.textView_item);
             QTY = (TextView) itemView.findViewById(R.id.QTY);
             cantidad_txt = (TextView) itemView.findViewById(R.id.cantidad_txt);
             iv_cart = (ImageView) itemView.findViewById(R.id.iv_cart);
-            tipo_alta_cart = (ImageView) itemView.findViewById(R.id.tipo_alta_cart);
+            delete_item = (ImageView) itemView.findViewById(R.id.delete_item);
+            delete_item.setOnClickListener(new View.OnClickListener() {
+
+                public void onClick(View v) {
+
+                    Controlador_Carrito db3 = new Controlador_Carrito(context);
+
+                    db3.DELETE_ITEM(ID_PRODUCTO.getText().toString(), context);
+
+                    notifyDataSetChanged();
+
+
+
+
+                }
+
+            });
 
 
             iv_cart.setOnClickListener(new View.OnClickListener() {

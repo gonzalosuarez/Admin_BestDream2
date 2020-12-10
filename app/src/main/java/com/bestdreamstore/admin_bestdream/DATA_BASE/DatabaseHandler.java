@@ -4,40 +4,15 @@ package com.bestdreamstore.admin_bestdream.DATA_BASE;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteStatement;
-import android.os.Environment;
 import android.util.Log;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
-import android.widget.Toast;
-
-import com.bestdreamstore.admin_bestdream.ADAPTERS.Get_Cart_Adapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 
 public class DatabaseHandler extends SQLiteOpenHelper {
@@ -529,6 +504,8 @@ public boolean insert_all_cart(JSONArray CART){
 
 
 
+
+
     public int check_if_product_inf_cart(String id_producto){
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -543,34 +520,6 @@ public boolean insert_all_cart(JSONArray CART){
 
 
     }
-
-
-
-    public int check_cantidad_id_prod(String id_producto){
-
-        int cantidad = 0;
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_CART + " WHERE " + KEY_ID_PRODUCTO + " = ?", new String[] {id_producto});
-
-
-            if (cursor.moveToFirst()){
-                cantidad = cursor.getInt(cursor.getColumnIndex(KEY_CANTIDAD));
-            }
-            cursor.close();
-
-
-        db.close();
-
-        Log.i("Cantidad: "," :: "+ cantidad);
-
-        return cantidad;
-
-
-    }
-
-
-
 
 
     public JSONArray get_Cart_Json() throws JSONException, FileNotFoundException {
@@ -661,35 +610,6 @@ public boolean insert_all_cart(JSONArray CART){
 
 
 
-    public int incrementar_uno(String id_producto){
-
-       int cantidad_bd = check_cantidad_id_prod(id_producto);
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        ContentValues args = new ContentValues();
-        args.put(KEY_CANTIDAD, cantidad_bd+1);
-
-        return db.update(TABLE_CART, args,  KEY_ID_PRODUCTO +"=?", new String[]{id_producto});
-
-    }
-
-
-
-
-    public int insertar_error_code(String err, String id_producto){
-
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        ContentValues args = new ContentValues();
-        args.put(KEY_ERROR, err);
-
-        return db.update(TABLE_CART, args,  KEY_ID_PRODUCTO +"=?", new String[]{id_producto});
-
-    }
-
-
-
-
 
 
     public boolean delete(String id_producto){
@@ -704,35 +624,14 @@ public boolean insert_all_cart(JSONArray CART){
 
 
 
-    public boolean delete_id_position(int id_position){
+    public boolean delete_bar_code(String bar_code){
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        return db.delete(TABLE_CART, KEY_ID + "="+id_position, null) > 0;
+        return db.delete(TABLE_CART, KEY_BAR_CODE + "="+bar_code, null) > 0;
 
 
     }
-
-
-
-
-
-
-    public boolean delete_id_position(String position){
-
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        return db.delete(TABLE_CART, KEY_ID + "=?", new String[]{position}) > 0;
-
-
-    }
-
-
-
-
-
-
-
 
 
 

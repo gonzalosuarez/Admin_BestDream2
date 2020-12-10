@@ -49,7 +49,7 @@ import java.util.List;
 import static android.content.Context.ACTIVITY_SERVICE;
 
 
-public class Controlador_Carrito {
+public class Cart_Controller_Nuevo {
 
 
     private static RecyclerView recyclerView_global;
@@ -92,7 +92,7 @@ public class Controlador_Carrito {
     private static float total_prod;
 
 
-    public Controlador_Carrito(Context context){
+    public Cart_Controller_Nuevo(Context context){
 
         super();
         this.context = context;
@@ -108,6 +108,114 @@ public class Controlador_Carrito {
 
 
 
+
+
+
+
+
+
+
+    public boolean ADD_CART_SKU(String id_producto){
+        //update_icon_cart(context);
+        return ADD_CART_DB_PRINCIPAL(id_producto);
+    }
+
+
+
+    public boolean ADD_CART_DETAILS_SKU(String id_producto){
+        return ADD_CART_DB_PRINCIPAL(id_producto);
+    }
+
+
+
+
+    public boolean ADD_CART_DB_PRINCIPAL(String id_producto){
+
+
+        String request_url = "https://bestdream.store/Android/details_id/"+id_producto;
+
+        final JsonArrayRequest searchMsg = new JsonArrayRequest(request_url, new Response.Listener<JSONArray>() {
+
+            // ProgressDialog dialog = ProgressDialog.show(context, "", "Espere un Momento....", true);
+
+            @Override
+            public void onResponse(JSONArray response) {
+
+                for (int i = 0; i < response.length(); i++) {
+
+                    try {
+
+                        JSONObject obj = response.getJSONObject(i);
+
+
+                        feed_todos = obj.getJSONArray("feed_todos");
+                        json_fin = feed_todos.getJSONObject(0);
+                        json_json = json_fin.getJSONObject("json");
+
+                        /*IMAGEN PINCIPAL*/
+
+                        int precio_mayoreo_url = json_json.getInt("precio_mayoreo");
+                        int decimales_mayoreo_url = json_json.getInt("decimales_mayoreo");
+                        String PRECIO_PREMIUM_GLOBAL = String.valueOf(precio_mayoreo_url)+"."+String.valueOf(decimales_mayoreo_url);
+
+
+                        Log.i("----PRECIO PREMIUM---", PRECIO_PREMIUM_GLOBAL);
+
+
+                        int costo_producto = json_json.getInt("costo_producto");
+                        int decimales_costo = json_json.getInt("decimales_costo");
+                        String COSTO_PRODUCTO_GLOBAL = String.valueOf(costo_producto)+"."+String.valueOf(decimales_costo);
+
+                        Log.i("----COSTO PRODCUTO---", COSTO_PRODUCTO_GLOBAL);
+
+
+                        /*
+                        DatabaseHandler db3 = new DatabaseHandler(context);
+                        db3.addCart(
+                                json_json.getString("id"),
+                                json_json.getString("nombre"),
+                                json_json.getString("imagen"),
+                                json_json.getString("categoria"),
+                                json_json.getString("bar_code"),
+                                json_json.getString("marca"),
+                                PRECIO_PREMIUM_GLOBAL,
+                                COSTO_PRODUCTO_GLOBAL,
+                                json_json.getInt("peso"),
+                                json_json.getString("producto"),
+                                1
+                        );
+                        */
+
+
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
+
+                }
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d("error volley", "Error: " + error.getMessage());
+                // dialog.dismiss();
+
+            }
+        });
+        // Adding request to request queue
+
+        SliderVolleyRequest.getInstance(context).addToRequestQueue(searchMsg);
+
+
+
+        return true;
+
+    }
 
 
 
@@ -131,7 +239,7 @@ public class Controlador_Carrito {
             recyclerView_global = GET_CART(ctx);
 
             //datos_pedido = (TextView)view.findViewById(R.id.datos_pedido);
-           // datos_pedido.setText("TOTAL: "+GET_SUBTOTAL(ctx));
+            //datos_pedido.setText("TOTAL: "+GET_SUBTOTAL(ctx));
 
 
         }else{
@@ -143,9 +251,6 @@ public class Controlador_Carrito {
         //update_icon_cart(ctx);
 
     }
-
-
-
 
 
 
@@ -173,6 +278,11 @@ public class Controlador_Carrito {
         GetCartAdapter1.clear();
         recyclerView_global = GET_CART(ctx);
 
+       // datos_pedido = (TextView)view.findViewById(R.id.datos_pedido);
+       // datos_pedido.setText("TOTAL: "+GET_SUBTOTAL(ctx));
+
+
+        //update_icon_cart(ctx);
 
 
     }
@@ -215,12 +325,26 @@ public class Controlador_Carrito {
 
     public static void SHOW_POOP_UP_CART(final Context ctx) {
 
+        final Functions userFunction = new Functions();
+
         GetCartAdapter1.clear();
 
-        final LinearLayout content_window = (LinearLayout) ((Activity) ctx).findViewById(R.id.content_window);
-        final ImageView logo_cart = (ImageView) ((Activity) ctx).findViewById(R.id.logo_cart);
-        final ImageButton close = (ImageButton) ((Activity) ctx).findViewById(R.id.closePopupBtn);
-       // final HTMLTextView datos_pedido_html = (HTMLTextView) ((Activity) ctx).findViewById(R.id.datos_pedido_html);
+        /*INICIA POPUP*/
+        final PopupWindow mRecordWindow;
+        view = View.inflate(ctx, R.layout.poopup_cart, null);
+
+        mRecordWindow = new PopupWindow(view, -1, -1);
+        mRecordWindow.showAtLocation(view, 17, 0, 0);
+        mRecordWindow.setFocusable(true);
+        mRecordWindow.setOutsideTouchable(false);
+        mRecordWindow.setTouchable(false);
+
+        final ImageView logo_cart = (ImageView)view.findViewById(R.id.logo_cart);
+        final ImageButton close = (ImageButton)view.findViewById(R.id.closePopupBtn);
+        //final Button delivery = (Button)view.findViewById(R.id.delivery);
+        //final HTMLTextView datos_pedido_html = (HTMLTextView)view.findViewById(R.id.datos_pedido_html);
+        final LinearLayout content_window = (LinearLayout)view.findViewById(R.id.content_window);
+        //datos_pedido = (TextView)view.findViewById(R.id.datos_pedido);
 
 
 
@@ -230,7 +354,7 @@ public class Controlador_Carrito {
             protected void onPreExecute() {
                 super.onPreExecute();
 
-               // datos_pedido.setText("Espere. Abriendo Carrito......");
+                datos_pedido.setText("Espere. Abriendo Carrito......");
                 GetCartAdapter1.clear();
 
             }
@@ -249,11 +373,45 @@ public class Controlador_Carrito {
                 super.onPostExecute(params);
 
 
-                //datos_pedido.setText("TOTAL: "+GET_SUBTOTAL(ctx));
+                new DownloadImageTask(ctx, logo_cart, "https://bestdream.store/Views/Default/img/logo_bestdream_dark.png").execute();
 
 
-               // int precio_envio = userFunction.get_envio_costo();
-               // datos_pedido_html.setText("Envío: <span style='color:red'> $"+precio_envio+".00 </span>");
+                /*
+                delivery.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View view) {
+
+                        //mRecordWindow.dismiss();
+                        Intent i = new Intent(ctx, Delivery.class);
+                        ctx.startActivity(i);
+                        mRecordWindow.dismiss();
+
+
+
+                    }
+                });
+
+                 */
+
+
+                close.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View view) {
+
+                        mRecordWindow.dismiss();
+
+                    }
+                });
+
+
+
+                datos_pedido.setText("TOTAL: "+GET_SUBTOTAL(ctx));
+
+
+                //int precio_envio = userFunction.get_envio_costo();
+                //datos_pedido_html.setText("Envío: <span style='color:red'> $"+precio_envio+".00 </span>");
 
                 recyclerView_global = GET_CART(ctx);
 
@@ -364,8 +522,6 @@ public class Controlador_Carrito {
         RecyclerView.LayoutManager recyclerViewlayoutManager = new GridLayoutManager(ctx, 1);
 
         Parcelable recyclerViewState = null;
-
-       // final RecyclerView recyclerView_global = (RecyclerView) ((Activity) ctx).findViewById(R.id.recycler_view_nuevo);
 
         recyclerView_global = new RecyclerView(ctx);
         recyclerView_global.setHasFixedSize(true);
@@ -506,6 +662,8 @@ public class Controlador_Carrito {
         return res;
 
     }
+
+
 
 
 

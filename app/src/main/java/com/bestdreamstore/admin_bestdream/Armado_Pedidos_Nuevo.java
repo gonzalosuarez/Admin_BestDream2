@@ -428,9 +428,6 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
     public void DELETE_ITEM(String bar_code){
 
         json_base_2 = null;
-        DatabaseHandler db2 = new DatabaseHandler(getApplicationContext());
-        GetCartAdapter1.clear();
-
 
         if (productos.toString().contains(bar_code)) {
 
@@ -450,14 +447,18 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
                         if(json_base_2.getInt(KEY_CANTIDAD) > 1){
 
                             //ELIMINAR 1 DE LA CANTIDAD
-                            db2.cambiar_cantidad(json_base_2.getString(KEY_ID_PRODUCTO), json_base_2.getInt(KEY_CANTIDAD));
-                            REFRESH_CART();
+
+                            Controlador_Carrito db3 = new Controlador_Carrito(getApplicationContext());
+                            db3.UPDATE_QTY(json_base_2.getString(KEY_ID_PRODUCTO), json_base_2.getInt(KEY_CANTIDAD), getApplicationContext());
+                            //REFRESH_CART();
+
 
                         }else{
 
                             //DESAPARECE DEL LISTADO
-                            db2.delete(json_base_2.getString(KEY_ID_PRODUCTO));
-                            REFRESH_CART();
+                            Controlador_Carrito db3 = new Controlador_Carrito(getApplicationContext());
+                            db3.DELETE_ITEM(json_base_2.getString(KEY_ID_PRODUCTO), getApplicationContext());
+                            //REFRESH_CART();
 
 
                         }
@@ -502,12 +503,14 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
 
 
+
+
+
     public void REFRESH_CART(){
 
-        GetCartAdapter1.clear();
 
-        productos = userFunctions.get_jsonarray_cart(getApplicationContext());
-        productos = userFunctions.ordenar_arr_bar_code(productos);
+         productos = userFunctions.get_jsonarray_cart(getApplicationContext());
+         productos = userFunctions.ordenar_arr_bar_code(productos);
         Controlador_Carrito.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
 
 

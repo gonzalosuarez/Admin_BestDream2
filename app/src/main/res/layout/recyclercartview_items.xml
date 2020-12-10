@@ -105,10 +105,11 @@
 
 
                                             <ImageView
+                                                android:src="@drawable/icon_close_red"
                                                 android:gravity="center_vertical"
-                                                android:id="@+id/tipo_alta_cart"
-                                                android:layout_width="15dp"
-                                                android:layout_height="15dp" />
+                                                android:id="@+id/delete_item"
+                                                android:layout_width="25dp"
+                                                android:layout_height="25dp" />
 
 
 

@@ -647,6 +647,11 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
+
+
+
+
+
     public void MOSTRAR_CARRITO(JSONArray CART){
 
         GetCartAdapter1.clear();
