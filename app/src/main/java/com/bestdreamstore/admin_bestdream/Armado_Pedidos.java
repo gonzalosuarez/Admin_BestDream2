@@ -128,6 +128,11 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
+
+
+
+
+
         /*NUEVO DETECTOR SIN EDIT TEXT - 2*/
 
         setFinishOnTouchOutside(false);
@@ -740,17 +745,11 @@ public class Armado_Pedidos extends AppCompatActivity{
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
 
                 final int position = viewHolder.getAdapterPosition();
-               recyclerViewadapter.notifyItemRemoved(position);
+                recyclerViewadapter.notifyItemRemoved(position);
 
-               GetCartAdapter1.remove(position);
-               recyclerViewadapter.notifyDataSetChanged();
-               productos.remove(position);
-
-
-               // DatabaseHandler db2 = new DatabaseHandler(getApplicationContext());
-               // db2.delete_id_position(position);
-               // REFRESH_CART();
-
+                GetCartAdapter1.remove(position);
+                recyclerViewadapter.notifyDataSetChanged();
+                productos.remove(position);
 
 
             }
@@ -758,6 +757,7 @@ public class Armado_Pedidos extends AppCompatActivity{
 
         ItemTouchHelper itemTouchhelper = new ItemTouchHelper(swipeToDeleteCallback);
         itemTouchhelper.attachToRecyclerView(recyclerView_global);
+
 
 
     }

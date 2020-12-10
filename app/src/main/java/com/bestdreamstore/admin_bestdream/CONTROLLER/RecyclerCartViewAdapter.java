@@ -5,11 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,16 +16,11 @@ import android.widget.TextView;
 
 import com.android.volley.toolbox.NetworkImageView;
 import com.bestdreamstore.admin_bestdream.ADAPTERS.Get_Cart_Adapter;
-import com.bestdreamstore.admin_bestdream.ADAPTERS.SwipeToDeleteCallback;
 import com.bestdreamstore.admin_bestdream.DATA_BASE.DatabaseHandler;
 import com.bestdreamstore.admin_bestdream.R;
 import com.squareup.picasso.Picasso;
 import android.widget.ImageView;
-import android.widget.Toast;
-
 import java.util.List;
-
-import static com.bestdreamstore.admin_bestdream.CONTROLLER.Cart_Controller.GetCartAdapter1;
 
 
 /**
@@ -40,8 +31,8 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
 
     Context context;
     List<Get_Cart_Adapter> getDataAdapter;
-    ImageView delete_item;
-    RecyclerView recyclerView_global;
+    ImageView iv_cart, tipo_alta_pedido;
+    private static RecyclerView recyclerView_global;
     Cart_Controller cart = new Cart_Controller(context);
     int qty, multi_fin, id;
     float precio_premium, SUBTOTAL_PROD;
@@ -99,7 +90,7 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
         Picasso.get().load(getDataAdapter1.getimagen_comp()).into(Viewholder.iv_cart);
 
 
-       // Picasso.get().load("https://bestdream.store/Views/Default/img/flecha_amarilla_derecha.jpg").into(Viewholder.tipo_alta_cart);
+        Picasso.get().load("https://bestdream.store/Views/Default/img/flecha_amarilla_derecha.jpg").into(Viewholder.tipo_alta_cart);
 
 
 
@@ -136,7 +127,6 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
         //Log.e("PRODUCTO PRECIO:", String.valueOf(precio_premium));
         Viewholder.textView_item.setText(getDataAdapter1.getnombre_producto()+" -- ID: "+getDataAdapter1.getid_producto()+" -- "+getDataAdapter1.getbar_code());
         Viewholder.QTY.setText("QTY --  "+String.valueOf(qty));
-        Viewholder.id_producto.setText(getDataAdapter1.getid_producto());
 
 
 
@@ -167,9 +157,14 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
         DatabaseHandler db;
 
         public TextView cantidad_txt;
-        public TextView textView_item, QTY, id_producto;
-        public ImageView iv_cart, delete_item;
+        public TextView textView_item, QTY;
+        public ImageView iv_cart, tipo_alta_cart, details_img;
 
+
+        public NetworkImageView networkImageView;
+        public Button button_cantidad;
+        public PopupWindow popupWindow;
+        LinearLayout content_window;
 
 
         public ViewHolder(final View itemView) {
@@ -178,30 +173,11 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
 
 
 
-
-
             textView_item = (TextView) itemView.findViewById(R.id.textView_item);
-            id_producto = (TextView) itemView.findViewById(R.id.id_producto);
             QTY = (TextView) itemView.findViewById(R.id.QTY);
             cantidad_txt = (TextView) itemView.findViewById(R.id.cantidad_txt);
             iv_cart = (ImageView) itemView.findViewById(R.id.iv_cart);
-
-            delete_item = (ImageView) itemView.findViewById(R.id.delete_item);
-            delete_item.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(final View view) {
-
-                    String id_prod_fin = id_producto.getText().toString();
-                    Toast.makeText(context, id_prod_fin, Toast.LENGTH_SHORT).show(); //Correcto
-
-                    DatabaseHandler db = new DatabaseHandler(context);
-                    db.delete(id_prod_fin);
-
-
-                }
-            });
-
+            tipo_alta_cart = (ImageView) itemView.findViewById(R.id.tipo_alta_cart);
 
 
             iv_cart.setOnClickListener(new View.OnClickListener() {

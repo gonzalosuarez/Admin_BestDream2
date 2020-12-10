@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+
+    android:background="@drawable/poop_up_traslucid_style"
+    android:id="@+id/linear">
+
+
+
+
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:gravity="right"
+            android:layout_weight="7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:gravity="left"
+                android:id="@+id/logo_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:gravity="right"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_gravity="right"
+                android:layout_margin="10dip"
+                android:background="@drawable/icon_close_red"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:id="@+id/closePopupBtn"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+    /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
+    /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
+    /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
+
+    <LinearLayout
+        android:layout_margin="10px"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:id="@+id/content_window"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+
+    /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
+    /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
+    /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
+
+
+
+
+
+
+    <LinearLayout
+        android:background="@drawable/poop_up_traslucid_style"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="130dip">
+
+
+
+        <LinearLayout
+            android:layout_gravity="right"
+            android:layout_margin="5dip"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            >
+
+            <TextView
+
+                android:id="@+id/datos_pedido"
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+            <com.bestdreamstore.admin_bestdream.LIBS.HTMLTextView
+                android:id="@+id/datos_pedido_html"
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:layout_marginBottom="7dp"
+            android:id="@+id/procesar_pedido"
+            android:textColor="@color/theme_background"
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
+
+

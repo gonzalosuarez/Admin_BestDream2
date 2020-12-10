@@ -88,6 +88,18 @@
 
 
         <activity
+            android:name=".Armado_Pedidos_Nuevo"
+            android:label=""
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+
+            >
+        </activity>
+
+
+
+        <activity
             android:name=".Faltantes_Productos"
             android:label=""
             android:configChanges="orientation"

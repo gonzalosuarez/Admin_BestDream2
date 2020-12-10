@@ -105,12 +105,10 @@
 
 
                                             <ImageView
-                                                android:src="@drawable/icon_close_red"
-                                                android:layout_marginTop="10dp"
                                                 android:gravity="center_vertical"
-                                                android:id="@+id/delete_item"
-                                                android:layout_width="25dp"
-                                                android:layout_height="25dp" />
+                                                android:id="@+id/tipo_alta_cart"
+                                                android:layout_width="15dp"
+                                                android:layout_height="15dp" />
 
 
 
@@ -131,7 +129,7 @@
 
 
                     <LinearLayout
-                        android:orientation="horizontal"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1">
@@ -142,14 +140,6 @@
                             android:textColor="@color/primary"
                             android:id="@+id/QTY"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-
-                        <TextView
-                            android:textSize=".5dp"
-                            android:layout_gravity="right"
-                            android:id="@+id/id_producto"
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
 

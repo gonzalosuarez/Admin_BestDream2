@@ -396,7 +396,7 @@ public class MainActivity extends AppCompatActivity
 
                 if(add_id_order_int == 1){
 
-                    Intent i = new Intent(MainActivity.this, Armado_Pedidos.class);
+                    Intent i = new Intent(MainActivity.this, Armado_Pedidos_Nuevo.class);
                     startActivityForResult(i, 2);
 
 
