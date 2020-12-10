@@ -5,6 +5,7 @@ package com.bestdreamstore.admin_bestdream;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -15,8 +16,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -44,12 +48,25 @@ import java.util.ArrayList;
 
 public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
-    private static final String KEY_PERMISOS = "permisos";
-    private static final String KEY_NAME = "name";
+
+
+    private static final String KEY_ID_PRODUCTO = "id_producto";
+    private static final String KEY_NOMBRE = "nombre_producto";
+    private static final String KEY_PRECIO_PREMIUM = "precio_premium";
+    private static final String KEY_COSTO_PRODUCTO = "costo_producto";
+    private static final String KEY_CANTIDAD = "cantidad";
+    private static final String KEY_COSTO_ENVIO = "costo_envio";
+    private static final String KEY_MARCA = "marca";
+    private static final String KEY_PRODUCTO = "producto";
+    private static final String KEY_BAR_CODE = "bar_code";
+    private static final String KEY_IMAGEN= "imagen_comp";
+    private static final String KEY_TIPO_ALTA_CART= "tipo_alta_cart";
+    private static final String KEY_ERROR= "key_error";
+    private static final String KEY_ID = "id";
 
 
     Functions userFunctions;
-    JSONObject json;
+    JSONObject json, json_base_2;
     JSONArray productos, productos_server;
 
     private static RecyclerView recyclerView_global;
@@ -62,19 +79,14 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
     Controlador_Carrito cart;
     Web_View_Controller web_view_controller;
 
+    ArrayList<String> errores_list = new ArrayList<String>();
 
 
-    HTMLTextView datos_clienta;
-    ImageView image_prod, image_confirmation;
-    String id_pedido;
     Button procesar_pedido;
-    Get_Cart_Adapter GetCartAdapter2;
-    ImageButton back, add_monedero;
-    Parcelable recyclerViewState = null;
     DatabaseHandler db;
     String id_order_fin;
-    View popupView;
     String barcode = "";
+
     ListView myListView;
 
 
@@ -104,6 +116,9 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
         userFunctions = new Functions();
         GetCartAdapter1.clear();
+
+        myListView = (ListView)findViewById(R.id.errores);
+        myListView.setBackgroundColor(getResources().getColor(R.color.white));
 
 
 
@@ -354,17 +369,13 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
 
 
-                //productos = userFunctions.ordenar_arr_bar_code(productos);
-                // MOSTRAR_CARRITO(productos);
-
 
                 if(userFunctions.insert_all_cart(productos_server, getApplicationContext())){
 
-                    productos = userFunctions.get_jsonarray_cart(getApplicationContext());
-                    productos = userFunctions.ordenar_arr_bar_code(productos);
-                    //MOSTRAR_CARRITO(productos);
-                    Controlador_Carrito.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
+
+                    REFRESH_CART();
                     Log.i("SUBIDA:", "CORRECTA");
+
 
                 }else{
 
@@ -383,6 +394,152 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
     }
 
+
+
+
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent e) {
+
+
+        if(e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() != KeyEvent.KEYCODE_ENTER){ //Not Adding ENTER_KEY to barcode String
+            char pressedKey = (char) e.getUnicodeChar();
+            barcode += pressedKey;
+        }
+
+        if (e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+            Log.e("BAR_CODE_SCANNER-----", barcode);
+            DELETE_ITEM(barcode);
+
+            barcode="";
+        }
+
+        return false;
+
+    }
+
+
+
+
+
+
+
+
+    public void DELETE_ITEM(String bar_code){
+
+        json_base_2 = null;
+        DatabaseHandler db2 = new DatabaseHandler(getApplicationContext());
+        GetCartAdapter1.clear();
+
+
+        if (productos.toString().contains(bar_code)) {
+
+            Log.i("SI EXISTE: "," :: "+ bar_code);
+
+            for(int i = 0; i<productos.length(); i++) {
+
+
+                try {
+
+                    json_base_2 = productos.getJSONObject(i);
+
+
+
+                    if(bar_code.equals(json_base_2.getString(KEY_BAR_CODE))){
+
+                        if(json_base_2.getInt(KEY_CANTIDAD) > 1){
+
+                            //ELIMINAR 1 DE LA CANTIDAD
+                            db2.cambiar_cantidad(json_base_2.getString(KEY_ID_PRODUCTO), json_base_2.getInt(KEY_CANTIDAD));
+                            REFRESH_CART();
+
+                        }else{
+
+                            //DESAPARECE DEL LISTADO
+                            db2.delete(json_base_2.getString(KEY_ID_PRODUCTO));
+                            REFRESH_CART();
+
+
+                        }
+
+
+                    }
+
+                } catch (JSONException e) {
+
+                    e.printStackTrace();
+                }
+
+
+
+            }
+
+        }else{
+
+
+            MediaPlayer mp = MediaPlayer.create(this, R.raw.error_sound2);
+            mp.start();
+
+            JSONObject datos_producto = userFunctions.get_details_bar_code(bar_code);
+
+            try {
+
+                errores_list.add(datos_producto.getString("nombre"));
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            Log.i("NO EXISTE: "," :: "+ bar_code);
+            show_errores();
+
+
+        }
+
+
+    }
+
+
+
+
+    public void REFRESH_CART(){
+
+        GetCartAdapter1.clear();
+
+        productos = userFunctions.get_jsonarray_cart(getApplicationContext());
+        productos = userFunctions.ordenar_arr_bar_code(productos);
+        Controlador_Carrito.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
+
+
+    }
+
+
+
+    public void show_errores(){
+
+
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.text_size_err_listview, errores_list);
+
+        myListView.setAdapter(arrayAdapter);
+        myListView.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                myListView.invalidateViews();
+                arrayAdapter.remove(arrayAdapter.getItem(position));
+                if(myListView.getAdapter().getCount() <= 0){
+
+                    myListView.setBackgroundColor(getResources().getColor(R.color.white));
+
+                }
+
+            }
+        });
+
+    }
 
 
 

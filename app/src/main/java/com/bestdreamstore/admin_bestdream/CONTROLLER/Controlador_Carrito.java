@@ -331,7 +331,7 @@ public class Controlador_Carrito {
         final LinearLayout content_window = (LinearLayout) ((Activity) ctx).findViewById(R.id.content_window);
         final ImageView logo_cart = (ImageView) ((Activity) ctx).findViewById(R.id.logo_cart);
         final ImageButton close = (ImageButton) ((Activity) ctx).findViewById(R.id.closePopupBtn);
-        final HTMLTextView datos_pedido_html = (HTMLTextView) ((Activity) ctx).findViewById(R.id.datos_pedido_html);
+       // final HTMLTextView datos_pedido_html = (HTMLTextView) ((Activity) ctx).findViewById(R.id.datos_pedido_html);
 
 
 

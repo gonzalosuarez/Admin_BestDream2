@@ -79,7 +79,7 @@
         android:orientation="vertical"
         android:id="@+id/content_window"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp">
 
     </LinearLayout>
 
@@ -89,6 +89,13 @@
 
 
 
+    <ListView
+
+        android:layout_weight="2"
+        android:id="@+id/errores"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"/>
 
 
 
@@ -101,42 +108,19 @@
 
 
 
-        <LinearLayout
-            android:layout_gravity="right"
-            android:layout_margin="5dip"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="6"
-            >
-
-            <TextView
-
-                android:id="@+id/datos_pedido"
-                android:layout_gravity="bottom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-
-
-            <com.bestdreamstore.admin_bestdream.LIBS.HTMLTextView
-                android:id="@+id/datos_pedido_html"
-                android:layout_gravity="bottom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-
-        </LinearLayout>
-
 
 
         <Button
-            android:layout_marginBottom="7dp"
+            android:layout_weight=".2"
+            android:layout_gravity="left"
             android:id="@+id/procesar_pedido"
             android:textColor="@color/theme_background"
-            android:layout_weight="4"
+            android:text="Procesar >> "
+            android:background="@color/colorPrimaryDark"
             android:layout_width="match_parent"
-            android:layout_height="0dp"/>
+            android:layout_height="wrap_content"/>
+
+
 
 
 

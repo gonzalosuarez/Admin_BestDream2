@@ -533,6 +533,11 @@ public class Armado_Pedidos extends AppCompatActivity{
 
 
 
+
+
+
+
+
     public void DELETE_ITEM(String bar_code){
 
         json_base_2 = null;
@@ -559,6 +564,7 @@ public class Armado_Pedidos extends AppCompatActivity{
                             //ELIMINAR 1 DE LA CANTIDAD
                             db2.cambiar_cantidad(json_base_2.getString(KEY_ID_PRODUCTO), json_base_2.getInt(KEY_CANTIDAD));
                             REFRESH_CART();
+
 
                         }else{
 
@@ -601,12 +607,7 @@ public class Armado_Pedidos extends AppCompatActivity{
             show_errores();
 
 
-
-
         }
-
-
-
 
 
     }
@@ -624,9 +625,6 @@ public class Armado_Pedidos extends AppCompatActivity{
 
         myListView.setAdapter(arrayAdapter);
         myListView.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-
-
-
 
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -708,6 +706,7 @@ public class Armado_Pedidos extends AppCompatActivity{
         productos = userFunctions.get_jsonarray_cart(getApplicationContext());
         productos = userFunctions.ordenar_arr_bar_code(productos);
         MOSTRAR_CARRITO(productos);
+
 
 
     }
