@@ -508,9 +508,12 @@ public boolean insert_all_cart(JSONArray CART){
 
     public int check_if_product_inf_cart(String id_producto){
 
+
+
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_CART + " WHERE " + KEY_ID_PRODUCTO + " = ?", new String[] {id_producto});
         Log.i("Number of Records"," :: "+cursor.getCount());
+
 
         db.close();
 
@@ -520,6 +523,24 @@ public boolean insert_all_cart(JSONArray CART){
 
 
     }
+
+
+
+    public int check_if_product_inf_cart_bar_code(String bar_code){
+
+      int num_rows = 0;
+
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor=db.rawQuery("SELECT * FROM " + TABLE_CART + " WHERE " + KEY_BAR_CODE + " = ?",new String[]{bar_code});
+        if (cursor.moveToFirst()) {
+            num_rows = cursor.getInt(cursor.getColumnIndex(KEY_CANTIDAD)); //<< get the data from the column
+        }
+
+        return num_rows;
+
+
+    }
+
 
 
     public JSONArray get_Cart_Json() throws JSONException, FileNotFoundException {
@@ -596,6 +617,7 @@ public boolean insert_all_cart(JSONArray CART){
 
 
         SQLiteDatabase db = this.getReadableDatabase();
+
         ContentValues args = new ContentValues();
         args.put(KEY_CANTIDAD, cantidad-1);
 
@@ -606,6 +628,18 @@ public boolean insert_all_cart(JSONArray CART){
     }
 
 
+
+
+    public void restar_uno_item(String bar_code){
+
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String strSQL = "UPDATE "+ TABLE_CART +" SET cantidad = cantidad-1 WHERE bar_code = "+ bar_code;
+        db.execSQL(strSQL);
+
+
+
+    }
 
 
 

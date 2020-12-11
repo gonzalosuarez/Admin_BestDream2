@@ -117,22 +117,14 @@ public class Controlador_Carrito {
 
     public void DELETE_ITEM(String ID_PRODUCTO, Context ctx){
 
-
         DatabaseHandler db3 = new DatabaseHandler(context);
 
         boolean delete = db3.delete(ID_PRODUCTO);
 
         if(delete) {
 
-            //Toast.makeText(context, "Borrado ID:  " + ID_PRODUCTO, Toast.LENGTH_SHORT).show();
-
-
             GetCartAdapter1.clear();
             recyclerView_global = GET_CART(ctx);
-
-            //datos_pedido = (TextView)view.findViewById(R.id.datos_pedido);
-           // datos_pedido.setText("TOTAL: "+GET_SUBTOTAL(ctx));
-
 
         }else{
             Toast.makeText(context, "ERROR:  " +ID_PRODUCTO, Toast.LENGTH_SHORT).show();
@@ -140,14 +132,30 @@ public class Controlador_Carrito {
         }
 
 
-        //update_icon_cart(ctx);
-
     }
 
 
 
 
 
+    public void DELETE_ITEM_BAR_CODE(String BAR_CODE, Context ctx){
+
+        DatabaseHandler db3 = new DatabaseHandler(context);
+
+        boolean delete = db3.delete_bar_code(BAR_CODE);
+
+        if(delete) {
+
+            GetCartAdapter1.clear();
+            recyclerView_global = GET_CART(ctx);
+
+        }else{
+            Toast.makeText(context, "ERROR:  " +BAR_CODE, Toast.LENGTH_SHORT).show();
+
+        }
+
+
+    }
 
 
 
@@ -173,8 +181,6 @@ public class Controlador_Carrito {
         GetCartAdapter1.clear();
         recyclerView_global = GET_CART(ctx);
 
-
-
     }
 
 
@@ -182,6 +188,17 @@ public class Controlador_Carrito {
 
 
 
+    public void UPDATE_QTY_BAR_CODE(String bar_code, Context ctx){
+
+
+        DatabaseHandler db3 = new DatabaseHandler(context);
+
+        db3.restar_uno_item(bar_code);
+
+        GetCartAdapter1.clear();
+        recyclerView_global = GET_CART(ctx);
+
+    }
 
 
 
@@ -202,6 +219,17 @@ public class Controlador_Carrito {
 
 
 
+
+
+
+    public int check_if_prod_in_cart_bar_code(String bar_code){
+
+        DatabaseHandler db3 = new DatabaseHandler(context);
+        int res = db3.check_if_product_inf_cart_bar_code(bar_code);
+        return res;
+
+
+    }
 
 
 

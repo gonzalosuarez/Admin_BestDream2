@@ -1,5 +1,6 @@
 package com.bestdreamstore.admin_bestdream.CONTROLLER;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 
 import com.bestdreamstore.admin_bestdream.ADAPTERS.Get_Cart_Adapter;
 import com.bestdreamstore.admin_bestdream.ADAPTERS.SwipeToDeleteCallback;
+import com.bestdreamstore.admin_bestdream.Armado_Pedidos;
 import com.bestdreamstore.admin_bestdream.R;
 
 import org.json.JSONArray;
@@ -99,40 +101,21 @@ public class Cart_Controller {
 
 
 
-/*
 
-    public void DELETE_ITEM(String ID_PRODUCTO, Context ctx){
+
+    public boolean DELETE_ITEM(String ID_PRODUCTO, Context ctx){
 
 
         DatabaseHandler db3 = new DatabaseHandler(context);
 
-        boolean delete = db3.delete_id_producto(ID_PRODUCTO);
+        boolean delete = db3.delete(ID_PRODUCTO);
 
-        if(delete) {
+       return delete;
 
-            //Toast.makeText(context, "Borrado ID:  " + ID_PRODUCTO, Toast.LENGTH_SHORT).show();
-
-
-            //GetCartAdapter1.clear();
-            //recyclerView_global = GET_CART(ctx);
-
-            ACTUALIZAR_CARRITO(ctx);
-
-            //datos_pedido = (TextView)view.findViewById(R.id.datos_pedido);
-            //datos_pedido.setText("TOTAL: "+GET_SUBTOTAL(ctx));
-
-
-        }else{
-            Toast.makeText(context, "ERROR:  " +ID_PRODUCTO, Toast.LENGTH_SHORT).show();
-
-        }
-
-
-        //update_icon_cart(ctx);
 
     }
 
-*/
+
 
 
 
@@ -178,8 +161,14 @@ public class Cart_Controller {
 
     public void ACTUALIZAR_CARRITO(Context ctx){
 
-        GetCartAdapter1.clear();
-        recyclerView_global = GET_CART(ctx);
+        Armado_Pedidos actividad = new Armado_Pedidos();
+        Functions userFunctions = new Functions();
+
+        JSONArray productos = userFunctions.get_jsonarray_cart(ctx);
+        productos = userFunctions.ordenar_arr_bar_code(productos);
+
+        actividad.MOSTRAR_CARRITO(productos);
+
 
 
     }

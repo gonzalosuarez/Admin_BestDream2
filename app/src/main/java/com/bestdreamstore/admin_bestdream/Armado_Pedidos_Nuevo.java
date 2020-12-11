@@ -370,6 +370,8 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
 
 
+                productos_server = userFunctions.ordenar_arr_bar_code(productos_server); //SE ORDENAN PARA GUARDAR
+
                 if(userFunctions.insert_all_cart(productos_server, getApplicationContext())){
 
 
@@ -409,7 +411,48 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
         if (e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
             Log.e("BAR_CODE_SCANNER-----", barcode);
-            DELETE_ITEM(barcode);
+
+            int numero_de_items_en_carrito = cart.check_if_prod_in_cart_bar_code(barcode);
+
+            if(numero_de_items_en_carrito > 1){
+
+
+                Log.i("SI EXISTE: "+ numero_de_items_en_carrito," :: "+ barcode);
+
+                /*RESTAMOS UNO A CARRITO*/
+                Controlador_Carrito cart = new Controlador_Carrito(getApplicationContext());
+                cart.UPDATE_QTY_BAR_CODE(barcode, this);
+
+            }else if(numero_de_items_en_carrito == 1){
+
+                Log.i("SI EXISTE: "+ numero_de_items_en_carrito," :: "+ barcode);
+                /*ELIMINAMOS ITEM*/
+                Controlador_Carrito cart = new Controlador_Carrito(getApplicationContext());
+                cart.DELETE_ITEM_BAR_CODE(barcode, this);  ///TESTEO ESTE ESTA BIEN
+
+
+            }else{
+
+
+                MediaPlayer mp = MediaPlayer.create(this, R.raw.error_sound2);
+                mp.start();
+
+                JSONObject datos_producto = userFunctions.get_details_bar_code(barcode);
+
+                try {
+
+                    errores_list.add(datos_producto.getString("nombre"));
+
+                } catch (JSONException j) {
+                    j.printStackTrace();
+                }
+
+                Log.i("NO EXISTE: "," :: "+ barcode);
+                show_errores();
+
+
+            }
+
 
             barcode="";
         }
@@ -424,97 +467,12 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
 
 
-
-    public void DELETE_ITEM(String bar_code){
-
-        json_base_2 = null;
-
-        if (productos.toString().contains(bar_code)) {
-
-            Log.i("SI EXISTE: "," :: "+ bar_code);
-
-            for(int i = 0; i<productos.length(); i++) {
-
-
-                try {
-
-                    json_base_2 = productos.getJSONObject(i);
-
-
-
-                    if(bar_code.equals(json_base_2.getString(KEY_BAR_CODE))){
-
-                        if(json_base_2.getInt(KEY_CANTIDAD) > 1){
-
-                            //ELIMINAR 1 DE LA CANTIDAD
-
-                            Controlador_Carrito db3 = new Controlador_Carrito(getApplicationContext());
-                            db3.UPDATE_QTY(json_base_2.getString(KEY_ID_PRODUCTO), json_base_2.getInt(KEY_CANTIDAD), getApplicationContext());
-                            //REFRESH_CART();
-
-
-                        }else{
-
-                            //DESAPARECE DEL LISTADO
-                            Controlador_Carrito db3 = new Controlador_Carrito(getApplicationContext());
-                            db3.DELETE_ITEM(json_base_2.getString(KEY_ID_PRODUCTO), getApplicationContext());
-                            //REFRESH_CART();
-
-
-                        }
-
-
-                    }
-
-                } catch (JSONException e) {
-
-                    e.printStackTrace();
-                }
-
-
-
-            }
-
-        }else{
-
-
-            MediaPlayer mp = MediaPlayer.create(this, R.raw.error_sound2);
-            mp.start();
-
-            JSONObject datos_producto = userFunctions.get_details_bar_code(bar_code);
-
-            try {
-
-                errores_list.add(datos_producto.getString("nombre"));
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            Log.i("NO EXISTE: "," :: "+ bar_code);
-            show_errores();
-
-
-        }
-
-
-    }
-
-
-
-
-
-
-
     public void REFRESH_CART(){
 
-
-         productos = userFunctions.get_jsonarray_cart(getApplicationContext());
-         productos = userFunctions.ordenar_arr_bar_code(productos);
         Controlador_Carrito.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
 
-
     }
+
 
 
 

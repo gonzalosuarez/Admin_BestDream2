@@ -181,6 +181,17 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
 
                     notifyDataSetChanged();
 
+                    /*
+                    Cart_Controller db3 = new Cart_Controller(context);
+
+
+                    if(db3.DELETE_ITEM(ID_PRODUCTO.getText().toString(), context)){
+                        db3.ACTUALIZAR_CARRITO(context);
+
+                    }
+                    */
+
+
 
 
 
