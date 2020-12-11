@@ -118,6 +118,7 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
 
         //Viewholder.totales.setText("$"+precio_p);
         //Log.e("PRODUCTO PRECIO:", String.valueOf(precio_premium));
+        Viewholder.nombre_producto.setText(getDataAdapter1.getnombre_producto());
         Viewholder.ID_PRODUCTO.setText(getDataAdapter1.getid_producto());
         Viewholder.QTY.setText("QTY --  "+String.valueOf(qty));
 
@@ -150,7 +151,7 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
         DatabaseHandler db;
 
         public TextView cantidad_txt;
-        public TextView ID_PRODUCTO, QTY;
+        public TextView ID_PRODUCTO, QTY, nombre_producto;
         public ImageView iv_cart, delete_item, details_img;
 
 
@@ -167,6 +168,7 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
 
 
             ID_PRODUCTO = (TextView) itemView.findViewById(R.id.textView_item);
+            nombre_producto = (TextView) itemView.findViewById(R.id.nombre_producto);
             QTY = (TextView) itemView.findViewById(R.id.QTY);
             cantidad_txt = (TextView) itemView.findViewById(R.id.cantidad_txt);
             iv_cart = (ImageView) itemView.findViewById(R.id.iv_cart);

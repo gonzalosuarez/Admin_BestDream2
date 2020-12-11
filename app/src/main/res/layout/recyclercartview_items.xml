@@ -83,9 +83,10 @@
 
 
                                                 <TextView
+                                                    android:layout_marginTop="10dp"
                                                     android:textSize="10dp"
                                                     android:layout_gravity="center_vertical"
-                                                    android:id="@+id/textView_item"
+                                                    android:id="@+id/nombre_producto"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"/>
 
@@ -103,8 +104,16 @@
 
 
 
+                                            <TextView
+                                                android:textSize="1dp"
+                                                android:layout_gravity="center_vertical"
+                                                android:id="@+id/textView_item"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"/>
+
 
                                             <ImageView
+                                                android:layout_marginTop="10dp"
                                                 android:src="@drawable/icon_close_red"
                                                 android:gravity="center_vertical"
                                                 android:id="@+id/delete_item"

@@ -5,55 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-
-    android:background="@drawable/poop_up_traslucid_style"
     android:id="@+id/linear">
 
 
 
 
-    <LinearLayout
 
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:weightSum="6"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
 
-        <LinearLayout
-            android:gravity="right"
-            android:layout_weight="7"
+
+
+        <ImageButton
+            android:layout_weight=".1"
+            android:layout_gravity="left"
+            android:background="@drawable/icon_back_black"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/back"/>
+
+
+        <com.bestdreamstore.admin_bestdream.LIBS.HTMLTextView
+            android:textSize="8dip"
+            android:textColor="#333333"
+            android:padding="5dip"
+            android:layout_gravity="right"
+            android:id="@+id/datos_clienta"
+            android:layout_weight="4.8"
             android:layout_width="0dp"
-            android:layout_height="wrap_content">
-
-
-            <ImageView
-                android:gravity="left"
-                android:id="@+id/logo_cart"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
 
 
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:gravity="right"
-            android:layout_weight="3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:layout_gravity="right"
-                android:layout_margin="10dip"
-                android:background="@drawable/icon_close_red"
-                android:layout_width="20dp"
-                android:layout_height="30dp"
-                android:id="@+id/closePopupBtn"/>
-
-        </LinearLayout>
-
+        <ImageButton
+            android:layout_weight=".1"
+            android:layout_gravity="right"
+            android:background="@drawable/ic_baseline_account_balance_24"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/add_monedero"/>
 
 
 
@@ -99,11 +94,10 @@
 
 
     <LinearLayout
-        android:background="@drawable/poop_up_traslucid_style"
         android:orientation="vertical"
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_height="130dip">
+        android:layout_height="wrap_content">
 
 
 

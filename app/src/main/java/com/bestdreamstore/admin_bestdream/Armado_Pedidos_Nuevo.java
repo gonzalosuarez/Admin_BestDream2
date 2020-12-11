@@ -86,6 +86,7 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
     DatabaseHandler db;
     String id_order_fin;
     String barcode = "";
+    ImageButton back, add_monedero;
 
     ListView myListView;
 
@@ -139,6 +140,63 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
 
         }
+
+
+
+
+        add_monedero = (ImageButton)findViewById(R.id.add_monedero);
+        add_monedero.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Log.e("MONEDERO ACULUMADO: ", productos.toString());
+                Log.e("MONEDERO QUE QUEDA: ", String.valueOf(productos.length()));
+
+                AlertDialog alertDialog = new AlertDialog.Builder(Armado_Pedidos_Nuevo.this).create();
+                alertDialog.setCanceledOnTouchOutside(false);
+                alertDialog.setTitle("Bienvenido.");
+                alertDialog.setMessage("Estas seguro de mandar a Monedero?");
+                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "ACEPTAR",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                enviar_monedero_server();
+
+                            }
+                        });
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Cancelar",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                dialog.dismiss();
+
+                            }
+                        });
+                alertDialog.show();
+            }
+        });
+
+
+
+
+
+
+        back = (ImageButton)findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                DatabaseHandler db = new DatabaseHandler(getApplicationContext());
+                db.DELETE_CART();
+                //MOSTRAR_CARRITO();
+                finish();
+
+
+            }
+        });
+
 
 
 
@@ -513,6 +571,93 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
     }
 
+
+
+
+    @SuppressLint("StaticFieldLeak")
+    public void enviar_monedero_server(){
+
+        final String user_admin = userFunctions.get_name_user(getApplicationContext());
+        final String id_pedido = id_order_fin;
+        final String productos_monedero = productos.toString();
+
+
+        new AsyncTask<Object, Void, JSONObject>() {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+                procesar_pedido.setText("Enviando Peticion.....");
+                procesar_pedido.setBackgroundColor(getResources().getColor(R.color.blue));
+
+            }
+
+
+
+            @Override
+            protected JSONObject doInBackground(Object... params) {
+
+                return userFunctions.enviar_peticion_monedero(user_admin, id_pedido, productos_monedero);
+
+            }
+
+
+            @Override
+            protected void onPostExecute(final JSONObject params) {
+                super.onPostExecute(params);
+
+
+                try {
+
+                    String success = params.getString("success");
+
+                    if(success.equals("1")){
+
+
+                        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.ok_1);
+                        mp.start();
+
+                        procesar_pedido.setText("Enviado con Exito!!");
+                        procesar_pedido.setBackgroundColor(getResources().getColor(R.color.green));
+                        finish();
+
+                    }else if(success.equals("3")){
+
+
+                        procesar_pedido.setText("Ya has enviado Previamente!");
+                        procesar_pedido.setBackgroundColor(getResources().getColor(R.color.yellow));
+
+
+                    }else{
+
+                        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.error_sound2);
+                        mp.start();
+
+                        procesar_pedido.setText("Falla. Pregunta en sistma.");
+                        procesar_pedido.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+
+                    }
+
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
+
+            } }.execute();
+
+
+
+
+
+
+
+
+    }
 
 
 
