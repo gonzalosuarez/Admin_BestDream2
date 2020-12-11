@@ -87,8 +87,12 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
     String id_order_fin;
     String barcode = "";
     ImageButton back, add_monedero;
+    HTMLTextView datos_clienta;
 
     ListView myListView;
+    int nun_errors;
+
+    ArrayAdapter<String> array_errors;
 
 
     @Override
@@ -97,8 +101,13 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
         setContentView(R.layout.armado_pedidos_nuevo);
 
 
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+
+
+        array_errors = new ArrayAdapter<String>(this, R.layout.text_size_err_listview, errores_list);
+        db = new DatabaseHandler(getApplicationContext());
 
 
         userFunctions = new Functions();
@@ -106,7 +115,6 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
         /*NUEVO DETECTOR SIN EDIT TEXT - 2*/
 
         setFinishOnTouchOutside(false);
-        ARRAY_ERRORES = new JSONArray();
 
         db = new DatabaseHandler(getApplicationContext());
 
@@ -117,6 +125,10 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
         userFunctions = new Functions();
         GetCartAdapter1.clear();
+
+
+        datos_clienta = (HTMLTextView) findViewById(R.id.datos_clienta);
+
 
         myListView = (ListView)findViewById(R.id.errores);
         myListView.setBackgroundColor(getResources().getColor(R.color.white));
@@ -237,7 +249,13 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
                 super.onPreExecute();
                 //response_server.setText("Espere Un Momento......");
 
+                procesar_pedido.setText("Buscando.......");
+                procesar_pedido.setBackgroundColor(getResources().getColor(R.color.yellow));
+
             }
+
+
+
 
 
             @Override
@@ -406,7 +424,7 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
                     }
 
 
-                    /*
+
 
                     datos_clienta.setText(
                             "Nombre Cliente: <strong>"+full_name+"</strong><br>"+
@@ -415,7 +433,7 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
                                     //"<strong>$"+total_pagado+"</strong><br>"+
                                     "<strong>Usuario Interno: "+quien_armo+"</strong><br>"
                     );
-                    */
+
 
 
 
@@ -435,13 +453,18 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
                     REFRESH_CART();
                     Log.i("SUBIDA:", "CORRECTA");
+                    procesar_pedido.setText("Listo! Pedido:"+id_order);
+                    procesar_pedido.setBackgroundColor(getResources().getColor(R.color.green));
 
 
                 }else{
 
+
                     productos = null;
                     productos_server = null;
                     Log.i("SUBIDA:", "ERROR SUBIDA");
+                    procesar_pedido.setText("Error Subida: "+id_order);
+                    procesar_pedido.setBackgroundColor(getResources().getColor(R.color.primary_dark));
 
                 }
 
@@ -470,53 +493,79 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
         if (e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
             Log.e("BAR_CODE_SCANNER-----", barcode);
 
-            int numero_de_items_en_carrito = cart.check_if_prod_in_cart_bar_code(barcode);
 
-            if(numero_de_items_en_carrito > 1){
 
-                Log.i("SI EXISTE: "+ numero_de_items_en_carrito," :: "+ barcode);
+            /*SI HAY ERRORES NO PERMITE SEGUIR PEDIDO*/
+            nun_errors = db.get_num_errors();
+            Log.e("NUM_ERRORES-----", String.valueOf(nun_errors));
 
-                /*RESTAMOS UNO A CARRITO*/
-
-                if(cart.UPDATE_QTY_BAR_CODE(barcode, getApplicationContext()) == 1){
-                    cart.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
-                }
+            if(nun_errors > 0){
 
 
 
-            }else if(numero_de_items_en_carrito == 1){
+                MediaPlayer mp = MediaPlayer.create(this, R.raw.error_sound_1);
+                mp.start();
 
-                Log.i("SI EXISTE: "+ numero_de_items_en_carrito," :: "+ barcode);
-                /*ELIMINAMOS ITEM*/
-                Controlador_Carrito cart = new Controlador_Carrito(getApplicationContext());
-                if(cart.DELETE_ITEM_BAR_CODE(barcode, Armado_Pedidos_Nuevo.this)){
-
-                    //GetCartAdapter1.clear();
-                    //recyclerView_global = cart.GET_CART(getApplicationContext());
-                    cart.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
-
-
-                }
 
 
             }else{
 
 
-                MediaPlayer mp = MediaPlayer.create(this, R.raw.error_sound2);
-                mp.start();
+                    int numero_de_items_en_carrito = cart.check_if_prod_in_cart_bar_code(barcode);
 
-                JSONObject datos_producto = userFunctions.get_details_bar_code(barcode);
+                    if(numero_de_items_en_carrito > 1){
 
-                try {
+                        Log.i("SI EXISTE: "+ numero_de_items_en_carrito," :: "+ barcode);
 
-                    errores_list.add(datos_producto.getString("nombre"));
+                        /*RESTAMOS UNO A CARRITO*/
 
-                } catch (JSONException j) {
-                    j.printStackTrace();
-                }
+                        if(cart.UPDATE_QTY_BAR_CODE(barcode, getApplicationContext()) == 1){
+                            cart.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
+                        }
 
-                Log.i("NO EXISTE: "," :: "+ barcode);
-                show_errores();
+
+
+                    }else if(numero_de_items_en_carrito == 1){
+
+                        Log.i("SI EXISTE: "+ numero_de_items_en_carrito," :: "+ barcode);
+                        /*ELIMINAMOS ITEM*/
+                        Controlador_Carrito cart = new Controlador_Carrito(getApplicationContext());
+                        if(cart.DELETE_ITEM_BAR_CODE(barcode, Armado_Pedidos_Nuevo.this)){
+
+                            //GetCartAdapter1.clear();
+                            //recyclerView_global = cart.GET_CART(getApplicationContext());
+                            cart.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
+
+
+                        }
+
+
+                    }else{
+
+
+                        db.add_Error();
+
+                        MediaPlayer mp = MediaPlayer.create(this, R.raw.error_sound2);
+                        mp.start();
+
+                        JSONObject datos_producto = userFunctions.get_details_bar_code(barcode);
+
+                        try {
+
+                            errores_list.add(datos_producto.getString("nombre"));
+
+                        } catch (JSONException j) {
+                            j.printStackTrace();
+                        }
+
+                        Log.i("NO EXISTE: "," :: "+ barcode);
+                        show_errores();
+
+
+                    }
+
+
+
 
 
             }
@@ -548,9 +597,9 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
     public void show_errores(){
 
 
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.text_size_err_listview, errores_list);
 
-        myListView.setAdapter(arrayAdapter);
+
+        myListView.setAdapter(array_errors);
         myListView.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
 
 
@@ -559,10 +608,11 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 myListView.invalidateViews();
-                arrayAdapter.remove(arrayAdapter.getItem(position));
+                array_errors.remove(array_errors.getItem(position));
                 if(myListView.getAdapter().getCount() <= 0){
 
                     myListView.setBackgroundColor(getResources().getColor(R.color.white));
+                    db.reset_errores();
 
                 }
 

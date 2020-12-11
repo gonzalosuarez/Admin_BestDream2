@@ -4,6 +4,7 @@ package com.bestdreamstore.admin_bestdream.DATA_BASE;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -19,14 +20,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     //private SQLiteHelper sqLiteHelper;
     // VARIABLES ESTATICAS
-    private static final int DATABASE_VERSION = 12;
+    private static final int DATABASE_VERSION = 14;
 
 
 
     // NOMBRE DE TABLA LOGIN
-    private static final String TABLE_LOGIN = "login_admin_fin";
-    private static final String TABLE_CART = "cart_administracion_4";
-    private static final String TABLE_ID_PEDIDO = "id_pedido_admin";
+    private static final String TABLE_LOGIN = "login_admin_fin_2";
+    private static final String TABLE_CART = "cart_administracion_5";
+    private static final String TABLE_ID_PEDIDO = "id_pedido_admin_2";
+    private static final String TABLE_ERRORES = "errores_2";
 
 
 
@@ -84,6 +86,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
 
+    String CREATE_TABLE_LIST_ERRORS = "CREATE TABLE IF NOT EXISTS " + TABLE_ERRORES + "("
+            + KEY_ID + " INTEGER PRIMARY KEY,"
+            + KEY_ID_PRODUCTO + " TEXT" + ")";
 
 
     String CREATE_LOGIN_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_LOGIN + "("
@@ -119,6 +124,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL(CREATE_LOGIN_TABLE);
         db.execSQL(CREATE_TABLE_CART);
         db.execSQL(CREATE_TABLE_ID_PEDIDO);
+        db.execSQL(CREATE_TABLE_LIST_ERRORS);
 
 
     }
@@ -127,7 +133,84 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
 
+    /****************************************************************************************/
+    /****************************************************************************************/
+    /**************************************ERRORES**************************************************/
+    /****************************************************************************************/
+    /****************************************************************************************/
+    /****************************************************************************************/
+    /**************************************ERRORES**************************************************/
+    /****************************************************************************************/
 
+
+
+
+
+
+
+
+
+
+    public int add_Error() {
+
+        int res_fin = 0;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_ID_PRODUCTO, "ERR");
+
+
+        long result = db.insert(TABLE_ERRORES, null, values);
+        if(result == -1){
+            res_fin = 0;
+        }else{
+            res_fin = 1;
+        }
+
+        Log.e("error_nuevo:", String.valueOf(result));
+
+        db.close(); // CERRAR CONEXION
+
+        return res_fin;
+    }
+
+
+
+
+    public int reset_errores(){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        int result = db.delete(TABLE_ERRORES, null, null);
+        db.close();
+
+        return result;
+
+
+    }
+
+
+
+    public int get_num_errors() {
+
+        String countQuery = "SELECT  * FROM " + TABLE_ERRORES;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+
+    }
+
+
+    /****************************************************************************************/
+    /****************************************************************************************/
+    /**************************************ERRORES**************************************************/
+    /****************************************************************************************/
+    /****************************************************************************************/
+    /****************************************************************************************/
+    /**************************************ERRORES**************************************************/
+    /****************************************************************************************/
 
 
 
