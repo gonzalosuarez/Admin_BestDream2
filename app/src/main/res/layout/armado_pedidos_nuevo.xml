@@ -73,15 +73,14 @@
     /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
     /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
 
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
         android:layout_margin="10px"
         android:layout_weight="4"
-        android:orientation="vertical"
         android:id="@+id/content_window"
         android:layout_width="match_parent"
         android:layout_height="0dp">
 
-    </LinearLayout>
+    </android.support.v7.widget.RecyclerView>
 
     /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/
     /*AQUI VIENE EL RECICLERVIEW DE CARRITO*/

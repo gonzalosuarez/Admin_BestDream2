@@ -29,6 +29,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.bestdreamstore.admin_bestdream.ADAPTERS.Get_Cart_Adapter;
+import com.bestdreamstore.admin_bestdream.Armado_Pedidos_Nuevo;
 import com.bestdreamstore.admin_bestdream.DATA_BASE.DatabaseHandler;
 import com.bestdreamstore.admin_bestdream.LIBS.DownloadImageTask;
 import com.bestdreamstore.admin_bestdream.LIBS.HTMLTextView;
@@ -138,21 +139,14 @@ public class Controlador_Carrito {
 
 
 
-    public void DELETE_ITEM_BAR_CODE(String BAR_CODE, Context ctx){
+    public boolean DELETE_ITEM_BAR_CODE(String BAR_CODE, Context ctx){
 
         DatabaseHandler db3 = new DatabaseHandler(context);
 
         boolean delete = db3.delete_bar_code(BAR_CODE);
 
-        if(delete) {
 
-            GetCartAdapter1.clear();
-            recyclerView_global = GET_CART(ctx);
-
-        }else{
-            Toast.makeText(context, "ERROR:  " +BAR_CODE, Toast.LENGTH_SHORT).show();
-
-        }
+        return delete;
 
 
     }
@@ -243,54 +237,90 @@ public class Controlador_Carrito {
 
     public static void SHOW_POOP_UP_CART(final Context ctx) {
 
+
+        DatabaseHandler db = new DatabaseHandler(ctx);
+
         GetCartAdapter1.clear();
 
-        final LinearLayout content_window = (LinearLayout) ((Activity) ctx).findViewById(R.id.content_window);
-        final ImageView logo_cart = (ImageView) ((Activity) ctx).findViewById(R.id.logo_cart);
-        final ImageButton close = (ImageButton) ((Activity) ctx).findViewById(R.id.closePopupBtn);
-       // final HTMLTextView datos_pedido_html = (HTMLTextView) ((Activity) ctx).findViewById(R.id.datos_pedido_html);
+        Get_Cart_Adapter GetCartAdapter2;
+
+        RecyclerView.LayoutManager recyclerViewlayoutManager = new GridLayoutManager(ctx, 1);
+
+        Parcelable recyclerViewState = null;
+
+        final RecyclerView recyclerView_global = (RecyclerView) ((Armado_Pedidos_Nuevo) ctx).findViewById(R.id.content_window);
+
+        recyclerView_global.setHasFixedSize(true);
+        recyclerView_global.setLayoutManager(recyclerViewlayoutManager);
+
+        JSONArray CART = null;
+
+        try {
+
+            CART = db.get_Cart_Json();
+
+            //Log.i("----CARRITO TOTAL---", String.valueOf(CART));
+
+
+            for(int j = 0; j<CART.length(); j++) {
+
+                JSONObject json_base = null;
+                try {
+
+                    json_base = CART.getJSONObject(j);
+
+                    JSONArray feed = new JSONArray(json_base.getString("productos"));
+                    //JSONArray feed =  json_base.getJSONArray("feed");
+
+                    JSONObject json_base_2 = null;
+
+                    for(int i = 0; i<feed.length(); i++) {
+
+                        GetCartAdapter2 = new Get_Cart_Adapter();
+
+                        try {
+
+                            json_base_2 = feed.getJSONObject(i);
+
+                            GetCartAdapter2.setprecio_premium(Float.parseFloat(json_base_2.getString(KEY_PRECIO_PREMIUM)));
+                            GetCartAdapter2.setnombre_producto(json_base_2.getString(KEY_NOMBRE));
+                            GetCartAdapter2.setgetid_producto(json_base_2.getString(KEY_ID_PRODUCTO));
+                            GetCartAdapter2.setbar_code(json_base_2.getString(KEY_BAR_CODE));
+                            GetCartAdapter2.setqty(json_base_2.getInt(KEY_CANTIDAD));
+                            GetCartAdapter2.setimagen_comp(json_base_2.getString(KEY_IMAGEN));
+
+
+                        } catch (JSONException e) {
+
+                            e.printStackTrace();
+                        }
+
+
+                        GetCartAdapter1.add(GetCartAdapter2);
+
+                    }
+
+
+                    recyclerView_global.getLayoutManager().onRestoreInstanceState(recyclerViewState);
+                    recyclerViewadapter = new RecyclerCartViewAdapter(GetCartAdapter1, ctx);
+                    recyclerView_global.setAdapter(recyclerViewadapter);
 
 
 
-        new AsyncTask<Object, Void, RecyclerView>() {
 
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-
-               // datos_pedido.setText("Espere. Abriendo Carrito......");
-                GetCartAdapter1.clear();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
             }
 
-            @Override
-            protected RecyclerView doInBackground(Object... params) {
-
-                recyclerView_global = GET_CART(ctx);
-                return recyclerView_global;
-
-            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
 
-            @Override
-            protected void onPostExecute(final RecyclerView params) {
-                super.onPostExecute(params);
-
-
-                //datos_pedido.setText("TOTAL: "+GET_SUBTOTAL(ctx));
-
-
-               // int precio_envio = userFunction.get_envio_costo();
-               // datos_pedido_html.setText("Envío: <span style='color:red'> $"+precio_envio+".00 </span>");
-
-                recyclerView_global = GET_CART(ctx);
-
-
-                content_window.addView(params);
-
-
-
-            } }.execute();
 
 
 

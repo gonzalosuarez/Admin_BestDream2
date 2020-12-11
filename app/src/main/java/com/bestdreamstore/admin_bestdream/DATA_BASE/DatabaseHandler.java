@@ -662,7 +662,7 @@ public boolean insert_all_cart(JSONArray CART){
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        return db.delete(TABLE_CART, KEY_BAR_CODE + "="+bar_code, null) > 0;
+        return db.delete(TABLE_CART, KEY_BAR_CODE + "=?", new String[]{bar_code}) > 0;
 
 
     }

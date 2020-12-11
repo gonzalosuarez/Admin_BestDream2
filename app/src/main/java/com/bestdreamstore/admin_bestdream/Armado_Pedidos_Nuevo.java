@@ -416,19 +416,27 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
             if(numero_de_items_en_carrito > 1){
 
-
                 Log.i("SI EXISTE: "+ numero_de_items_en_carrito," :: "+ barcode);
 
                 /*RESTAMOS UNO A CARRITO*/
-                Controlador_Carrito cart = new Controlador_Carrito(getApplicationContext());
+
                 cart.UPDATE_QTY_BAR_CODE(barcode, this);
+                cart.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
+
 
             }else if(numero_de_items_en_carrito == 1){
 
                 Log.i("SI EXISTE: "+ numero_de_items_en_carrito," :: "+ barcode);
                 /*ELIMINAMOS ITEM*/
                 Controlador_Carrito cart = new Controlador_Carrito(getApplicationContext());
-                cart.DELETE_ITEM_BAR_CODE(barcode, this);  ///TESTEO ESTE ESTA BIEN
+                if(cart.DELETE_ITEM_BAR_CODE(barcode, this)){
+
+                    //GetCartAdapter1.clear();
+                    //recyclerView_global = cart.GET_CART(getApplicationContext());
+                    cart.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
+
+
+                }
 
 
             }else{
@@ -468,6 +476,7 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
 
     public void REFRESH_CART(){
+
 
         Controlador_Carrito.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
 
