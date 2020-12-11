@@ -420,8 +420,10 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
                 /*RESTAMOS UNO A CARRITO*/
 
-                cart.UPDATE_QTY_BAR_CODE(barcode, this);
-                cart.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
+                if(cart.UPDATE_QTY_BAR_CODE(barcode, getApplicationContext()) == 1){
+                    cart.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
+                }
+
 
 
             }else if(numero_de_items_en_carrito == 1){
@@ -429,7 +431,7 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
                 Log.i("SI EXISTE: "+ numero_de_items_en_carrito," :: "+ barcode);
                 /*ELIMINAMOS ITEM*/
                 Controlador_Carrito cart = new Controlador_Carrito(getApplicationContext());
-                if(cart.DELETE_ITEM_BAR_CODE(barcode, this)){
+                if(cart.DELETE_ITEM_BAR_CODE(barcode, Armado_Pedidos_Nuevo.this)){
 
                     //GetCartAdapter1.clear();
                     //recyclerView_global = cart.GET_CART(getApplicationContext());

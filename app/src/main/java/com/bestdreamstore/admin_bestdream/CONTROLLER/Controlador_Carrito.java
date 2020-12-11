@@ -182,15 +182,10 @@ public class Controlador_Carrito {
 
 
 
-    public void UPDATE_QTY_BAR_CODE(String bar_code, Context ctx){
-
+    public int UPDATE_QTY_BAR_CODE(String bar_code, Context ctx){
 
         DatabaseHandler db3 = new DatabaseHandler(context);
-
-        db3.restar_uno_item(bar_code);
-
-        GetCartAdapter1.clear();
-        recyclerView_global = GET_CART(ctx);
+        return db3.restar_uno_item(bar_code);
 
     }
 
