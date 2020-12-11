@@ -22,27 +22,21 @@
 
 
 
-        <LinearLayout
-            android:weightSum="4"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
 
 
                         <LinearLayout
                             android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="3">
+                            android:layout_height="wrap_content">
 
 
 
                                         <LinearLayout
-                                            android:weightSum="4"
+                                            android:weightSum="6"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:orientation="horizontal">
+
 
 
 
@@ -55,12 +49,10 @@
 
 
 
-
                                                 <ImageView
                                                     android:id="@+id/iv_cart"
                                                     android:layout_width="wrap_content"
-                                                    android:layout_height="0dp"
-                                                    android:layout_weight="1.5"
+                                                    android:layout_height="match_parent"
                                                     android:layout_gravity="left"
                                                     android:src="@mipmap/ic_launcher"
                                                     />
@@ -68,6 +60,29 @@
 
 
                                             </LinearLayout>
+
+
+
+
+
+                                            <LinearLayout
+                                                android:layout_gravity="center"
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1">
+
+                                                <TextView
+                                                    android:layout_marginTop="15dp"
+                                                    android:textSize="18dp"
+                                                    android:gravity="center_vertical"
+                                                    android:textColor="@color/primary"
+                                                    android:id="@+id/QTY"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content" />
+
+
+                                            </LinearLayout>
+
 
 
 
@@ -91,12 +106,12 @@
                                                     android:layout_height="wrap_content"/>
 
 
-
                                                 <TextView
+                                                    android:textSize="1dp"
                                                     android:layout_gravity="center_vertical"
-                                                    android:id="@+id/cantidad_txt"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="match_parent" />
+                                                    android:id="@+id/textView_item"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"/>
 
 
 
@@ -104,63 +119,34 @@
 
 
 
-                                            <TextView
-                                                android:textSize="1dp"
-                                                android:layout_gravity="center_vertical"
-                                                android:id="@+id/textView_item"
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"/>
 
 
-                                            <ImageView
-                                                android:layout_marginTop="10dp"
-                                                android:src="@drawable/icon_close_red"
-                                                android:gravity="center_vertical"
-                                                android:id="@+id/delete_item"
-                                                android:layout_width="25dp"
-                                                android:layout_height="25dp" />
+                                            <LinearLayout
+                                                android:orientation="vertical"
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1">
 
+
+                                                <ImageView
+                                                    android:layout_marginTop="10dp"
+                                                    android:src="@drawable/icon_close_red"
+                                                    android:layout_gravity="center"
+                                                    android:id="@+id/delete_item"
+                                                    android:layout_width="30dp"
+                                                    android:layout_height="30dp" />
+
+
+                                            </LinearLayout>
 
 
                                         </LinearLayout>
 
 
 
-
-
-
-
-
-
-
                         </LinearLayout>
 
 
-
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1">
-
-                        <TextView
-                            android:textSize="12dp"
-                            android:layout_gravity="right"
-                            android:textColor="@color/primary"
-                            android:id="@+id/QTY"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-
-
-                    </LinearLayout>
-
-
-
-
-
-        </LinearLayout>
 
 
 

@@ -202,6 +202,7 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
                 DatabaseHandler db = new DatabaseHandler(getApplicationContext());
                 db.DELETE_CART();
+                db.reset_errores();
                 //MOSTRAR_CARRITO();
                 finish();
 
@@ -221,6 +222,7 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
                 DatabaseHandler db = new DatabaseHandler(getApplicationContext());
                 db.DELETE_CART();
+                db.reset_errores();
 
                 PROCESAR_PETICION(id_order_fin);
 

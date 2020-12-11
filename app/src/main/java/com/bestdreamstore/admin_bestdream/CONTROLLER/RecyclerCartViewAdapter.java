@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.media.MediaPlayer;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +38,7 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
     int qty, multi_fin, id;
     float precio_premium, SUBTOTAL_PROD;
     String precio_p;
+    int nun_errors;
 
 
 
@@ -116,11 +118,9 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
 
 
 
-        //Viewholder.totales.setText("$"+precio_p);
-        //Log.e("PRODUCTO PRECIO:", String.valueOf(precio_premium));
         Viewholder.nombre_producto.setText(getDataAdapter1.getnombre_producto());
         Viewholder.ID_PRODUCTO.setText(getDataAdapter1.getid_producto());
-        Viewholder.QTY.setText("QTY --  "+String.valueOf(qty));
+        Viewholder.QTY.setText(String.valueOf(qty));
 
 
 
@@ -148,7 +148,7 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
     class ViewHolder extends RecyclerView.ViewHolder{
 
 
-        DatabaseHandler db;
+        DatabaseHandler db = new DatabaseHandler(context);
 
         public TextView cantidad_txt;
         public TextView ID_PRODUCTO, QTY, nombre_producto;
@@ -177,21 +177,26 @@ public class RecyclerCartViewAdapter extends RecyclerView.Adapter<RecyclerCartVi
 
                 public void onClick(View v) {
 
-                    Controlador_Carrito db3 = new Controlador_Carrito(context);
 
-                    db3.DELETE_ITEM(ID_PRODUCTO.getText().toString(), context);
+                    nun_errors = db.get_num_errors();
 
-                    notifyDataSetChanged();
-
-                    /*
-                    Cart_Controller db3 = new Cart_Controller(context);
+                    if(nun_errors > 0){
 
 
-                    if(db3.DELETE_ITEM(ID_PRODUCTO.getText().toString(), context)){
-                        db3.ACTUALIZAR_CARRITO(context);
+                        MediaPlayer mp = MediaPlayer.create(context, R.raw.error_sound_1);
+                        mp.start();
+
+
+                    }else{
+
+
+                        Controlador_Carrito cart = new Controlador_Carrito(context);
+                        cart.DELETE_ITEM(ID_PRODUCTO.getText().toString(), context);
+                        notifyDataSetChanged();
+
 
                     }
-                    */
+
 
 
 
