@@ -99,7 +99,7 @@
 
                                                 <TextView
                                                     android:layout_marginTop="10dp"
-                                                    android:textSize="10dp"
+                                                    android:textSize="12dp"
                                                     android:layout_gravity="center_vertical"
                                                     android:id="@+id/nombre_producto"
                                                     android:layout_width="match_parent"

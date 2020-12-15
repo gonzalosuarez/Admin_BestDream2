@@ -279,8 +279,8 @@ public class Faltantes_Productos extends AppCompatActivity{
     @Override
     public void onBackPressed() {
 
-        DatabaseHandler db = new DatabaseHandler(getApplicationContext());
-        db.DELETE_CART();
+        //DatabaseHandler db = new DatabaseHandler(getApplicationContext());
+        //db.DELETE_CART();
         //MOSTRAR_CARRITO();
         finish();
     }

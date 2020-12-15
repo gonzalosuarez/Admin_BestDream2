@@ -6,7 +6,7 @@ android {
         applicationId "com.bestdreamstore.admin_bestdream"
         minSdkVersion 15
         targetSdkVersion 29
-        versionCode 31
+        versionCode 33
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -31,6 +31,8 @@ dependencies {
     implementation 'me.dm7.barcodescanner:zbar:1.9.13'
     implementation 'com.journeyapps:zxing-android-embedded:3.1.0@aar'
     implementation 'com.android.support:design:28.0.0-alpha3'
+
+
 
 
 

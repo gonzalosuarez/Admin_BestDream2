@@ -432,7 +432,7 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
                             "Nombre Cliente: <strong>"+full_name+"</strong><br>"+
                                     //calle+" "+ numero +" "+ colonia +"<br>"+
                                     // municipio+" "+ estado +" "+ cp +"<br>"+
-                                    //"<strong>$"+total_pagado+"</strong><br>"+
+                                    "<strong>$"+total_pagado+"</strong><br>"+
                                     "<strong>Usuario Interno: "+quien_armo+"</strong><br>"
                     );
 

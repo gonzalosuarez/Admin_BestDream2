@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity
     LinearLayout encaje_linearlayout;
     Spinner usuarios_spinner;
     String get_encajador_db;
+    String  get_cliente_name, id_encaje_txt;
 
     java.util.ArrayList<String> users_string = new java.util.ArrayList<>();
 
@@ -250,90 +251,129 @@ public class MainActivity extends AppCompatActivity
                  @Override
                  public void onClick(View view) {
 
-                     final String id_encaje_txt = id_encaje.getText().toString();
+                     id_encaje_txt = id_encaje.getText().toString();
+
+
+
+
+
+
 
 
                      int add_id_order_int = userFunctions.add_Id_Order(id_encaje_txt, getApplicationContext());
 
                      if(add_id_order_int == 1){
 
-                         final String USUARIO_FIN = usuarios_spinner.getSelectedItem().toString();
-                         String  get_cliente_name = userFunctions.get_name_cliente(id_encaje_txt);
-
-
-                         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                         alertDialog.setCanceledOnTouchOutside(false);
-                         alertDialog.setTitle("Bienvenido.");
-                         alertDialog.setMessage("El Usuario:"+USUARIO_FIN+" encajara el pedido de: "+get_cliente_name);
-                         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "ACEPTAR",
-                                 new DialogInterface.OnClickListener() {
-                                     public void onClick(DialogInterface dialog, int which) {
-                                         dialog.dismiss();
-
-
-                                           Log.i("USUARIO_ENCAJE", USUARIO_FIN);
 
 
 
+                         new AsyncTask<Object, Void, String>() {
 
-                                         new AsyncTask<Object, Void, Integer>() {
-
-                                             @Override
-                                             protected void onPreExecute() {
-                                                 super.onPreExecute();
-                                                 //response_server.setText("Espere Un Momento......");
-
-                                             }
-
-                                             @Override
-                                             protected Integer doInBackground(Object... params) {
-                                                 return userFunctions.encajar_pedido_func(USUARIO_FIN, id_encaje_txt);
-
-                                             }
-
-                                             @SuppressLint("WrongConstant")
-                                             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-                                             @Override
-                                             protected void onPostExecute(final Integer params) {
-                                                 super.onPostExecute(params);
+                             @Override
+                             protected void onPreExecute() {
+                                 super.onPreExecute();
+                             }
 
 
+                             @SuppressLint("WrongThread")
+                             @Override
+                             protected String doInBackground(Object... params) {
+                                 return usuarios_spinner.getSelectedItem().toString();
 
-                                                 if(params == 1){
-
-                                                     Toast.makeText(MainActivity.this, "Listo! Redireccionando", 6000).show(); //Incorrecto
-
-                                                 }else if(params == 2){
-
-                                                     Toast.makeText(MainActivity.this, "Ya ha sido encajado previamente.....", 6000).show(); //Incorrecto
-
-                                                 }else if(params == 3){
-                                                     Toast.makeText(MainActivity.this, "ERROR DE SISTEMA. REPORTAR", 6000).show(); //Incorrecto
+                             }
 
 
-                                                 }
+                             @SuppressLint("StaticFieldLeak")
+                             @Override
+                             protected void onPostExecute(final String USUARIO_FIN) {
+                                 super.onPostExecute(USUARIO_FIN);
 
-                                                 Intent i = new Intent(MainActivity.this, Faltantes_Productos.class);
-                                                 startActivityForResult(i, 2);
+
+                                                     get_cliente_name = userFunctions.get_name_cliente(id_encaje_txt);
 
 
+                                                     AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+                                                     alertDialog.setCanceledOnTouchOutside(false);
+                                                     alertDialog.setTitle("Bienvenido.");
+                                                     alertDialog.setMessage("El Usuario:"+USUARIO_FIN+" encajara el pedido de: "+get_cliente_name);
+                                                     alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "ACEPTAR",
+                                                             new DialogInterface.OnClickListener() {
+                                                                 public void onClick(DialogInterface dialog, int which) {
+                                                                     dialog.dismiss();
 
-                                             } }.execute();
+
+                                                                     Log.i("USUARIO_ENCAJE", USUARIO_FIN);
 
 
 
 
+                                                                     new AsyncTask<Object, Void, Integer>() {
 
-                                     }
-                                 });
-                         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Cancelar",
-                                 new DialogInterface.OnClickListener() {
-                                     public void onClick(DialogInterface dialog, int which) {
-                                         dialog.dismiss();
+                                                                         @Override
+                                                                         protected void onPreExecute() {
+                                                                             super.onPreExecute();
+                                                                             //response_server.setText("Espere Un Momento......");
 
-                                     }
-                                 });
-                         alertDialog.show();
+                                                                         }
+
+                                                                         @Override
+                                                                         protected Integer doInBackground(Object... params) {
+                                                                             return userFunctions.encajar_pedido_func(USUARIO_FIN, id_encaje_txt);
+
+                                                                         }
+
+                                                                         @SuppressLint("WrongConstant")
+                                                                         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                                                                         @Override
+                                                                         protected void onPostExecute(final Integer params) {
+                                                                             super.onPostExecute(params);
+
+
+
+                                                                             if(params == 1){
+
+                                                                                 Toast.makeText(MainActivity.this, "Listo! Redireccionando", 6000).show(); //Incorrecto
+
+                                                                             }else if(params == 2){
+
+                                                                                 Toast.makeText(MainActivity.this, "Ya ha sido encajado previamente.....", 6000).show(); //Incorrecto
+
+                                                                             }else if(params == 3){
+                                                                                 Toast.makeText(MainActivity.this, "ERROR DE SISTEMA. REPORTAR", 6000).show(); //Incorrecto
+
+
+                                                                             }
+
+                                                                             Intent i = new Intent(MainActivity.this, Faltantes_Productos.class);
+                                                                             startActivityForResult(i, 2);
+
+
+
+                                                                         } }.execute();
+
+
+
+
+
+                                                                 }
+                                                             });
+                                                     alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Cancelar",
+                                                             new DialogInterface.OnClickListener() {
+                                                                 public void onClick(DialogInterface dialog, int which) {
+                                                                     dialog.dismiss();
+
+                                                                 }
+                                                             });
+                                                     alertDialog.show();
+
+
+
+
+
+
+
+                                                 } }.execute();
+
 
 
 
@@ -417,7 +457,7 @@ public class MainActivity extends AppCompatActivity
                 Log.e("KEY_PEDIDO-----", get_key_pedido);
 
 
-                String  get_cliente_name = userFunctions.get_name_cliente(id_order_fin);
+                get_cliente_name = userFunctions.get_name_cliente(id_order_fin);
                 int add_id_order_int = userFunctions.add_Id_Order(id_order_fin, getApplicationContext());
 
                 if(add_id_order_int == 1){

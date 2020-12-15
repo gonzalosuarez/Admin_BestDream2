@@ -19,6 +19,7 @@ import android.view.LayoutInflater;
 import com.bestdreamstore.admin_bestdream.ADAPTERS.Get_List_Pedidos_Adapter;
 import com.bestdreamstore.admin_bestdream.Add_Bar_Code_ID;
 import com.bestdreamstore.admin_bestdream.Armado_Pedidos;
+import com.bestdreamstore.admin_bestdream.Armado_Pedidos_Nuevo;
 import com.bestdreamstore.admin_bestdream.DATA_BASE.DatabaseHandler;
         import com.bestdreamstore.admin_bestdream.Funciones.Functions;
 import com.bestdreamstore.admin_bestdream.MainActivity;
@@ -203,8 +204,8 @@ public class RecyclerView_List_Pedidos_Adapter extends RecyclerView.Adapter<Recy
                     //id_order_result.setText(id_order_fin);
 
 
-
-                        Intent intent = new Intent(context.getApplicationContext(), Armado_Pedidos.class);
+                   // Intent intent = new Intent(context.getApplicationContext(), Armado_Pedidos.class);
+                        Intent intent = new Intent(context.getApplicationContext(), Armado_Pedidos_Nuevo.class);
                         intent.putExtra("id_pedido", id);
                         context.startActivity(intent);
 
