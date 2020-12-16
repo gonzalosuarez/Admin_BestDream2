@@ -35,7 +35,7 @@
 
 
         <EditText
-            android:inputType="phone"
+            android:inputType="text"
             android:textColor="@color/primary"
             android:id="@+id/id_order_edittext"
             android:hint="ID Pedido"

@@ -265,8 +265,6 @@ public class MainActivity extends AppCompatActivity
                      if(add_id_order_int == 1){
 
 
-
-
                          new AsyncTask<Object, Void, String>() {
 
                              @Override
@@ -289,7 +287,7 @@ public class MainActivity extends AppCompatActivity
                                  super.onPostExecute(USUARIO_FIN);
 
 
-                                                     get_cliente_name = userFunctions.get_name_cliente(id_encaje_txt);
+                                                     //get_cliente_name = userFunctions.get_name_cliente(id_encaje_txt);
 
 
                                                      AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
@@ -457,12 +455,15 @@ public class MainActivity extends AppCompatActivity
                 Log.e("KEY_PEDIDO-----", get_key_pedido);
 
 
-                get_cliente_name = userFunctions.get_name_cliente(id_order_fin);
+                //get_cliente_name = userFunctions.get_name_cliente(id_order_fin);
                 int add_id_order_int = userFunctions.add_Id_Order(id_order_fin, getApplicationContext());
 
+
+
+
+
+
                 if(add_id_order_int == 1){
-
-
 
                     AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
                     alert.setTitle("Estimado:"+ nombre_user);

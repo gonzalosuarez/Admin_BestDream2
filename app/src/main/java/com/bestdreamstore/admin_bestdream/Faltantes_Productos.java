@@ -108,7 +108,7 @@ public class Faltantes_Productos extends AppCompatActivity{
         GetCartAdapter1.clear();
 
 
-         nombre_user = userFunctions.get_name_user(getApplicationContext());
+         //nombre_user = userFunctions.get_name_user(getApplicationContext());
 
 
 
@@ -119,8 +119,8 @@ public class Faltantes_Productos extends AppCompatActivity{
             @Override
             public void onClick(View view) {
 
-                DatabaseHandler db = new DatabaseHandler(getApplicationContext());
-                db.DELETE_CART();
+                //DatabaseHandler db = new DatabaseHandler(getApplicationContext());
+                //db.DELETE_CART();
                 //MOSTRAR_CARRITO();
                 finish();
 
@@ -282,7 +282,7 @@ public class Faltantes_Productos extends AppCompatActivity{
         //DatabaseHandler db = new DatabaseHandler(getApplicationContext());
         //db.DELETE_CART();
         //MOSTRAR_CARRITO();
-        finish();
+        //finish();
     }
 
 
@@ -298,8 +298,6 @@ public class Faltantes_Productos extends AppCompatActivity{
 
                 final int position = viewHolder.getAdapterPosition();
                 recyclerViewadapter.notifyItemRemoved(position);
-
-
 
                 GetCartAdapter1.remove(position);
                 recyclerViewadapter.notifyDataSetChanged();
