@@ -438,8 +438,9 @@ public class Functions {
 
 
     public String get_name_cliente(String id_pedido){
+        String res1 = "";
+        String res2 = "";
 
-        String res = "";
 
         String urlfin = "https://bestdream.store/Android/get_nombre_cliente_id_pedido/?id_pedido="+id_pedido;
         HashMap<String, String> params = new HashMap<>();
@@ -449,15 +450,24 @@ public class Functions {
 
         try {
 
-            res = json.getString("nombre_cliente");
+
+            res1 = json.getString("nombre_cliente");
+            if (res1 != null) {
+                res2 = json.getString("nombre_cliente");
+            }else{
+                res2 = "error";
+            }
+
 
         } catch (JSONException e) {
+
             e.printStackTrace();
+
         }
 
 
 
-        return res;
+        return res2;
 
 
     }
