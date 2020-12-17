@@ -478,6 +478,27 @@ public class Functions {
 
 
 
+    public JSONObject ver_reportes_pedido(String id_pedido){
+
+        String urlfin = "https://bestdream.store/Android/ver_reportes_pedido/?id_pedido="+id_pedido;
+        HashMap<String, String> params = new HashMap<>();
+        params.put("id_pedido", id_pedido);
+
+        JSONObject json = jsonParser.makeHttpRequest(urlfin, "POST",params);
+
+        Log.e("REPORTES_PEDIDO: ", String.valueOf(json));
+
+        return json;
+
+
+    }
+
+
+
+
+
+
+
     public JSONObject enviar_peticion_monedero(String user_admin, String id_pedido, String productos){
 
         String urlfin = "https://bestdream.store/Android/enviar_peticion_monedero/";
@@ -492,6 +513,8 @@ public class Functions {
 
 
     }
+
+
 
 
 

@@ -85,8 +85,9 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
     Button procesar_pedido;
     DatabaseHandler db;
     String id_order_fin;
+    String reporte = "";
     String barcode = "";
-    ImageButton back, add_monedero;
+    ImageButton back, add_monedero, ver_reporte;
     HTMLTextView datos_clienta;
 
     ListView myListView;
@@ -191,7 +192,8 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
 
 
-
+        ver_reporte = (ImageButton)findViewById(R.id.ver_reporte);
+        ver_reporte.setVisibility(View.INVISIBLE);
 
 
         back = (ImageButton)findViewById(R.id.back);
@@ -232,7 +234,9 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
         });
 
 
-        //Controlador_Carrito.SHOW_POOP_UP_CART(Armado_Pedidos_Nuevo.this);
+
+
+
 
 
 
@@ -402,6 +406,7 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
                                     public void onClick(DialogInterface dialog, int which) {
 
                                         dialog.dismiss();
+                                        ver_reportes_pedido(id_order_fin);
 
                                     }
                                 });
@@ -473,11 +478,20 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
 
 
+
+
+
+
             } }.execute();
 
 
 
     }
+
+
+
+
+
 
 
 
@@ -579,6 +593,97 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
         return false;
 
     }
+
+
+
+
+
+
+
+
+
+
+    public void ver_reportes_pedido(final String id_pedido){
+
+
+        new AsyncTask<Object, Void, JSONObject>() {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                }
+
+            @Override
+            protected JSONObject doInBackground(Object... params) {
+
+                return userFunctions.ver_reportes_pedido(id_pedido);
+
+            }
+
+            @Override
+            protected void onPostExecute(final JSONObject params) {
+                super.onPostExecute(params);
+
+
+                try {
+
+                    int success = params.getInt("success");
+
+
+                    if(success == 1){
+
+                        reporte = params.getString("reporte");
+
+                        ver_reporte.setVisibility(View.VISIBLE);
+                        ver_reporte.setOnClickListener(new View.OnClickListener() {
+
+                            @Override
+                            public void onClick(View view) {
+
+                                AlertDialog alertDialog = new AlertDialog.Builder(Armado_Pedidos_Nuevo.this).create();
+                                alertDialog.setCanceledOnTouchOutside(false);
+                                alertDialog.setTitle("REPORTE DE PEDIDO!");
+                                alertDialog.setMessage(reporte);
+                                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Entendido!",
+                                        new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+
+                                                dialog.dismiss();
+
+                                            }
+                                        });
+
+                                alertDialog.show();
+
+
+                            }
+                        });
+
+
+
+                    }else{
+
+
+
+                    }
+
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
+
+            } }.execute();
+
+
+    }
+
+
+
+
 
 
 
