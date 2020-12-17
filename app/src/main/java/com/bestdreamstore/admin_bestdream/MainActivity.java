@@ -37,6 +37,7 @@ import android.widget.Toast;
 
 import com.bestdreamstore.admin_bestdream.ADAPTERS.Get_Faltantes_Adapter;
 import com.bestdreamstore.admin_bestdream.CONTROLLER.RecyclerView_List_Faltantes_Adapter;
+import com.bestdreamstore.admin_bestdream.Funciones.AsincTask_Values;
 import com.bestdreamstore.admin_bestdream.Funciones.Functions;
 import com.squareup.picasso.Picasso;
 
@@ -46,6 +47,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -64,14 +66,11 @@ public class MainActivity extends AppCompatActivity
     LinearLayout encaje_linearlayout;
     Spinner usuarios_spinner;
     String get_encajador_db;
-    String  get_cliente_name, id_encaje_txt;
+    String  get_cliente_name, id_encaje_txt, nombre_user, permisos_user;
+
 
     java.util.ArrayList<String> users_string = new java.util.ArrayList<>();
 
-    /*
-    private final static String[] usuarios = { "estanis", "antonio", "ruben",
-            "jose", "duilio", "eliseo", "emanuel" };
-    */
 
 
     private static String[] usuarios = {"Selecciona Usuario"};
@@ -91,16 +90,21 @@ public class MainActivity extends AppCompatActivity
         verificarYPedirPermisosDeCamara();
 
 
-        ArrayAdapter usuarios_arr = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_dropdown_item, usuarios);
+        try {
+
+            String resultadoAsynctask =  new AsincTask_Values(getApplicationContext()).execute("lalossssss").get();
+
+            Toast.makeText(MainActivity.this, "VALOR:"+ resultadoAsynctask, Toast.LENGTH_SHORT).show();
+
+
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
         usuarios_spinner = (Spinner)findViewById(R.id.usuarios);
-
-
-
-
-
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -112,9 +116,10 @@ public class MainActivity extends AppCompatActivity
         id_encaje.setTransformationMethod(new NumericKeyBoardTransformationMethod());
 
         encaje_linearlayout = (LinearLayout) findViewById(R.id.encaje_linearlayout);
-
-
         encaje_linearlayout.setVisibility(View.INVISIBLE);
+
+
+
 
 
 
@@ -128,13 +133,8 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        final String nombre_user = userFunctions.get_name_user(getApplicationContext());
-        String permisos_user = userFunctions.get_permisos_user(getApplicationContext());
-
-
-
-
-
+        nombre_user = userFunctions.get_name_user(getApplicationContext());
+        permisos_user = userFunctions.get_permisos_user(getApplicationContext());
 
 
 
@@ -159,20 +159,22 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        final String id_order_fin = userFunctions.get_id_order_admin(getApplicationContext());
 
         id_pedido_edittext = (EditText)findViewById(R.id.id_order_edittext);
         //id_pedido_edittext.setText(id_order_fin);
 
 
 
-
         id_order_result = (TextView) findViewById(R.id.id_order_result);
         id_order_result.setText("Bienvenido: "+nombre_user);
 
-         if(nombre_user.equals("estanis") || nombre_user.equals("gonzalo") || nombre_user.equals("gerardo") || nombre_user.equals("fran")){
+
+
+         if(nombre_user.trim().equals("gonzalo") || nombre_user.trim().equals("estanis") || nombre_user.trim().equals("gerardo") || nombre_user.trim().equals("fran")){
 
              encaje_linearlayout.setVisibility(View.VISIBLE);
+             //Toast.makeText(MainActivity.this, "SI ES IGUAL AUNO DE ELLOS:"+ nombre_user, Toast.LENGTH_SHORT).show();
+
 
 
              new AsyncTask<Object, Void, JSONArray>() {
@@ -252,11 +254,6 @@ public class MainActivity extends AppCompatActivity
                  public void onClick(View view) {
 
                      id_encaje_txt = id_encaje.getText().toString();
-
-
-
-
-
 
 
 
@@ -391,10 +388,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        final String perms = userFunctions.get_permisos_user(getApplicationContext());
-
-
-        if(perms.equals("3")){
+        if(permisos_user.equals("3")){
 
 
             drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
@@ -775,4 +769,9 @@ public class MainActivity extends AppCompatActivity
             return source;
         }
     }
+
+
+
+
+
 }

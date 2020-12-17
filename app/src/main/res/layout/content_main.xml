@@ -35,7 +35,7 @@
 
 
         <EditText
-            android:inputType="text"
+            android:inputType="phone"
             android:textColor="@color/primary"
             android:id="@+id/id_order_edittext"
             android:hint="ID Pedido"
@@ -156,7 +156,7 @@
 
 
             <EditText
-                android:inputType = "text"
+                android:inputType = "phone"
                 android:textColor="@color/primary"
                 android:hint="Bar_Code_Fedex_Guia"
                 android:id="@+id/id_encaje"
