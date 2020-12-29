@@ -397,6 +397,12 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
                     }else{
 
 
+
+                        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.error_sound_1);
+                        mp.start();
+
+
+
                         AlertDialog alertDialog = new AlertDialog.Builder(Armado_Pedidos_Nuevo.this).create();
                         alertDialog.setCanceledOnTouchOutside(false);
                         alertDialog.setTitle("ALERTA! ALERTA!");
