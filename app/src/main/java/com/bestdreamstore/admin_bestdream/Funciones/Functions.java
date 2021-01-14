@@ -778,6 +778,89 @@ public static JSONArray ordenar_arr_bar_code(JSONArray array) {
 
 
 
+    public static JSONArray ordenar_arr_marca(JSONArray array) {
+
+        List<JSONObject> jsons = new ArrayList<JSONObject>();
+        for (int i = 0; i < array.length(); i++) {
+
+            try {
+
+                jsons.add(array.getJSONObject(i));
+                Log.i("JSON_COMPARE:::MARCA", "----" + jsons + "---");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        Collections.sort(jsons, new Comparator<JSONObject>() {
+            @Override
+            public int compare(JSONObject lhs, JSONObject rhs) {
+                String lid = null;
+                String rid = null;
+
+                try {
+
+                        lid = lhs.getString("marca");
+                        rid = rhs.getString("marca");
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                // Here you could parse string id to integer and then compare.
+                return lid.compareTo(rid);
+            }
+        });
+        return new JSONArray(jsons);
+    }
+
+
+
+
+
+
+    public static JSONArray ordenar_arr_categoria(JSONArray array) {
+
+        List<JSONObject> jsons = new ArrayList<JSONObject>();
+        for (int i = 0; i < array.length(); i++) {
+
+            try {
+
+                jsons.add(array.getJSONObject(i));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        Collections.sort(jsons, new Comparator<JSONObject>() {
+            @Override
+            public int compare(JSONObject lhs, JSONObject rhs) {
+                String lid = null;
+                String rid = null;
+
+                try {
+
+                    lid = lhs.getString("categoria");
+                    rid = rhs.getString("categoria");
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                // Here you could parse string id to integer and then compare.
+                return lid.compareTo(rid);
+            }
+        });
+        return new JSONArray(jsons);
+    }
+
+
+
+
 
 
 

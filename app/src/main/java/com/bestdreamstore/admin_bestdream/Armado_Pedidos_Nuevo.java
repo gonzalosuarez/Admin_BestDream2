@@ -460,6 +460,11 @@ public class Armado_Pedidos_Nuevo extends AppCompatActivity {
 
 
                 productos_server = userFunctions.ordenar_arr_bar_code(productos_server); //SE ORDENAN PARA GUARDAR
+                productos_server = userFunctions.ordenar_arr_marca(productos_server); //SE ORDENAN POR MARCA
+               // productos_server = userFunctions.ordenar_arr_categoria(productos_server); //SE ORDENAN POR CATEGORIA
+
+
+
 
                 if(userFunctions.insert_all_cart(productos_server, getApplicationContext())){
 
