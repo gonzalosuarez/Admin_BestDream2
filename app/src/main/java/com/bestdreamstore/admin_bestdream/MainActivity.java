@@ -391,7 +391,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        if(permisos_user.equals("3")){
+        if(!permisos_user.equals("0")){
 
 
             drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
