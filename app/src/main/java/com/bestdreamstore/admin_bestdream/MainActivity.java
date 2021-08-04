@@ -6,9 +6,11 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
@@ -47,6 +49,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity
 
     private static final int REQUEST_CODE_QR_SCAN = 101;
 
-    private static final int CODIGO_PERMISOS_CAMARA = 1, CODIGO_INTENT = 2;
+    private static final int CODIGO_PERMISOS_CAMARA = 1, CODIGO_CAMARA = 2, CODIGO_VOZ = 3;
     private boolean permisoCamaraConcedido = false, permisoSolicitadoDesdeBoton = false;
 
 
@@ -67,6 +70,7 @@ public class MainActivity extends AppCompatActivity
     Spinner usuarios_spinner;
     String get_encajador_db;
     String  get_cliente_name, id_encaje_txt, nombre_user, permisos_user;
+    ImageView comando_voz;
 
 
     java.util.ArrayList<String> users_string = new java.util.ArrayList<>();
@@ -120,6 +124,17 @@ public class MainActivity extends AppCompatActivity
 
         encaje_linearlayout = (LinearLayout) findViewById(R.id.encaje_linearlayout);
         encaje_linearlayout.setVisibility(View.INVISIBLE);
+
+
+        comando_voz = (ImageView)findViewById(R.id.comando_voz);
+        comando_voz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                capturarVoz();
+
+            }
+        });
 
 
 
@@ -626,8 +641,14 @@ public class MainActivity extends AppCompatActivity
 
         }else if(id == R.id.cerrar_session){
 
+
             userFunctions.cerrar_session_login(getApplicationContext());
             finish();
+
+        }else if(id == R.id.comando_voz){
+
+            Intent i = new Intent(MainActivity.this, Voz_texto.class);
+            startActivity(i);
 
         }else if(id == R.id.search_pedidos){
 
@@ -681,7 +702,7 @@ public class MainActivity extends AppCompatActivity
 
     private void escanear() {
         Intent i = new Intent(MainActivity.this, ActivityEscanear.class);
-        startActivityForResult(i, CODIGO_INTENT);
+        startActivityForResult(i, CODIGO_CAMARA);
     }
 
 
@@ -698,14 +719,14 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == CODIGO_INTENT) {
+
+
+        if (requestCode == CODIGO_CAMARA) {
+
             if (resultCode == Activity.RESULT_OK) {
                 if (data != null) {
 
-
                     final String codigo = data.getStringExtra("codigo");
-
-
 
                     new AsyncTask<Object, Void, String>() {
 
@@ -752,13 +773,20 @@ public class MainActivity extends AppCompatActivity
                         } }.execute();
 
 
-
-
-
-
-
                 }
             }
+
+
+        }else if(requestCode == CODIGO_VOZ  && resultCode == RESULT_OK && data != null){
+
+
+            ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+
+            String txt_fin = result.get(0).replace(" ","");
+            id_pedido_edittext.setText(txt_fin);
+
+           // textView.setText(result.get(0));
+
         }
     }
 
@@ -770,6 +798,30 @@ public class MainActivity extends AppCompatActivity
         @Override
         public CharSequence getTransformation(CharSequence source, View view) {
             return source;
+        }
+    }
+
+
+
+
+
+    private void capturarVoz(){
+        Intent intent = new Intent(RecognizerIntent
+                .ACTION_RECOGNIZE_SPEECH);
+
+        intent.putExtra(
+                RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+        );
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE,
+                Locale.getDefault());
+
+        if (intent.resolveActivity(getPackageManager()) != null)
+        {
+            startActivityForResult(intent, CODIGO_VOZ);
+        } else
+        {
+            Log.e("ERROR","Su dispositivo no admite entrada de voz");
         }
     }
 
