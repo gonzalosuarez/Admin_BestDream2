@@ -74,7 +74,7 @@ public class Searchs extends AppCompatActivity implements SwipeRefreshLayout.OnR
     RecyclerView.Adapter recyclerViewadapter;
 
 
-
+    RequestQueue requestQueue;
 
 
     @Override
@@ -85,7 +85,8 @@ public class Searchs extends AppCompatActivity implements SwipeRefreshLayout.OnR
 
 
 
-
+        requestQueue = Volley.newRequestQueue(this);
+        requestQueue.getCache().clear();
 
 
 
@@ -267,6 +268,10 @@ public class Searchs extends AppCompatActivity implements SwipeRefreshLayout.OnR
 
     public void REFRESH_SEARCH_DOWN(){
 
+
+
+        requestQueue.getCache().clear();
+
         mSwipeRefreshLayout.setRefreshing(true);
         recyclerView.scrollToPosition(1);
         ver_mas.setVisibility(View.INVISIBLE);
@@ -325,7 +330,7 @@ public class Searchs extends AppCompatActivity implements SwipeRefreshLayout.OnR
         Log.i("URL_ENCODE", URL_FINAL);
 
 
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
 
         // Initialize a new JsonObjectRequest instance
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
