@@ -720,6 +720,11 @@ public class Functions {
 
 
 
+
+
+
+
+
 public static JSONArray ordenar_arr_bar_code(JSONArray array) {
 
         List<JSONObject> jsons = new ArrayList<JSONObject>();
@@ -734,6 +739,10 @@ public static JSONArray ordenar_arr_bar_code(JSONArray array) {
             }
 
         }
+
+
+
+
 
         Collections.sort(jsons, new Comparator<JSONObject>() {
             @Override
@@ -770,6 +779,115 @@ public static JSONArray ordenar_arr_bar_code(JSONArray array) {
             }
         });
         return new JSONArray(jsons);
+    }
+
+
+
+
+
+
+
+
+    public static JSONArray ordenar_arr_productos(JSONArray array) {
+
+        List<JSONObject> jsons_bar_code = new ArrayList<JSONObject>();
+        List<JSONObject> jsons_marca = new ArrayList<JSONObject>();
+
+
+
+
+
+        for (int i = 0; i < array.length(); i++) {
+
+
+            try {
+
+                JSONObject json_base_2 = array.getJSONObject(i);
+
+                String marca = json_base_2.getString("marca");
+                String bar_code = json_base_2.getString("bar_code");
+
+                if(bar_code.equals("")){
+
+                    jsons_marca.add(array.getJSONObject(i));
+
+                }else{
+
+                    jsons_bar_code.add(array.getJSONObject(i));
+
+                }
+
+
+
+                Log.i("JSON_BAR_CODE:::", "----" + jsons_bar_code + "---");
+                Log.i("JSON_BAR_MARCA:::", "----" + jsons_marca + "---");
+
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+
+
+
+
+        Collections.sort(jsons_bar_code, new Comparator<JSONObject>() {
+            @Override
+            public int compare(JSONObject lhs, JSONObject rhs) {
+                String lid = null;
+                String rid = null;
+
+                try {
+
+                    lid = lhs.getString("bar_code");
+                    rid = rhs.getString("bar_code");
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                // Here you could parse string id to integer and then compare.
+                return lid.compareTo(rid);
+            }
+        });
+
+
+
+
+
+        Collections.sort(jsons_marca, new Comparator<JSONObject>() {
+            @Override
+            public int compare(JSONObject lhs, JSONObject rhs) {
+                String lid = null;
+                String rid = null;
+
+                try {
+
+                    lid = lhs.getString("marca");
+                    rid = rhs.getString("marca");
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                // Here you could parse string id to integer and then compare.
+                return lid.compareTo(rid);
+            }
+        });
+
+
+        jsons_bar_code.addAll(jsons_marca);
+
+
+
+        Log.i("JSON_FIN:::", "----" + jsons_bar_code + "---");
+
+
+        return new JSONArray(jsons_bar_code);
+
     }
 
 
