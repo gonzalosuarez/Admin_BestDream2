@@ -108,6 +108,7 @@ public class Faltantes_Productos extends AppCompatActivity{
         GetCartAdapter1.clear();
 
 
+
          //nombre_user = userFunctions.get_name_user(getApplicationContext());
 
 
@@ -140,6 +141,9 @@ public class Faltantes_Productos extends AppCompatActivity{
         recyclerView_global = (RecyclerView)findViewById(R.id.recycler_view);
         recyclerView_global.setHasFixedSize(true);
         recyclerView_global.setLayoutManager(recyclerViewlayoutManager);
+
+        recyclerView_global.getRecycledViewPool().clear();
+
 
 
 

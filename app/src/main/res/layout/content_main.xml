@@ -174,7 +174,7 @@
             <EditText
                 android:inputType = "phone"
                 android:textColor="@color/primary"
-                android:hint="Bar_Code_Fedex_Guia"
+                android:hint="Id Pedido"
                 android:id="@+id/id_encaje"
                 android:layout_width="match_parent"
                 android:layout_weight="3"
@@ -201,7 +201,7 @@
         <Button
             android:weightSum="1"
             android:textColor="@color/primary"
-            android:text=" Asignar Usuario Encaje "
+            android:text=" Asignar Usuario o Ver Detalles"
             android:id="@+id/button_encaje"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
